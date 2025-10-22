@@ -407,6 +407,17 @@ body {
   line-height: 1.8;
 }
 
+/* Video Section */
+.video-section {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.home-video {
+  border: 3px solid #001f3f;
+}
+
 /* Services Section */
 .services-section {
   background-color: #f8f9fa;
