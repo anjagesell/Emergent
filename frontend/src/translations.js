@@ -72,13 +72,18 @@ export const translations = {
       },
       z3: {
         title: 'Betreuungshilfe',
-        desc: 'Persönliche Begleitung und soziale Betreuung im Alltag.',
+        desc: 'Menschliche Nähe, soziale Teilhabe und sinnvolle Beschäftigung – unsere Betreuungskräfte sind für Sie da, wenn Sie Gesellschaft, Aktivierung oder einfach ein offenes Ohr brauchen.',
+        fullText: 'Ein erfülltes Leben besteht nicht nur aus Pflege und Versorgung – soziale Kontakte, gemeinsame Aktivitäten und das Gefühl, am Leben teilzuhaben, sind mindestens genauso wichtig für das Wohlbefinden. Gerade bei eingeschränkter Mobilität oder wenn Angehörige weit entfernt wohnen, kann Einsamkeit zur Belastung werden.\n\nUnsere nach § 43b SGB XI qualifizierten Betreuungskräfte sind speziell dafür ausgebildet, Menschen mit Einschränkungen zu begleiten und ihren Alltag zu bereichern. Sie nehmen sich Zeit für Gespräche, unternehmen gemeinsame Aktivitäten und gehen auf Ihre individuellen Interessen und Vorlieben ein.\n\nDabei geht es nicht um Leistungsdruck oder ein starres Programm – im Mittelpunkt steht das gemeinsame Erleben und die Freude am Moment. Ob beim Spaziergang im Park, beim Vorlesen, bei Gesellschaftsspielen oder beim Betrachten alter Fotos: Unsere Betreuungskräfte gestalten die Zeit so, wie es Ihnen guttut. Besonders bei Menschen mit Demenz oder kognitiven Einschränkungen arbeiten wir mit biografieorientierten und validierenden Ansätzen, die das Selbstwertgefühl stärken und Sicherheit geben.',
         services: [
-          'Alltagsbegleitung',
-          'Gespräche und soziale Kontakte',
-          'Begleitung zu Terminen',
-          'Freizeitgestaltung',
-          'Kognitive Aktivierung'
+          'Alltagsbegleitung und gemeinsame Aktivitäten im häuslichen Umfeld',
+          'Gespräche, aktives Zuhören und emotionale Unterstützung',
+          'Begleitung zu Arztterminen, Behördengängen oder Veranstaltungen',
+          'Spaziergänge und Aktivitäten im Freien',
+          'Vorlesen, gemeinsames Musizieren oder Singen',
+          'Spiele, Rätsel und kognitive Aktivierung',
+          'Unterstützung bei Hobbys und Freizeitgestaltung',
+          'Hilfe bei der Aufrechterhaltung sozialer Kontakte',
+          'Biografiearbeit und Erinnerungspflege'
         ]
       },
       z4: {
