@@ -685,92 +685,41 @@ function App() {
                             </thead>
                             <tbody>
                               {[...jobApplications].sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp)).map((application, index) => (
-                            <div key={application.id} className="request-card" data-testid="application-card">
-                              <div className="request-header">
-                                <h4 className="request-name">{application.name}</h4>
-                                <span className="request-date">
-                                  {new Date(application.timestamp).toLocaleString(language === 'de' ? 'de-DE' : 'en-US')}
-                                </span>
-                              </div>
-                              
-                              <div className="request-details">
-                                <p><strong>Email:</strong> {application.email}</p>
-                                <p><strong>{language === 'de' ? 'Telefon' : 'Phone'}:</strong> {application.phone}</p>
-                                
-                                {application.photo && (
-                                  <div className="applicant-photo">
-                                    <strong>{language === 'de' ? 'Foto' : 'Photo'}:</strong>
-                                    <br />
-                                    <img 
-                                      src={application.photo} 
-                                      alt={application.name} 
-                                      style={{
-                                        maxWidth: '150px', 
-                                        maxHeight: '150px', 
-                                        marginTop: '10px', 
-                                        borderRadius: '8px',
-                                        border: '2px solid #001f3f'
-                                      }} 
-                                    />
-                                  </div>
-                                )}
-                                
-                                {application.position && (
-                                  <p>
-                                    <strong>{language === 'de' ? 'Position' : 'Position'}:</strong>{' '}
+                                <tr key={application.id} data-testid="application-row">
+                                  <td className="row-number">{index + 1}</td>
+                                  <td className="timestamp-cell">
+                                    {new Date(application.timestamp).toLocaleString(language === 'de' ? 'de-DE' : 'en-US')}
+                                  </td>
+                                  <td>{application.name}</td>
+                                  <td>{application.email}</td>
+                                  <td>{application.phone}</td>
+                                  <td>
                                     {application.position === 'pflege' 
-                                      ? (language === 'de' ? 'Pflegefachkraft' : 'Nursing Professional')
+                                      ? (language === 'de' ? 'Pflegefachkraft' : 'Nursing')
                                       : application.position === 'betreuung'
-                                      ? (language === 'de' ? 'Betreuungskraft' : 'Care Assistant')
+                                      ? (language === 'de' ? 'Betreuungskraft' : 'Care')
                                       : application.position === 'hauswirtschaft'
-                                      ? (language === 'de' ? 'Hauswirtschaft' : 'Household Staff')
+                                      ? (language === 'de' ? 'Hauswirtschaft' : 'Household')
                                       : application.position === 'ehrenamt'
-                                      ? (language === 'de' ? 'Ehrenamtliche Tätigkeit' : 'Volunteer Work')
-                                      : application.position === 'sonstiges'
-                                      ? (language === 'de' ? 'Sonstiges' : 'Other')
+                                      ? (language === 'de' ? 'Ehrenamtlich' : 'Volunteer')
                                       : application.position}
-                                  </p>
-                                )}
-                                
-                                {application.marital_status && (
-                                  <p>
-                                    <strong>{language === 'de' ? 'Familienstand' : 'Marital Status'}:</strong>{' '}
+                                  </td>
+                                  <td>
                                     {application.marital_status === 'married' 
                                       ? (language === 'de' ? 'Verheiratet' : 'Married')
-                                      : application.marital_status === 'unmarried'
-                                      ? (language === 'de' ? 'Unverheiratet' : 'Unmarried')
-                                      : application.marital_status}
-                                  </p>
-                                )}
-                                
-                                {application.number_of_children && (
-                                  <p>
-                                    <strong>{language === 'de' ? 'Anzahl der Kinder' : 'Number of Children'}:</strong>{' '}
+                                      : (language === 'de' ? 'Unverheiratet' : 'Unmarried')}
+                                  </td>
+                                  <td>
                                     {application.number_of_children === 'none' 
-                                      ? (language === 'de' ? 'Keine' : 'None')
-                                      : application.number_of_children}
-                                  </p>
-                                )}
-                                
-                                {application.foreign_languages && (
-                                  <p>
-                                    <strong>{language === 'de' ? 'Fremdsprachen' : 'Foreign Languages'}:</strong>{' '}
-                                    {application.foreign_languages}
-                                  </p>
-                                )}
-                                
-                                {application.drivers_license && (
-                                  <p>
-                                    <strong>{language === 'de' ? 'Führerschein' : 'Driver\'s License'}:</strong>{' '}
+                                      ? '0' : application.number_of_children}
+                                  </td>
+                                  <td className="languages-cell">{application.foreign_languages || '-'}</td>
+                                  <td>
                                     {application.drivers_license === 'yes' 
                                       ? (language === 'de' ? 'Ja' : 'Yes')
                                       : (language === 'de' ? 'Nein' : 'No')}
-                                  </p>
-                                )}
-                                
-                                {application.employment_type && (
-                                  <p>
-                                    <strong>{language === 'de' ? 'Beschäftigungsart' : 'Employment Type'}:</strong>{' '}
+                                  </td>
+                                  <td>
                                     {application.employment_type === 'fulltime' 
                                       ? (language === 'de' ? 'Vollzeit' : 'Full-time')
                                       : application.employment_type === 'parttime'
@@ -779,66 +728,33 @@ function App() {
                                       ? (language === 'de' ? 'Praktikum' : 'Internship')
                                       : application.employment_type === 'volunteer'
                                       ? (language === 'de' ? 'Ehrenamtlich' : 'Volunteer')
-                                      : application.employment_type === 'under3hrs'
-                                      ? (language === 'de' ? 'Unter 3 Stunden pro Tag' : 'Under 3 hrs a day')
-                                      : application.employment_type}
-                                  </p>
-                                )}
-                                
-                                {application.preferred_shift && (
-                                  <p>
-                                    <strong>{language === 'de' ? 'Bevorzugte Schicht' : 'Preferred Shift'}:</strong>{' '}
+                                      : (language === 'de' ? 'Unter 3h' : '<3hrs')}
+                                  </td>
+                                  <td>
                                     {application.preferred_shift === 'morning' 
-                                      ? (language === 'de' ? 'Frühschicht' : 'Morning shift')
-                                      : application.preferred_shift === 'evening'
-                                      ? (language === 'de' ? 'Spätschicht' : 'Evening shift')
-                                      : application.preferred_shift}
-                                  </p>
-                                )}
-                                
-                                {application.work_days_preference && (
-                                  <p>
-                                    <strong>{language === 'de' ? 'Arbeitstage-Präferenz' : 'Work Days Preference'}:</strong>{' '}
+                                      ? (language === 'de' ? 'Früh' : 'Morning')
+                                      : (language === 'de' ? 'Spät' : 'Evening')}
+                                  </td>
+                                  <td>
                                     {application.work_days_preference === 'weekends' 
-                                      ? (language === 'de' ? 'Wochenenden' : 'Weekends')
+                                      ? (language === 'de' ? 'Wochenende' : 'Weekends')
                                       : application.work_days_preference === 'weekdays'
                                       ? (language === 'de' ? 'Wochentage' : 'Weekdays')
-                                      : application.work_days_preference === 'no_preference'
-                                      ? (language === 'de' ? 'Ist mir egal' : 'Doesn\'t matter')
-                                      : application.work_days_preference}
-                                  </p>
-                                )}
-                                
-                                {application.about_yourself && (
-                                  <div className="request-message">
-                                    <strong>{language === 'de' ? 'Über sich' : 'About Yourself'}:</strong>
-                                    <p>{application.about_yourself}</p>
-                                  </div>
-                                )}
-                                
-                                {application.qualifications && (
-                                  <div className="request-message">
-                                    <strong>{language === 'de' ? 'Qualifikationen' : 'Qualifications'}:</strong>
-                                    <p>{application.qualifications}</p>
-                                  </div>
-                                )}
-                                
-                                {application.empathic_abilities && (
-                                  <div className="request-message">
-                                    <strong>{language === 'de' ? 'Empathische Fähigkeiten' : 'Empathic Abilities'}:</strong>
-                                    <p>{application.empathic_abilities}</p>
-                                  </div>
-                                )}
-                                
-                                {application.why_work_here && (
-                                  <div className="request-message">
-                                    <strong>{language === 'de' ? 'Warum bei OCTA arbeiten?' : 'Why work at OCTA?'}:</strong>
-                                    <p>{application.why_work_here}</p>
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-                          ))}
+                                      : (language === 'de' ? 'Egal' : 'Any')}
+                                  </td>
+                                  <td className="photo-cell">
+                                    {application.photo ? (
+                                      <img 
+                                        src={application.photo} 
+                                        alt={application.name}
+                                        className="thumbnail-photo"
+                                      />
+                                    ) : '-'}
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
                         </div>
                       )}
                     </>
