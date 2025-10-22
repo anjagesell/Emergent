@@ -27,13 +27,16 @@ export const translations = {
     categories: {
       z1: {
         title: 'Hauswirtschaftliche Hilfe',
-        desc: 'Professionelle Unterstützung im Haushalt für ein selbstbestimmtes Leben.',
+        desc: 'Ein gepflegtes und angenehmes Wohnumfeld trägt maßgeblich zur Lebensqualität und zum Wohlbefinden bei. Unsere hauswirtschaftliche Hilfe unterstützt Sie dabei, Ihren Haushalt so zu führen, wie es Ihren individuellen Bedürfnissen entspricht – ohne dass Sie sich überfordert fühlen müssen.',
+        fullText: 'Mit zunehmendem Alter oder bei gesundheitlichen Einschränkungen können alltägliche Haushaltsaufgaben zur Herausforderung werden. Hier setzen unsere qualifizierten Hauswirtschaftskräfte an: Sie übernehmen die Tätigkeiten, die Ihnen schwerfallen, und ermöglichen es Ihnen, weiterhin selbstbestimmt in Ihrem gewohnten Zuhause zu leben.\n\nUnsere Mitarbeiterinnen und Mitarbeiter sind speziell geschult und verfügen über langjährige Erfahrung in der hauswirtschaftlichen Versorgung. Sie arbeiten nach Ihren Wünschen und Vorstellungen und respektieren dabei selbstverständlich Ihre Privatsphäre und persönlichen Gewohnheiten.\n\nOb Sie nur gelegentlich Unterstützung benötigen oder eine regelmäßige Hilfe wünschen – wir passen unser Angebot flexibel an Ihre Situation an. Dabei legen wir besonderen Wert auf Kontinuität: Nach Möglichkeit betreuen Sie dieselben vertrauten Gesichter, sodass eine persönliche Beziehung entstehen kann.',
         services: [
-          'Reinigung und Pflege der Wohnräume',
-          'Wäsche waschen und bügeln',
-          'Einkaufen und Besorgungen',
-          'Zubereitung von Mahlzeiten',
-          'Unterstützung bei der Haushaltsführung'
+          'Reinigung und Pflege der Wohnräume nach Ihren individuellen Wünschen',
+          'Wäsche waschen, bügeln und ordentliche Aufbewahrung',
+          'Einkaufen und Besorgungen – gerne auch gemeinsam mit Ihnen',
+          'Zubereitung ausgewogener und schmackhafter Mahlzeiten',
+          'Unterstützung bei der Haushaltsorganisation und Verwaltung',
+          'Blumenpflege und kleine Dekorationsarbeiten',
+          'Entsorgung und Mülltrennung'
         ]
       },
       z2a: {
