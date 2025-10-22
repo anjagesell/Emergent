@@ -300,13 +300,18 @@ export const translations = {
       },
       z4: {
         title: 'Garden Services',
-        desc: 'Professional garden care for your green home.',
+        desc: 'A well-maintained garden is a piece of quality of life – we ensure that your green refuge remains in excellent condition even when physical work becomes difficult.',
+        fullText: 'Many people have nurtured and maintained their garden throughout their lives – it is a place of relaxation, pride, and connection with nature. But with increasing age or health limitations, mowing the lawn, trimming hedges, and maintaining flower beds become physical challenges. Often it is difficult to let go and see the beloved garden become overgrown.\n\nThis is exactly where our Garden Services come in: we take over the physically demanding work while you can continue to enjoy the beauty of your garden. Our employees work reliably, carefully, and according to your wishes – after all, it is and remains your garden.\n\nWe offer both regular garden maintenance and seasonal work. We flexibly adjust the services to your needs: some customers only want the heavy work like lawn mowing, while others prefer comprehensive care of the entire property. We are also there for you in winter and ensure with our winter service that paths and driveways remain safely passable.',
         services: [
-          'Lawn care and mowing',
-          'Flower bed and shrub maintenance',
-          'Hedge trimming',
-          'Winter service',
-          'Garden care as needed'
+          'Regular lawn care, mowing, and edge maintenance',
+          'Flower bed and shrub care, professional pruning',
+          'Hedge trimming and shaping',
+          'Weed removal and soil loosening',
+          'Leaf and green waste disposal',
+          'Winter service: snow removal and spreading',
+          'Planting work and seasonal planting',
+          'Watering during dry periods',
+          'Minor repairs to garden fences or paths'
         ]
       },
       z5: {
