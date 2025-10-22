@@ -208,7 +208,7 @@ export const translations = {
       submitButton: 'Anfrage absenden',
       closing: 'Mit freundlichen Grüßen',
       required: 'Pflichtfeld',
-      successMessage: 'Vielen Dank! Ihre Anfrage wurde erfolgreich übermittelt. Wir werden uns baldmöglichst bei Ihnen melden.',
+      successMessage: '🎉 Vielen herzlichen Dank für Ihre Anfrage!\n\nWir haben Ihre Nachricht erhalten und freuen uns sehr über Ihr Interesse an unseren Dienstleistungen. Unser Team wird Ihre Anfrage sorgfältig prüfen und sich innerhalb von 24 Stunden persönlich bei Ihnen melden.\n\nBis bald!\nIhr OCTA-Team',
       errorMessage: 'Bitte füllen Sie alle Pflichtfelder aus und wählen Sie mindestens einen Dienstleistungsbereich.',
       selectAtLeastOne: 'Bitte wählen Sie mindestens einen Bereich aus'
     }
