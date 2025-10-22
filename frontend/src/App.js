@@ -179,7 +179,8 @@ function App() {
           qualifications: '',
           empathic_abilities: '',
           number_of_children: '',
-          why_work_here: ''
+          why_work_here: '',
+          photo: ''
         });
       }, 8000);
       
