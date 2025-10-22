@@ -64,6 +64,27 @@ function App() {
   
   const t = translations[language];
   const categoryKeys = ['z1', 'z2a', 'z2b', 'z3', 'z4', 'z5', 'z6', 'z7', 'z8', 'z9'];
+  
+  // Text-to-Speech Funktion
+  const toggleTextToSpeech = () => {
+    if (isReading) {
+      // Stop reading
+      window.speechSynthesis.cancel();
+      setIsReading(false);
+    } else {
+      // Start reading - get all visible text content
+      const mainContent = document.querySelector('.main-content');
+      if (mainContent) {
+        const textContent = mainContent.innerText;
+        const utterance = new SpeechSynthesisUtterance(textContent);
+        utterance.lang = language === 'de' ? 'de-DE' : 'en-US';
+        utterance.rate = 0.9; // Slightly slower for better understanding
+        utterance.onend = () => setIsReading(false);
+        window.speechSynthesis.speak(utterance);
+        setIsReading(true);
+      }
+    }
+  };
 
   const handleServiceToggle = (service) => {
     setFormData(prev => ({
