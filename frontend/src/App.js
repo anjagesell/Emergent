@@ -615,38 +615,37 @@ function App() {
                       {requests.length === 0 ? (
                         <p className="no-requests">{t.intern.noRequests}</p>
                       ) : (
-                        <div className="requests-list">
-                          {requests.map((request) => (
-                            <div key={request.id} className="request-card" data-testid="request-card">
-                              <div className="request-header">
-                                <h4 className="request-name">{request.name}</h4>
-                                <span className="request-date">
-                                  {new Date(request.timestamp).toLocaleString(language === 'de' ? 'de-DE' : 'en-US')}
-                                </span>
-                              </div>
-                              
-                              <div className="request-details">
-                                <p><strong>Email:</strong> {request.email}</p>
-                                <p><strong>{language === 'de' ? 'Telefon' : 'Phone'}:</strong> {request.phone}</p>
-                                
-                                <div className="request-services">
-                                  <strong>{t.intern.services}:</strong>
-                                  <ul>
-                                    {request.services.map((service, idx) => (
-                                      <li key={idx}>{t.nav[service]}</li>
-                                    ))}
-                                  </ul>
-                                </div>
-                                
-                                {request.message && (
-                                  <div className="request-message">
-                                    <strong>{t.intern.message}:</strong>
-                                    <p>{request.message}</p>
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-                          ))}
+                        <div className="spreadsheet-container">
+                          <table className="spreadsheet-table">
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>{language === 'de' ? 'Zeitstempel' : 'Timestamp'}</th>
+                                <th>{language === 'de' ? 'Name' : 'Name'}</th>
+                                <th>Email</th>
+                                <th>{language === 'de' ? 'Telefon' : 'Phone'}</th>
+                                <th>{language === 'de' ? 'Dienstleistungen' : 'Services'}</th>
+                                <th>{language === 'de' ? 'Nachricht' : 'Message'}</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {[...requests].sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp)).map((request, index) => (
+                                <tr key={request.id} data-testid="request-row">
+                                  <td className="row-number">{index + 1}</td>
+                                  <td className="timestamp-cell">
+                                    {new Date(request.timestamp).toLocaleString(language === 'de' ? 'de-DE' : 'en-US')}
+                                  </td>
+                                  <td>{request.name}</td>
+                                  <td>{request.email}</td>
+                                  <td>{request.phone}</td>
+                                  <td className="services-cell">
+                                    {request.services.map(service => t.nav[service]).join(', ')}
+                                  </td>
+                                  <td className="message-cell">{request.message || '-'}</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
                         </div>
                       )}
                     </>
