@@ -737,6 +737,32 @@ function App() {
 
       {/* Footer mit Impressum und Datenschutz */}
       <footer className="app-footer">
+        {/* Krankenkassen Logos */}
+        <div className="insurance-logos">
+          <p className="insurance-text">
+            {language === 'de' ? 'Akzeptierte Krankenkassen:' : 'Accepted Health Insurance:'}
+          </p>
+          <div className="logos-container">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_sprechen-sie-41/artifacts/p6hgsljo_Untitled-design-3.jpg" 
+              alt="Techniker Krankenkasse" 
+              className="insurance-logo"
+            />
+            <img 
+              src="https://customer-assets.emergentagent.com/job_sprechen-sie-41/artifacts/2vdwdvf9_barmer-logo-png_seeklogo-16692.png" 
+              alt="Barmer" 
+              className="insurance-logo"
+            />
+            <img 
+              src="https://customer-assets.emergentagent.com/job_sprechen-sie-41/artifacts/laarcn9u_GKV-Spitzenverband_logo.svg" 
+              alt="GKV Spitzenverband" 
+              className="insurance-logo"
+            />
+          </div>
+        </div>
+
+        <div className="footer-divider-line"></div>
+
         <div className="footer-links">
           <button 
             className="footer-link" 
