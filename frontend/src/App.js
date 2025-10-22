@@ -290,7 +290,9 @@ function App() {
         <img src={LOGO_URL} alt="OCTA Logo" className="logo" />
         <h1 className="company-name">OCTA</h1>
         <p className="company-slogan">
-          Der individuelle Dienst für Sie als individuelle Mensch
+          {language === 'de' 
+            ? 'Der individuelle Dienst für Sie als individuelle Mensch'
+            : 'The individual service for you as an individual person'}
         </p>
       </header>
 
