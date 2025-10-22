@@ -191,6 +191,7 @@ export const translations = {
     contactText: 'Für weitere Informationen zu unseren Leistungen kontaktieren Sie uns gerne.',
     servicesHeading: 'Unsere Leistungen:',
     impressum: 'Impressum',
+    datenschutz: 'Datenschutzerklärung',
     copyright: '© 2025 OCTA - Alle Rechte vorbehalten',
     intern: {
       title: 'Interner Bereich',
