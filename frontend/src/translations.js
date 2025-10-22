@@ -388,17 +388,18 @@ export const translations = {
       z7: {
         title: 'Assisted Living',
         desc: 'Coordinated care in your own home or in the OCTA Community – professional support exactly where you feel at home.',
-        fullText: 'Assisted living at OCTA means flexible care tailored to your needs. We coordinate a qualified caregiver who supports you in your familiar home environment. Depending on your requirements, this caregiver can live with you in your own residence or provide full-day care for 8 hours on-site – you decide which form of support works best for you.\n\nAdditionally, OCTA offers a special alternative to traditional nursing homes: Live as a tenant with benefits in our OCTA Community! On our own land, we have built Tiny Houses specifically designed for seniors – single-story construction, barrier-free, and with all the comfort you need. This modern living concept combines independence with the security of professional care infrastructure directly on-site.\n\nLiving in the OCTA Community offers tremendous advantages: You are part of a community, have your own four walls, benefit from short distances to care services, and don\'t have to take the difficult step into a nursing home. The Tiny Houses on our property are specifically designed for seniors\' needs – modern, safe, and with a warm neighborhood that looks out for one another.',
+        fullText: 'Assisted living at OCTA means flexible care tailored to your needs. We coordinate a qualified caregiver who supports you in your familiar home environment. Depending on your requirements, this caregiver can live with you in your own residence or provide full-day care for 8 hours on-site – you decide which form of support works best for you.\n\nAdditionally, OCTA offers a special alternative to traditional nursing homes: Live as a tenant with benefits in our OCTA Community! On our own land, nestled in a magnificent natural environment with beautiful tree coverage, we have built Tiny Houses specifically designed for seniors – single-story construction, barrier-free, and equipped with integrated modern technology. This modern living concept combines independence with the security of professional care infrastructure directly on-site.\n\nLiving in the OCTA Community offers tremendous advantages: You are part of a community, have your own four walls, and enjoy daily fresh meals in your own rented living space with care support. For your mobility on the spacious grounds, assigned golf carts are available, while you can explore the surroundings on beautiful nature walkways. Here, life as a single senior is truly wonderful! Through our collaboration with service providers from various fields, your retirement becomes a true piece of paradise – modern, safe, and with a warm neighborhood that looks out for one another.',
         services: [
           'Coordination of qualified caregivers for your home',
           'Flexible care models: live-in caregiver or 8-hour full-day care',
-          'OCTA Community Tiny Houses on owned land',
-          'Senior-friendly, single-story Tiny Houses',
+          'OCTA Community Tiny Houses nestled in magnificent natural environment with trees',
+          'Senior-friendly, single-story Tiny Houses with integrated modern technology',
+          'Nature walkways and assigned golf carts for mobility on the grounds',
+          'Daily fresh meals in your own rented living space with care support',
           'Barrier-free design and modern living quality',
           'Alternative to nursing homes – living as a tenant with benefits',
-          'Community and social contacts in the OCTA Community',
-          'Short distances to professional care services',
-          'Independent living with security and on-site support'
+          'Collaboration with service providers from various fields',
+          'Ideal for single seniors – your retirement as a piece of paradise'
         ]
       },
       z8: {
