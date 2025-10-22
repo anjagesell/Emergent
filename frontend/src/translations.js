@@ -234,7 +234,7 @@ export const translations = {
       intern: 'Internal',
       z1: 'Z1: Household Assistance',
       z2a: 'Z2a: Professional Care',
-      z2b: 'Z2b: Care Plus',
+      z2b: 'Z2b: CarePlus',
       z3: 'Z3: Care Support',
       z4: 'Z4: Garden Services',
       z5: 'Z5: Consulting & Assessment',
