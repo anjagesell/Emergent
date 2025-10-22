@@ -378,17 +378,6 @@ function App() {
           >
             🇩🇪
           </button>
-          {language === 'de' && (
-            <button
-              className={`tts-button ${isReading ? 'reading' : ''}`}
-              onClick={toggleTextToSpeech}
-              title={isReading ? 'Vorlesen stoppen' : 'Vorlesen starten'}
-              data-testid="tts-de"
-            >
-              <span className="tts-icon">{isReading ? '⏸' : '▶'}</span>
-              <span className="tts-text">{isReading ? 'Stopp' : 'Vorlesen'}</span>
-            </button>
-          )}
         </div>
         
         {/* US Flag - Right */}
@@ -401,17 +390,6 @@ function App() {
           >
             🇺🇸
           </button>
-          {language === 'en' && (
-            <button
-              className={`tts-button ${isReading ? 'reading' : ''}`}
-              onClick={toggleTextToSpeech}
-              title={isReading ? 'Stop Reading' : 'Start Reading'}
-              data-testid="tts-en"
-            >
-              <span className="tts-icon">{isReading ? '⏸' : '▶'}</span>
-              <span className="tts-text">{isReading ? 'Stop' : 'Read Aloud'}</span>
-            </button>
-          )}
         </div>
         
         <img src={LOGO_URL} alt="OCTA Logo" className="logo" />
