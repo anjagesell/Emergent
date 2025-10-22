@@ -754,6 +754,8 @@ function App() {
                                       ? (language === 'de' ? 'Vollzeit' : 'Full-time')
                                       : application.employment_type === 'parttime'
                                       ? (language === 'de' ? 'Teilzeit' : 'Part-time')
+                                      : application.employment_type === 'internship'
+                                      ? (language === 'de' ? 'Praktikum' : 'Internship')
                                       : application.employment_type === 'volunteer'
                                       ? (language === 'de' ? 'Ehrenamtlich' : 'Volunteer')
                                       : application.employment_type === 'under3hrs'
