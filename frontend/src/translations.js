@@ -230,6 +230,7 @@ export const translations = {
     nav: {
       home: 'Home',
       availability: 'Request Availability',
+      intern: 'Internal',
       z1: 'Z1: Household Assistance',
       z2a: 'Z2a: Professional Care',
       z2b: 'Z2b: Care Plus',
