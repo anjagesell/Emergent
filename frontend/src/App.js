@@ -128,6 +128,8 @@ function App() {
     
     if (!jobFormData.name || !jobFormData.email || !jobFormData.phone || 
         !jobFormData.marital_status || !jobFormData.foreign_languages ||
+        !jobFormData.drivers_license || !jobFormData.employment_type ||
+        !jobFormData.preferred_shift || !jobFormData.work_days_preference ||
         !jobFormData.about_yourself || !jobFormData.qualifications || 
         !jobFormData.empathic_abilities || !jobFormData.number_of_children || 
         !jobFormData.why_work_here) {
