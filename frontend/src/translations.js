@@ -171,6 +171,7 @@ export const translations = {
   en: {
     nav: {
       home: 'Home',
+      availability: 'Request Availability',
       z1: 'Z1: Household Assistance',
       z2a: 'Z2a: Professional Care',
       z2b: 'Z2b: Care Plus',
