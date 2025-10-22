@@ -36,8 +36,8 @@ body {
 /* Language Switcher */
 .language-switcher {
   position: absolute;
-  top: 1.5rem;
-  right: 2rem;
+  top: 1rem;
+  right: 1rem;
   display: flex;
   gap: 0.5rem;
   z-index: 10;
@@ -63,6 +63,19 @@ body {
   border-color: #001f3f;
   background-color: #e3f2fd;
   box-shadow: 0 2px 8px rgba(0, 31, 63, 0.2);
+}
+
+@media (max-width: 768px) {
+  .language-switcher {
+    top: 0.5rem;
+    right: 0.5rem;
+    gap: 0.25rem;
+  }
+  
+  .flag-button {
+    font-size: 1.5rem;
+    padding: 0.15rem 0.3rem;
+  }
 }
 
 .logo {
