@@ -314,6 +314,26 @@ export const translations = {
     contactText: 'For more information about our services, please feel free to contact us.',
     servicesHeading: 'Our Services:',
     impressum: 'Imprint',
-    copyright: '© 2025 OCTA - All Rights Reserved'
+    copyright: '© 2025 OCTA - All Rights Reserved',
+    availability: {
+      title: 'Availability Request',
+      greeting: 'Dear Sir or Madam,',
+      intro: 'I would like to request availability for the following services:',
+      nameLabel: 'Full Name',
+      namePlaceholder: 'John Doe',
+      emailLabel: 'Email Address',
+      emailPlaceholder: 'your.email@example.com',
+      phoneLabel: 'Phone Number',
+      phonePlaceholder: '+1 234 567890',
+      messageLabel: 'Your Request',
+      messagePlaceholder: 'Please describe your needs and any special requirements...',
+      servicesLabel: 'Requested Service Areas:',
+      submitButton: 'Submit Request',
+      closing: 'Kind regards',
+      required: 'Required',
+      successMessage: 'Thank you! Your request has been successfully submitted. We will contact you as soon as possible.',
+      errorMessage: 'Please fill out all required fields and select at least one service area.',
+      selectAtLeastOne: 'Please select at least one area'
+    }
   }
 };
