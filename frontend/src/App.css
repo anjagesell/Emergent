@@ -1029,6 +1029,132 @@ body {
   gap: 1.5rem;
 }
 
+/* Spreadsheet Style Table */
+.spreadsheet-container {
+  width: 100%;
+  overflow-x: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 31, 63, 0.1);
+}
+
+.spreadsheet-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background: white;
+}
+
+.spreadsheet-table thead {
+  background: linear-gradient(135deg, #001f3f 0%, #003d82 100%);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.spreadsheet-table th {
+  padding: 1rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  white-space: nowrap;
+}
+
+.spreadsheet-table th:last-child {
+  border-right: none;
+}
+
+.spreadsheet-table tbody tr {
+  border-bottom: 2px solid #e0e0e0;
+  transition: background-color 0.2s ease;
+}
+
+.spreadsheet-table tbody tr:hover {
+  background-color: #f5f9ff;
+}
+
+.spreadsheet-table td {
+  padding: 0.75rem;
+  border-right: 1px solid #e0e0e0;
+  vertical-align: middle;
+}
+
+.spreadsheet-table td:last-child {
+  border-right: none;
+}
+
+.row-number {
+  background-color: #f8f9fa;
+  font-weight: 700;
+  color: #001f3f;
+  text-align: center;
+  width: 50px;
+}
+
+.timestamp-cell {
+  min-width: 150px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.services-cell,
+.languages-cell,
+.message-cell {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.photo-cell {
+  text-align: center;
+  width: 80px;
+}
+
+.thumbnail-photo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid #001f3f;
+  cursor: pointer;
+}
+
+.status-cell {
+  text-align: center;
+  width: 100px;
+}
+
+.status-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #001f3f;
+}
+
+.notes-cell {
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.notes-textarea {
+  width: 100%;
+  min-height: 60px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.notes-textarea:focus {
+  outline: none;
+  border-color: #001f3f;
+  box-shadow: 0 0 0 2px rgba(0, 31, 63, 0.1);
+}
+
 .request-card {
   background-color: #ffffff;
   border: 2px solid #001f3f;
