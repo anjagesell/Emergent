@@ -21,6 +21,7 @@ const categoryIcons = {
 function App() {
   const [activeCategory, setActiveCategory] = useState('home');
   const [language, setLanguage] = useState('de'); // 'de' for German, 'en' for English
+  const [isReading, setIsReading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
