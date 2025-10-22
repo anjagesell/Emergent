@@ -182,7 +182,33 @@ body {
   font-size: 1.25rem;
   color: #003366;
   line-height: 1.8;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  padding: 1.5rem;
+  background-color: #e3f2fd;
+  border-left: 4px solid #001f3f;
+  border-radius: 8px;
+}
+
+/* Full Text Section for Categories */
+.full-text-section {
   margin-bottom: 2.5rem;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.full-text-paragraph {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #001f3f;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.full-text-paragraph:last-child {
+  margin-bottom: 0;
 }
 
 /* Home Content */
