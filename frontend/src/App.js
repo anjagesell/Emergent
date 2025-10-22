@@ -73,7 +73,7 @@ function App() {
       setIsReading(false);
     } else {
       // Start reading - get all visible text content
-      const mainContent = document.querySelector('[data-testid="main-content"]');
+      const mainContent = document.querySelector('.content') || document.querySelector('main') || document.body;
       if (mainContent) {
         const textContent = mainContent.innerText;
         
