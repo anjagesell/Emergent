@@ -283,19 +283,19 @@ export const translations = {
         ]
       },
       z2b: {
-        title: 'Care Plus',
-        desc: 'When special life circumstances require more intensive or specialized care, we are here for you with our extended range of services – around the clock and with the highest professional competence.',
-        fullText: 'Some care situations require more than standard care: with complex illnesses, in advanced disease stages, or with special needs such as dementia, specialized knowledge, particular experience, and sometimes intensive care throughout the day are needed.\n\nOur Care Plus is aimed at people who require particularly comprehensive or specialized care due to their health situation. Our nursing professionals have additional qualifications in various areas – from intensive care to dementia care to palliative care.\n\nWe know that an intensive care situation challenges not only those affected but the entire family. That is why we also see ourselves as relief and support for family caregivers. With our 24-hour service, we ensure that someone is always there – even at night and on weekends. This allows you as a relative to take a breath, knowing that your loved one is in the best hands.',
+        title: 'CarePlus',
+        desc: 'Well-being and quality of life go beyond pure care. With CarePlus, we connect you with qualified private service providers who come directly to your home – for your personal care, well-being, and health.',
+        fullText: 'A well-groomed appearance, professional treatments, and the feeling of being well cared for contribute significantly to well-being. However, with limited mobility, going to the hairdresser, beautician, or podiatrist often becomes an insurmountable hurdle. This is exactly where our CarePlus concept comes in.\n\nWe have built a network of trustworthy, qualified service providers who work on an outpatient basis and provide their services directly at your home. All our cooperation partners are verified, experienced in dealing with people in need of care, and work with the highest professionalism. This way, even with limited mobility, you can continue to look well-groomed, treat yourself to something good, and promote your health holistically.\n\nThe special thing: You don\'t have to worry about anything. We coordinate appointments, establish contact, and ensure that everything runs smoothly. The service providers come to your home with all necessary equipment and provide their services in familiar surroundings – discreetly, professionally, and tailored to your needs.',
         services: [
-          'Out-of-hospital intensive care with specially trained personnel',
-          'Specialized dementia care using validating concepts',
-          '24-hour care and comprehensive support',
-          'Palliative care for a dignified life until the end',
-          'Care for neurological diseases (Parkinson\'s, MS, stroke)',
-          'Care of ventilated patients',
-          'Individual care concepts according to your specific needs',
-          'Family counseling and training',
-          'Coordination with specialists and therapists'
+          'Mobile hairdressing services – washing, cutting, coloring at home',
+          'Professional cosmetic treatments for facial care and well-being',
+          'Medical foot care (podiatry) for diabetes, nail problems, or calluses',
+          'Manicure and pedicure for well-groomed hands and feet',
+          'Holistic naturopath treatments (acupuncture, natural medicine, etc.)',
+          'Mobile massage therapy for relaxation and pain relief',
+          'Physiotherapy home visits by medical prescription',
+          'Occupational therapy in the home environment',
+          'Referral to other health service providers as needed'
         ]
       },
       z3: {
