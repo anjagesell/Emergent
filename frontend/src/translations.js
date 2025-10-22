@@ -88,13 +88,18 @@ export const translations = {
       },
       z4: {
         title: 'Garten Dienste',
-        desc: 'Professionelle Gartenpflege für Ihr grünes Zuhause.',
+        desc: 'Ein gepflegter Garten ist ein Stück Lebensqualität – wir sorgen dafür, dass Ihr grünes Refugium auch dann in bestem Zustand bleibt, wenn Ihnen die körperliche Arbeit schwerfällt.',
+        fullText: 'Viele Menschen haben ihr Leben lang ihren Garten gehegt und gepflegt – er ist ein Ort der Entspannung, des Stolzes und der Naturverbundenheit. Doch mit zunehmendem Alter oder bei gesundheitlichen Einschränkungen werden Rasenmähen, Heckenschneiden und Beetpflege zur körperlichen Herausforderung. Oft fällt es schwer, loszulassen und den geliebten Garten verwildern zu sehen.\n\nGenau hier setzen unsere Garten Dienste an: Wir übernehmen die körperlich anstrengenden Arbeiten, während Sie weiterhin die Schönheit Ihres Gartens genießen können. Unsere Mitarbeiter arbeiten zuverlässig, sorgfältig und nach Ihren Vorstellungen – schließlich ist und bleibt es Ihr Garten.\n\nWir bieten sowohl regelmäßige Gartenpflege als auch saisonale Arbeiten an. Dabei stimmen wir die Leistungen flexibel auf Ihren Bedarf ab: Manche Kunden wünschen sich nur die schweren Arbeiten wie Rasenmähen, während andere eine umfassende Betreuung des gesamten Grundstücks bevorzugen. Auch im Winter sind wir für Sie da und sorgen mit unserem Winterdienst dafür, dass Wege und Zufahrten sicher begehbar bleiben.',
         services: [
-          'Rasenpflege und Mähen',
-          'Beet- und Strauchpflege',
-          'Heckenschnitt',
-          'Winterdienst',
-          'Gartenpflege nach Bedarf'
+          'Regelmäßige Rasenpflege, Mähen und Kantenpflege',
+          'Beet- und Strauchpflege, fachgerechter Rückschnitt',
+          'Heckenschnitt und Formierung',
+          'Unkrautentfernung und Bodenlockerung',
+          'Laub- und Grünschnittentsorgung',
+          'Winterdienst: Schneeräumung und Streuen',
+          'Pflanzarbeiten und jahreszeitliche Bepflanzung',
+          'Bewässerung in Trockenperioden',
+          'Kleinere Reparaturen an Gartenzäunen oder Wegen'
         ]
       },
       z5: {
