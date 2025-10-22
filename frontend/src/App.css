@@ -664,6 +664,14 @@ body {
   margin: 0;
 }
 
+.footer-designer {
+  font-size: 0.85rem;
+  color: #003366;
+  margin: 0.5rem 0 0 0;
+  font-style: italic;
+  opacity: 0.8;
+}
+
 /* Mobile Footer */
 @media (max-width: 768px) {
   .logos-container {
