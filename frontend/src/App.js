@@ -120,7 +120,10 @@ function App() {
     e.preventDefault();
     setJobFormError('');
     
-    if (!jobFormData.name || !jobFormData.email || !jobFormData.phone) {
+    if (!jobFormData.name || !jobFormData.email || !jobFormData.phone || 
+        !jobFormData.about_yourself || !jobFormData.qualifications || 
+        !jobFormData.empathic_abilities || !jobFormData.number_of_children || 
+        !jobFormData.why_work_here) {
       setJobFormError(language === 'de' 
         ? 'Bitte füllen Sie alle Pflichtfelder aus.' 
         : 'Please fill in all required fields.');
