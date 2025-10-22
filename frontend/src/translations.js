@@ -414,6 +414,22 @@ export const translations = {
           'Social gatherings and community experiences',
           'Biography work and memory care'
         ]
+      },
+      z9: {
+        title: 'Job Opportunities',
+        desc: 'Become part of our team! At OCTA, people with heart work who have found meaningful careers in care and support. Discover our current job openings.',
+        fullText: 'At OCTA, we are always looking for committed, empathetic people who share our vision: enabling people in need of care and the elderly to live dignified, self-determined lives. If you enjoy working with people, want to take responsibility, and wish to work in an appreciative environment, you are in the right place with us.\n\nWe offer you more than just a job: At OCTA, you will find a team that sticks together, fair working conditions, continuing education opportunities, and the chance to make a real difference in other people\'s lives every day. Whether you have just completed your training or already bring years of experience – we look forward to your application.\n\nWe are currently looking for reinforcement in various areas: From certified nursing professionals to care assistants to household staff. Career changers with the desire to get a foothold in care are also warmly welcome. Contact us – we look forward to getting to know you!',
+        services: [
+          'Certified nursing professionals (geriatric care, health and nursing)',
+          'Nursing assistants and care assistants',
+          'Care assistants according to § 43b SGB XI',
+          'Household staff for home care',
+          'Medical assistants (MFA) for outpatient care',
+          'Career changers with interest in care',
+          'Interns and trainees',
+          'Freelance cooperation partners (physiotherapy, occupational therapy, etc.)',
+          'Mini-jobbers for household activities'
+        ]
       }
     },
     overviewItems: {
