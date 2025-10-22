@@ -653,6 +653,24 @@ function App() {
                                 <p><strong>Email:</strong> {application.email}</p>
                                 <p><strong>{language === 'de' ? 'Telefon' : 'Phone'}:</strong> {application.phone}</p>
                                 
+                                {application.photo && (
+                                  <div className="applicant-photo">
+                                    <strong>{language === 'de' ? 'Foto' : 'Photo'}:</strong>
+                                    <br />
+                                    <img 
+                                      src={application.photo} 
+                                      alt={application.name} 
+                                      style={{
+                                        maxWidth: '150px', 
+                                        maxHeight: '150px', 
+                                        marginTop: '10px', 
+                                        borderRadius: '8px',
+                                        border: '2px solid #001f3f'
+                                      }} 
+                                    />
+                                  </div>
+                                )}
+                                
                                 {application.position && (
                                   <p>
                                     <strong>{language === 'de' ? 'Position' : 'Position'}:</strong>{' '}
