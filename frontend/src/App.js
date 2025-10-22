@@ -153,6 +153,7 @@ const categories = [
 
 function App() {
   const [activeCategory, setActiveCategory] = useState('home');
+  const [language, setLanguage] = useState('de'); // 'de' for German, 'en' for English
   
   const currentContent = categories.find(cat => cat.id === activeCategory)?.content;
 
