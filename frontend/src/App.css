@@ -181,9 +181,9 @@ body {
 }
 
 .logo {
-  height: 120px;
+  height: 180px;
   width: auto;
-  margin: 0 auto 1rem auto;
+  margin: 0 auto 0.5rem auto;
   display: block;
 }
 
