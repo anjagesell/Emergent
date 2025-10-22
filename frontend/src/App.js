@@ -127,8 +127,12 @@ function App() {
             
             if (selectedVoice) {
               utterance.voice = selectedVoice;
-              console.log('Selected voice:', selectedVoice.name);
+              console.log('🔊 ENGLISH Voice Selected:', selectedVoice.name, '| Lang:', selectedVoice.lang);
+            } else {
+              console.log('⚠️ No male voice found, using default');
             }
+            
+            console.log('📋 All available voices:', voices.map(v => `${v.name} (${v.lang})`).join(', '));
             
             // Calming, mature male voice settings
             utterance.rate = 0.85; // Slower, calm pace
