@@ -300,7 +300,7 @@ body {
 
 /* CTA Section */
 .cta-section {
-  background-color: #f8f9fa;
+  background-color: rgba(248, 249, 250, 0.95);
   padding: 2rem;
   border-radius: 8px;
   text-align: center;
