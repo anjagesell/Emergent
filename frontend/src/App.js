@@ -549,15 +549,25 @@ function App() {
         </main>
       </div>
 
-      {/* Footer mit Impressum-Link */}
+      {/* Footer mit Impressum und Datenschutz */}
       <footer className="app-footer">
-        <button 
-          className="impressum-link" 
-          data-testid="impressum-link"
-          onClick={() => setActiveCategory('impressum')}
-        >
-          {t.impressum}
-        </button>
+        <div className="footer-links">
+          <button 
+            className="footer-link" 
+            data-testid="impressum-link"
+            onClick={() => setActiveCategory('impressum')}
+          >
+            {t.impressum}
+          </button>
+          <span className="footer-divider">|</span>
+          <button 
+            className="footer-link" 
+            data-testid="datenschutz-link"
+            onClick={() => setActiveCategory('datenschutz')}
+          >
+            {t.datenschutz}
+          </button>
+        </div>
         <p className="footer-copyright">{t.copyright}</p>
       </footer>
     </div>
