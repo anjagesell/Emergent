@@ -192,6 +192,19 @@ export const translations = {
     servicesHeading: 'Unsere Leistungen:',
     impressum: 'Impressum',
     copyright: '© 2025 OCTA - Alle Rechte vorbehalten',
+    intern: {
+      title: 'Interner Bereich',
+      passwordLabel: 'Passwort',
+      loginButton: 'Anmelden',
+      logoutButton: 'Abmelden',
+      requestsTitle: 'Eingegangene Anfragen',
+      noRequests: 'Keine Anfragen vorhanden',
+      requestDetails: 'Anfragedetails',
+      services: 'Gewünschte Dienste',
+      message: 'Nachricht',
+      date: 'Datum',
+      language: 'Sprache'
+    },
     availability: {
       title: 'Verfügbarkeits-Anfrage',
       greeting: 'Sehr geehrte Damen und Herren,',
