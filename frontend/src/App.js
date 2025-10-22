@@ -389,6 +389,25 @@ function App() {
               <div className="cta-section">
                 <p className="cta-text">{t.home.ctaText}</p>
               </div>
+
+              {/* Video Section */}
+              <div className="video-section">
+                <video 
+                  controls 
+                  className="home-video"
+                  style={{
+                    width: '100%',
+                    maxWidth: '800px',
+                    margin: '2rem auto',
+                    display: 'block',
+                    borderRadius: '12px',
+                    boxShadow: '0 4px 12px rgba(0, 31, 63, 0.2)'
+                  }}
+                >
+                  <source src="https://customer-assets.emergentagent.com/job_83b4cff2-49f6-4a31-92ed-46338170884e/artifacts/rszlwysm_7f8193ae-31c1-4978-92c4-e0705d606f90%20%281%29.mp4" type="video/mp4" />
+                  {language === 'de' ? 'Ihr Browser unterstützt das Video-Tag nicht.' : 'Your browser does not support the video tag.'}
+                </video>
+              </div>
             </div>
           ) : activeCategory === 'availability' ? (
             <div className="content-wrapper">
