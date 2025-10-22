@@ -196,7 +196,8 @@ export const translations = {
       z5: { title: 'Z5: Beratung und Assessment', desc: 'Kompetente Beratung und individuelle Bedarfsermittlung' },
       z6: { title: 'Z6: Hausmeisterdienste', desc: 'Zuverlässige handwerkliche Dienstleistungen für Ihr Zuhause' },
       z7: { title: 'Z7: Betreutes Wohnen', desc: 'Selbstständiges Wohnen mit bedarfsgerechter Unterstützung' },
-      z8: { title: 'Z8: Wohlfühlstation', desc: 'Wellness und ganzheitliche Förderung von Körper und Geist' }
+      z8: { title: 'Z8: Wohlfühlstation', desc: 'Wellness und ganzheitliche Förderung von Körper und Geist' },
+      z9: { title: 'Z9: Stellenangebote', desc: 'Karrierechancen bei OCTA – werden Sie Teil unseres Teams' }
     },
     certifications: [
       { title: 'Pflegefachkräfte nach § 71 SGB XI', desc: 'Examinierte Altenpfleger/innen und Gesundheits- und Krankenpfleger/innen mit staatlicher Anerkennung' },
