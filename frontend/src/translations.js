@@ -41,13 +41,17 @@ export const translations = {
       },
       z2a: {
         title: 'Pflegefach',
-        desc: 'Fachgerechte pflegerische Versorgung durch qualifiziertes Personal.',
+        desc: 'Professionelle pflegerische Versorgung auf höchstem fachlichen Niveau – durchgeführt von examinierten Pflegefachkräften, die ihr Handwerk verstehen und mit Herzlichkeit ausüben.',
+        fullText: 'Wenn Pflegebedürftigkeit eintritt, stehen Betroffene und ihre Angehörigen vor vielen Fragen: Wie geht es weiter? Wer kann helfen? Kann ich in meinem Zuhause bleiben? Unsere Antwort ist klar: Mit professioneller pflegerischer Unterstützung ist ein würdevolles Leben in den eigenen vier Wänden möglich.\n\nUnser Team besteht aus staatlich examinierten Altenpfleger/innen und Gesundheits- und Krankenpfleger/innen, die nach den aktuellen pflegerischen Standards arbeiten und sich kontinuierlich fortbilden. Sie verfügen über fundiertes medizinisches Fachwissen und bringen zugleich die menschliche Wärme mit, die in der Pflege so wichtig ist.\n\nWir verstehen Pflege als ganzheitliches Konzept: Neben der medizinisch-pflegerischen Versorgung nehmen wir uns Zeit für Gespräche, achten auf Ihre Bedürfnisse und beziehen – falls gewünscht – auch Ihre Angehörigen aktiv mit ein. Gemeinsam mit Ihnen, Ihren Angehörigen und den behandelnden Ärzten entwickeln wir ein individuelles Pflegekonzept, das sich an Ihrer persönlichen Situation orientiert und flexibel angepasst werden kann.',
         services: [
-          'Grundpflege und Behandlungspflege',
-          'Medikamentengabe',
-          'Wundversorgung',
-          'Vitalzeichenkontrolle',
-          'Dokumentation nach Standards'
+          'Grundpflege: Körperpflege, An- und Auskleiden, Mobilisation',
+          'Behandlungspflege nach ärztlicher Verordnung',
+          'Fachgerechte Medikamentengabe und Überwachung der Medikation',
+          'Professionelle Wundversorgung nach modernen Standards',
+          'Regelmäßige Vitalzeichenkontrolle und gesundheitliche Beobachtung',
+          'Injektionen und Infusionen',
+          'Katheterpflege und Stomaversorgung',
+          'Lückenlose Pflegedokumentation und Kommunikation mit Ärzten'
         ]
       },
       z2b: {
