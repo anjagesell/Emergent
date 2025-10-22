@@ -205,11 +205,15 @@ function App() {
               
               <div className="welcome-intro">
                 <p className="intro-text">
-                  Als zertifizierter Dienstleister für ganzheitliche Pflege- und Betreuungsleistungen stehen wir Ihnen mit einem umfassenden Leistungsspektrum zur Seite. Unsere Dienststelle vereint professionelle Pflege, hauswirtschaftliche Unterstützung und individuelle Betreuungsangebote unter einem Dach – für ein selbstbestimmtes und würdevolles Leben in den eigenen vier Wänden oder in betreuten Wohnformen.
+                  Als zertifizierter Dienstleister für ganzheitliche Pflege- und Betreuungsleistungen stehen wir pflegebedürftigen und schwerbehinderten Menschen in allen Lebenslagen zur Seite – ob die benötigte Unterstützung geringfügiger oder komplexer Natur ist. Unsere Dienststelle vereint professionelle Pflege, hauswirtschaftliche Unterstützung und individuelle Betreuungsangebote unter einem Dach, um ein selbstbestimmtes und würdevolles Leben in den eigenen vier Wänden oder in betreuten Wohnformen zu ermöglichen.
                 </p>
                 
                 <p className="intro-text">
-                  Mit unserem interdisziplinären Team aus examinierten Pflegefachkräften, zertifizierten Betreuungskräften und qualifizierten Hauswirtschaftskräften bieten wir Ihnen maßgeschneiderte Lösungen, die sich an Ihren individuellen Bedürfnissen orientieren. Unser Anspruch ist es, durch fachliche Kompetenz, Herzenswärme und Zuverlässigkeit Lebensqualität zu schaffen und zu erhalten.
+                  Alle Dienste von OCTA dienen letztlich einem gemeinsamen Ziel: Menschen mit Pflegebedarf oder Schwerbehinderung ein verlässlicher Partner zu sein – von der kleinsten alltäglichen Hilfestellung bis hin zur umfassenden pflegerischen Versorgung. Mit unserem interdisziplinären Team aus examinierten Pflegefachkräften, zertifizierten Betreuungskräften und qualifizierten Hauswirtschaftskräften bieten wir Ihnen maßgeschneiderte Lösungen, die sich flexibel an Ihren individuellen Bedürfnissen und Ihrer jeweiligen Lebenssituation orientieren.
+                </p>
+                
+                <p className="intro-text">
+                  Unser Anspruch ist es, durch fachliche Kompetenz, Herzenswärme und Zuverlässigkeit Lebensqualität zu schaffen und zu erhalten – unabhängig davon, ob Sie leichte Unterstützung im Haushalt, intensive pflegerische Betreuung oder eine Kombination verschiedener Leistungen benötigen.
                 </p>
               </div>
 
