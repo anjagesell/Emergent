@@ -317,6 +317,16 @@ function App() {
           >
             🇺🇸
           </button>
+          {language === 'en' && (
+            <button
+              className={`tts-button ${isReading ? 'reading' : ''}`}
+              onClick={toggleTextToSpeech}
+              title={isReading ? 'Stop Reading' : 'Start Reading'}
+              data-testid="tts-en"
+            >
+              {isReading ? '🔊' : '🔇'} {isReading ? 'Stop' : 'Read Aloud'}
+            </button>
+          )}
         </div>
         
         <img src={LOGO_URL} alt="OCTA Logo" className="logo" />
