@@ -269,7 +269,11 @@ function App() {
                   {formSubmitted ? (
                     <div className="success-message" data-testid="success-message">
                       <span className="success-icon">✓</span>
-                      <p>{t.availability.successMessage}</p>
+                      <div className="success-text">
+                        {t.availability.successMessage.split('\n\n').map((para, idx) => (
+                          <p key={idx}>{para}</p>
+                        ))}
+                      </div>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="availability-form">
