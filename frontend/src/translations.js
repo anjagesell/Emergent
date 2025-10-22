@@ -4,6 +4,7 @@ export const translations = {
     nav: {
       home: 'Startseite',
       availability: 'Verfügbarkeit anfragen',
+      intern: 'Intern',
       z1: 'Z1: Hauswirtschaftliche Hilfe',
       z2a: 'Z2a: Pflegefach',
       z2b: 'Z2b: Pflege Plus',
