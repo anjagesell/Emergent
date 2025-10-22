@@ -86,10 +86,14 @@ body {
 }
 
 @media (max-width: 768px) {
-  .language-switcher {
+  .flag-left {
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+  
+  .flag-right {
     top: 0.5rem;
     right: 0.5rem;
-    gap: 0.25rem;
   }
   
   .flag-button {
