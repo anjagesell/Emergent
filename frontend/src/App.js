@@ -78,7 +78,7 @@ function App() {
       console.log('Form submitted successfully:', result);
       setFormSubmitted(true);
       
-      // Reset form after 5 seconds
+      // Reset form after 8 seconds
       setTimeout(() => {
         setFormSubmitted(false);
         setFormData({
@@ -88,13 +88,38 @@ function App() {
           message: '',
           services: []
         });
-      }, 5000);
+      }, 8000);
       
     } catch (error) {
       console.error('Error submitting form:', error);
       setFormError(language === 'de' 
         ? 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.'
         : 'An error occurred. Please try again later.');
+    }
+  };
+
+  const handleInternLogin = (e) => {
+    e.preventDefault();
+    // Simple password check - in production, use backend authentication
+    if (internPassword === 'OCTA2025') {
+      setIsInternAuthenticated(true);
+      setInternError('');
+      loadRequests();
+    } else {
+      setInternError(language === 'de' ? 'Falsches Passwort' : 'Incorrect password');
+    }
+  };
+
+  const loadRequests = async () => {
+    try {
+      const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+      const response = await fetch(`${BACKEND_URL}/api/availability-requests`);
+      if (response.ok) {
+        const data = await response.json();
+        setRequests(data);
+      }
+    } catch (error) {
+      console.error('Error loading requests:', error);
     }
   };
 
