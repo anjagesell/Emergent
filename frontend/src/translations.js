@@ -173,7 +173,7 @@ export const translations = {
     overviewItems: {
       z1: { title: 'Z1: Hauswirtschaftliche Hilfe', desc: 'Professionelle Unterstützung im Haushalt für ein gepflegtes Wohnumfeld' },
       z2a: { title: 'Z2a: Pflegefach', desc: 'Fachgerechte pflegerische Versorgung durch qualifizierte Pflegekräfte' },
-      z2b: { title: 'Z2b: PflegePlus', desc: 'Kooperation mit privaten Dienstleistern für Ihr Wohlbefinden zu Hause' },
+      z2b: { title: 'Z2b: PflegePlus', desc: 'Wellness und Teilhabe zu Hause – wenn der Gang in die Öffentlichkeit schwerfällt' },
       z3: { title: 'Z3: Betreuungshilfe', desc: 'Soziale Begleitung und Aktivierung im Alltag' },
       z4: { title: 'Z4: Garten Dienste', desc: 'Pflege und Instandhaltung Ihrer Außenanlagen' },
       z5: { title: 'Z5: Beratung und Assessment', desc: 'Kompetente Beratung und individuelle Bedarfsermittlung' },
