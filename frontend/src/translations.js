@@ -434,7 +434,7 @@ export const translations = {
       submitButton: 'Submit Request',
       closing: 'Kind regards',
       required: 'Required',
-      successMessage: 'Thank you! Your request has been successfully submitted. We will contact you as soon as possible.',
+      successMessage: '🎉 Thank you very much for your request!\n\nWe have received your message and are delighted about your interest in our services. Our team will carefully review your request and contact you personally within 24 hours.\n\nSee you soon!\nYour OCTA Team',
       errorMessage: 'Please fill out all required fields and select at least one service area.',
       selectAtLeastOne: 'Please select at least one area'
     }
