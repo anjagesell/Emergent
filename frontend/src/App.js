@@ -625,6 +625,8 @@ function App() {
                                 <th>{language === 'de' ? 'Telefon' : 'Phone'}</th>
                                 <th>{language === 'de' ? 'Dienstleistungen' : 'Services'}</th>
                                 <th>{language === 'de' ? 'Nachricht' : 'Message'}</th>
+                                <th>{language === 'de' ? 'Status bearbeitet' : 'Status Processed'}</th>
+                                <th>{language === 'de' ? 'Notizen' : 'Notes'}</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -641,6 +643,35 @@ function App() {
                                     {request.services.map(service => t.nav[service]).join(', ')}
                                   </td>
                                   <td className="message-cell">{request.message || '-'}</td>
+                                  <td className="status-cell">
+                                    <input 
+                                      type="checkbox" 
+                                      checked={request.status_processed || false}
+                                      onChange={async (e) => {
+                                        const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+                                        await fetch(`${BACKEND_URL}/api/availability-requests/${request.id}?status_processed=${e.target.checked}`, {
+                                          method: 'PATCH'
+                                        });
+                                        loadRequests();
+                                      }}
+                                      className="status-checkbox"
+                                    />
+                                  </td>
+                                  <td className="notes-cell">
+                                    <textarea
+                                      value={request.notes || ''}
+                                      onChange={async (e) => {
+                                        const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+                                        await fetch(`${BACKEND_URL}/api/availability-requests/${request.id}?notes=${encodeURIComponent(e.target.value)}`, {
+                                          method: 'PATCH'
+                                        });
+                                      }}
+                                      onBlur={loadRequests}
+                                      className="notes-textarea"
+                                      placeholder={language === 'de' ? 'Notizen...' : 'Notes...'}
+                                      maxLength="500"
+                                    />
+                                  </td>
                                 </tr>
                               ))}
                             </tbody>
