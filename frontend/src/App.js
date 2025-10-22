@@ -20,9 +20,53 @@ const categoryIcons = {
 function App() {
   const [activeCategory, setActiveCategory] = useState('home');
   const [language, setLanguage] = useState('de'); // 'de' for German, 'en' for English
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+    services: []
+  });
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formError, setFormError] = useState('');
   
   const t = translations[language];
   const categoryKeys = ['z1', 'z2a', 'z2b', 'z3', 'z4', 'z5', 'z6', 'z7', 'z8'];
+
+  const handleServiceToggle = (service) => {
+    setFormData(prev => ({
+      ...prev,
+      services: prev.services.includes(service)
+        ? prev.services.filter(s => s !== service)
+        : [...prev.services, service]
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormError('');
+    
+    if (!formData.name || !formData.email || !formData.phone || formData.services.length === 0) {
+      setFormError(t.availability.errorMessage);
+      return;
+    }
+    
+    // Here you would normally send the data to a backend
+    console.log('Form submitted:', formData);
+    setFormSubmitted(true);
+    
+    // Reset form after 5 seconds
+    setTimeout(() => {
+      setFormSubmitted(false);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        services: []
+      });
+    }, 5000);
+  };
 
   return (
     <div className="app-container">
