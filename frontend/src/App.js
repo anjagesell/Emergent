@@ -123,6 +123,34 @@ function App() {
     }
   };
 
+  const handlePhotoUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      // Check file size (max 5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        setJobFormError(language === 'de' 
+          ? 'Foto zu groß. Maximale Größe: 5MB' 
+          : 'Photo too large. Maximum size: 5MB');
+        return;
+      }
+      
+      // Check file type
+      if (!file.type.startsWith('image/')) {
+        setJobFormError(language === 'de' 
+          ? 'Bitte laden Sie nur Bilddateien hoch' 
+          : 'Please upload only image files');
+        return;
+      }
+      
+      // Convert to base64
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setJobFormData({...jobFormData, photo: reader.result});
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleJobApplicationSubmit = async (e) => {
     e.preventDefault();
     setJobFormError('');
