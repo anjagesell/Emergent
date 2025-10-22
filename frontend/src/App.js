@@ -47,7 +47,8 @@ function App() {
     qualifications: '',
     empathic_abilities: '',
     number_of_children: '',
-    why_work_here: ''
+    why_work_here: '',
+    photo: ''
   });
   const [jobFormSubmitted, setJobFormSubmitted] = useState(false);
   const [jobFormError, setJobFormError] = useState('');
