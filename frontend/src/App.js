@@ -285,10 +285,8 @@ function App() {
         
         <img src={LOGO_URL} alt="OCTA Logo" className="logo" />
         <h1 className="company-name">OCTA</h1>
-        <p className="company-tagline">
-          {language === 'de' 
-            ? 'Ganzheitliche Pflege- und Betreuungsdienstleistungen'
-            : 'Comprehensive Care and Support Services'}
+        <p className="company-slogan">
+          Der individuelle Dienst für Sie als individuelle Mensch
         </p>
       </header>
 
