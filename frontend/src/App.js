@@ -162,6 +162,8 @@ function App() {
           email: '',
           phone: '',
           position: '',
+          marital_status: '',
+          foreign_languages: '',
           about_yourself: '',
           qualifications: '',
           empathic_abilities: '',
