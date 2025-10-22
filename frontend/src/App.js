@@ -471,6 +471,192 @@ function App() {
                 </div>
               )}
             </div>
+          ) : activeCategory === 'datenschutz' ? (
+            <div className="content-wrapper">
+              <h2 className="content-title">{t.datenschutz}</h2>
+              
+              <div className="legal-content">
+                {language === 'de' ? (
+                  <>
+                    <section className="legal-section">
+                      <h3>1. Datenschutz auf einen Blick</h3>
+                      <h4>Allgemeine Hinweise</h4>
+                      <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.</p>
+                    </section>
+
+                    <section className="legal-section">
+                      <h3>2. Datenerfassung auf dieser Website</h3>
+                      <h4>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</h4>
+                      <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen.</p>
+                      
+                      <h4>Wie erfassen wir Ihre Daten?</h4>
+                      <p>Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z.B. um Daten handeln, die Sie in ein Kontaktformular eingeben.</p>
+                      <p>Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z.B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.</p>
+                      
+                      <h4>Wofür nutzen wir Ihre Daten?</h4>
+                      <p>Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden oder um Sie über unsere Dienstleistungen zu informieren, wenn Sie eine Verfügbarkeitsanfrage gestellt haben.</p>
+                      
+                      <h4>Welche Rechte haben Sie bezüglich Ihrer Daten?</h4>
+                      <p>Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.</p>
+                      <p>Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden.</p>
+                    </section>
+
+                    <section className="legal-section">
+                      <h3>3. Hosting</h3>
+                      <p>Wir hosten die Inhalte unserer Website bei einem externen Dienstleister. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierbei kann es sich v.a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, die über eine Website generiert werden, handeln.</p>
+                      <p>Der Einsatz des Hosters erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).</p>
+                    </section>
+
+                    <section className="legal-section">
+                      <h3>4. Allgemeine Hinweise und Pflichtinformationen</h3>
+                      <h4>Datenschutz</h4>
+                      <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+                      <p>Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht.</p>
+                      <p>Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
+                      
+                      <h4>Hinweis zur verantwortlichen Stelle</h4>
+                      <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
+                      <p><strong>Lois Schmidt</strong><br />
+                      Gilmerdingen<br />
+                      Niedersachsen, Deutschland<br />
+                      E-Mail: Alltagshilfe007@web.de</p>
+                      <p>Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, E-Mail-Adressen o. Ä.) entscheidet.</p>
+                    </section>
+
+                    <section className="legal-section">
+                      <h3>5. Datenerfassung auf dieser Website</h3>
+                      <h4>Kontaktformular</h4>
+                      <p>Wenn Sie uns per Kontaktformular (Verfügbarkeitsanfrage) Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+                      <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde.</p>
+                      <p>Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z.B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.</p>
+                    </section>
+
+                    <section className="legal-section">
+                      <h3>6. Ihre Rechte</h3>
+                      <h4>Auskunftsrecht</h4>
+                      <p>Sie haben das Recht, jederzeit Auskunft über Ihre bei uns gespeicherten personenbezogenen Daten zu erhalten.</p>
+                      
+                      <h4>Recht auf Berichtigung</h4>
+                      <p>Sie haben das Recht, die Berichtigung unrichtiger oder Vervollständigung unvollständiger personenbezogener Daten zu verlangen.</p>
+                      
+                      <h4>Recht auf Löschung</h4>
+                      <p>Sie haben das Recht, die Löschung Ihrer bei uns gespeicherten personenbezogenen Daten zu verlangen, soweit nicht die Verarbeitung zur Ausübung des Rechts auf freie Meinungsäußerung und Information, zur Erfüllung einer rechtlichen Verpflichtung, aus Gründen des öffentlichen Interesses oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen erforderlich ist.</p>
+                      
+                      <h4>Recht auf Einschränkung der Verarbeitung</h4>
+                      <p>Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen, wenn die Richtigkeit der Daten von Ihnen bestritten wird, die Verarbeitung unrechtmäßig ist, Sie aber deren Löschung ablehnen.</p>
+                      
+                      <h4>Recht auf Datenübertragbarkeit</h4>
+                      <p>Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen.</p>
+                      
+                      <h4>Widerspruchsrecht</h4>
+                      <p>Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Sie betreffender personenbezogener Daten, die aufgrund von Art. 6 Abs. 1 lit. e oder f DSGVO erfolgt, Widerspruch einzulegen.</p>
+                      
+                      <h4>Beschwerderecht</h4>
+                      <p>Sie haben das Recht, sich bei einer Aufsichtsbehörde zu beschweren. Zuständig ist die Aufsichtsbehörde Ihres üblichen Aufenthaltsortes, Ihres Arbeitsplatzes oder unseres Unternehmenssitzes.</p>
+                    </section>
+
+                    <section className="legal-section">
+                      <h3>7. Speicherdauer</h3>
+                      <p>Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer personenbezogenen Daten haben (z.B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die Löschung nach Fortfall dieser Gründe.</p>
+                    </section>
+
+                    <section className="legal-section">
+                      <p><strong>Stand: Januar 2025</strong></p>
+                      <p>Diese Datenschutzerklärung entspricht den Anforderungen der EU-Datenschutz-Grundverordnung (DSGVO) in der aktuell gültigen Fassung.</p>
+                    </section>
+                  </>
+                ) : (
+                  <>
+                    <section className="legal-section">
+                      <h3>1. Data Protection at a Glance</h3>
+                      <h4>General Information</h4>
+                      <p>The following information provides a simple overview of what happens to your personal data when you visit this website. Personal data is any data that can be used to personally identify you. For detailed information on data protection, please refer to our privacy policy listed below this text.</p>
+                    </section>
+
+                    <section className="legal-section">
+                      <h3>2. Data Collection on this Website</h3>
+                      <h4>Who is responsible for data collection on this website?</h4>
+                      <p>Data processing on this website is carried out by the website operator. You can find their contact details in the imprint of this website.</p>
+                      
+                      <h4>How do we collect your data?</h4>
+                      <p>Your data is collected in part by you providing it to us. This may be data that you enter into a contact form, for example.</p>
+                      <p>Other data is collected automatically or with your consent when you visit the website by our IT systems. This is mainly technical data (e.g. internet browser, operating system, or time of page access). This data is collected automatically as soon as you enter this website.</p>
+                      
+                      <h4>What do we use your data for?</h4>
+                      <p>Some of the data is collected to ensure error-free provision of the website. Other data may be used to analyze your user behavior or to inform you about our services if you have submitted an availability request.</p>
+                      
+                      <h4>What rights do you have regarding your data?</h4>
+                      <p>You have the right to receive information about the origin, recipient, and purpose of your stored personal data free of charge at any time. You also have the right to request correction or deletion of this data. If you have given consent to data processing, you can revoke this consent at any time for the future. You also have the right to request restriction of the processing of your personal data under certain circumstances. Furthermore, you have the right to lodge a complaint with the competent supervisory authority.</p>
+                      <p>You can contact us at any time regarding this and other questions about data protection.</p>
+                    </section>
+
+                    <section className="legal-section">
+                      <h3>3. Hosting</h3>
+                      <p>We host the content of our website with an external service provider. The personal data collected on this website is stored on the host's servers. This may include IP addresses, contact requests, meta and communication data, contract data, contact details, names, website accesses, and other data generated via a website.</p>
+                      <p>The host is used for the purpose of fulfilling contracts with our potential and existing customers (Art. 6 Para. 1 lit. b GDPR) and in the interest of secure, fast, and efficient provision of our online offer by a professional provider (Art. 6 Para. 1 lit. f GDPR).</p>
+                    </section>
+
+                    <section className="legal-section">
+                      <h3>4. General Information and Mandatory Information</h3>
+                      <h4>Data Protection</h4>
+                      <p>The operators of these pages take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with statutory data protection regulations and this privacy policy.</p>
+                      <p>When you use this website, various personal data is collected. Personal data is data that can be used to personally identify you. This privacy policy explains what data we collect and what we use it for. It also explains how and for what purpose this happens.</p>
+                      <p>We point out that data transmission on the Internet (e.g. when communicating by email) can have security gaps. Complete protection of data against access by third parties is not possible.</p>
+                      
+                      <h4>Note on the Responsible Party</h4>
+                      <p>The responsible party for data processing on this website is:</p>
+                      <p><strong>Lois Schmidt</strong><br />
+                      Gilmerdingen<br />
+                      Lower Saxony, Germany<br />
+                      Email: Alltagshilfe007@web.de</p>
+                      <p>The responsible party is the natural or legal person who alone or jointly with others determines the purposes and means of processing personal data (e.g. names, email addresses, etc.).</p>
+                    </section>
+
+                    <section className="legal-section">
+                      <h3>5. Data Collection on this Website</h3>
+                      <h4>Contact Form</h4>
+                      <p>If you send us inquiries via the contact form (availability request), your details from the inquiry form, including the contact details you provided there, will be stored by us for the purpose of processing the inquiry and in case of follow-up questions. We do not pass on this data without your consent.</p>
+                      <p>This data is processed on the basis of Art. 6 Para. 1 lit. b GDPR, provided your request is related to the fulfillment of a contract or is necessary for the implementation of pre-contractual measures. In all other cases, processing is based on our legitimate interest in effectively processing inquiries sent to us (Art. 6 Para. 1 lit. f GDPR) or on your consent (Art. 6 Para. 1 lit. a GDPR) if this has been requested.</p>
+                      <p>The data you enter in the contact form remains with us until you request deletion, revoke your consent to storage, or the purpose for data storage no longer applies (e.g. after completing your request). Mandatory legal provisions – especially retention periods – remain unaffected.</p>
+                    </section>
+
+                    <section className="legal-section">
+                      <h3>6. Your Rights</h3>
+                      <h4>Right to Information</h4>
+                      <p>You have the right to receive information about your personal data stored by us at any time.</p>
+                      
+                      <h4>Right to Rectification</h4>
+                      <p>You have the right to request correction of incorrect or completion of incomplete personal data.</p>
+                      
+                      <h4>Right to Deletion</h4>
+                      <p>You have the right to request deletion of your personal data stored by us, unless processing is necessary for exercising the right to freedom of expression and information, for fulfilling a legal obligation, for reasons of public interest, or for asserting, exercising, or defending legal claims.</p>
+                      
+                      <h4>Right to Restriction of Processing</h4>
+                      <p>You have the right to request restriction of processing of your personal data if the accuracy of the data is disputed by you, the processing is unlawful, but you refuse its deletion.</p>
+                      
+                      <h4>Right to Data Portability</h4>
+                      <p>You have the right to have data that we process automatically on the basis of your consent or in fulfillment of a contract handed over to you or to a third party in a common, machine-readable format.</p>
+                      
+                      <h4>Right to Object</h4>
+                      <p>You have the right to object at any time to the processing of personal data concerning you, which is based on Art. 6 Para. 1 lit. e or f GDPR, for reasons arising from your particular situation.</p>
+                      
+                      <h4>Right to Complain</h4>
+                      <p>You have the right to lodge a complaint with a supervisory authority. The supervisory authority of your usual place of residence, workplace, or our company headquarters is responsible.</p>
+                    </section>
+
+                    <section className="legal-section">
+                      <h3>7. Storage Duration</h3>
+                      <p>Unless a more specific storage period has been specified within this privacy policy, your personal data will remain with us until the purpose for data processing no longer applies. If you assert a legitimate request for deletion or revoke consent to data processing, your data will be deleted unless we have other legally permissible reasons for storing your personal data (e.g. tax or commercial retention periods); in the latter case, deletion occurs after these reasons cease to apply.</p>
+                    </section>
+
+                    <section className="legal-section">
+                      <p><strong>Status: January 2025</strong></p>
+                      <p>This privacy policy complies with the requirements of the EU General Data Protection Regulation (GDPR) in its currently valid version.</p>
+                    </section>
+                  </>
+                )}
+              </div>
+            </div>
           ) : activeCategory === 'impressum' ? (
             <div className="content-wrapper">
               <h2 className="content-title">{t.impressum}</h2>
