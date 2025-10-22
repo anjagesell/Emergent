@@ -400,7 +400,7 @@ export const translations = {
     overviewItems: {
       z1: { title: 'Z1: Household Assistance', desc: 'Professional household support for a well-maintained living environment' },
       z2a: { title: 'Z2a: Professional Care', desc: 'Professional nursing care by qualified nursing staff' },
-      z2b: { title: 'Z2b: Care Plus', desc: 'Extended care services for special and intensive needs' },
+      z2b: { title: 'Z2b: CarePlus', desc: 'Cooperation with private service providers for your well-being at home' },
       z3: { title: 'Z3: Care Support', desc: 'Social accompaniment and activation in daily life' },
       z4: { title: 'Z4: Garden Services', desc: 'Care and maintenance of your outdoor areas' },
       z5: { title: 'Z5: Consulting & Assessment', desc: 'Competent consultation and individual needs assessment' },
