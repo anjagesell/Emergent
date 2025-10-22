@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import { Home, Users, Stethoscope, HeartHandshake, UserCheck, Leaf, ClipboardCheck, Wrench, Building2, Sparkles, FileText } from 'lucide-react';
+import { Home, Users, Stethoscope, HeartHandshake, UserCheck, Leaf, ClipboardCheck, Wrench, Building2, Sparkles, FileText, Briefcase } from 'lucide-react';
 import { translations } from './translations';
 
 const LOGO_URL = 'https://customer-assets.emergentagent.com/job_sprechen-sie-41/artifacts/xxlap8yl_octagon-simplex-300x300.jpg';
@@ -14,7 +14,8 @@ const categoryIcons = {
   z5: ClipboardCheck,
   z6: Wrench,
   z7: Building2,
-  z8: Sparkles
+  z8: Sparkles,
+  z9: Briefcase
 };
 
 function App() {
