@@ -72,6 +72,10 @@ class JobApplication(BaseModel):
     position: str
     marital_status: str
     foreign_languages: str
+    drivers_license: str
+    employment_type: str
+    preferred_shift: str
+    work_days_preference: str
     about_yourself: str
     qualifications: str
     empathic_abilities: str
@@ -87,6 +91,10 @@ class JobApplicationCreate(BaseModel):
     position: str
     marital_status: str
     foreign_languages: str
+    drivers_license: str
+    employment_type: str
+    preferred_shift: str
+    work_days_preference: str
     about_yourself: str
     qualifications: str
     empathic_abilities: str
