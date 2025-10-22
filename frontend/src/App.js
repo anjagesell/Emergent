@@ -502,6 +502,7 @@ function App() {
                         setIsInternAuthenticated(false);
                         setInternPassword('');
                         setRequests([]);
+                        setJobApplications([]);
                       }}
                       data-testid="logout-btn"
                     >
@@ -509,44 +510,122 @@ function App() {
                     </button>
                   </div>
                   
-                  <h3 className="requests-title">{t.intern.requestsTitle}</h3>
+                  {/* Tabs for different request types */}
+                  <div className="intern-tabs">
+                    <button
+                      className={`intern-tab ${internActiveTab === 'availability' ? 'active' : ''}`}
+                      onClick={() => setInternActiveTab('availability')}
+                    >
+                      {language === 'de' ? 'Verfügbarkeitsanfragen' : 'Availability Requests'} ({requests.length})
+                    </button>
+                    <button
+                      className={`intern-tab ${internActiveTab === 'jobs' ? 'active' : ''}`}
+                      onClick={() => setInternActiveTab('jobs')}
+                    >
+                      {language === 'de' ? 'Bewerbungen' : 'Job Applications'} ({jobApplications.length})
+                    </button>
+                  </div>
                   
-                  {requests.length === 0 ? (
-                    <p className="no-requests">{t.intern.noRequests}</p>
-                  ) : (
-                    <div className="requests-list">
-                      {requests.map((request) => (
-                        <div key={request.id} className="request-card" data-testid="request-card">
-                          <div className="request-header">
-                            <h4 className="request-name">{request.name}</h4>
-                            <span className="request-date">
-                              {new Date(request.timestamp).toLocaleString(language === 'de' ? 'de-DE' : 'en-US')}
-                            </span>
-                          </div>
-                          
-                          <div className="request-details">
-                            <p><strong>Email:</strong> {request.email}</p>
-                            <p><strong>{language === 'de' ? 'Telefon' : 'Phone'}:</strong> {request.phone}</p>
-                            
-                            <div className="request-services">
-                              <strong>{t.intern.services}:</strong>
-                              <ul>
-                                {request.services.map((service, idx) => (
-                                  <li key={idx}>{t.nav[service]}</li>
-                                ))}
-                              </ul>
-                            </div>
-                            
-                            {request.message && (
-                              <div className="request-message">
-                                <strong>{t.intern.message}:</strong>
-                                <p>{request.message}</p>
+                  {/* Availability Requests Tab */}
+                  {internActiveTab === 'availability' && (
+                    <>
+                      <h3 className="requests-title">{t.intern.requestsTitle}</h3>
+                      
+                      {requests.length === 0 ? (
+                        <p className="no-requests">{t.intern.noRequests}</p>
+                      ) : (
+                        <div className="requests-list">
+                          {requests.map((request) => (
+                            <div key={request.id} className="request-card" data-testid="request-card">
+                              <div className="request-header">
+                                <h4 className="request-name">{request.name}</h4>
+                                <span className="request-date">
+                                  {new Date(request.timestamp).toLocaleString(language === 'de' ? 'de-DE' : 'en-US')}
+                                </span>
                               </div>
-                            )}
-                          </div>
+                              
+                              <div className="request-details">
+                                <p><strong>Email:</strong> {request.email}</p>
+                                <p><strong>{language === 'de' ? 'Telefon' : 'Phone'}:</strong> {request.phone}</p>
+                                
+                                <div className="request-services">
+                                  <strong>{t.intern.services}:</strong>
+                                  <ul>
+                                    {request.services.map((service, idx) => (
+                                      <li key={idx}>{t.nav[service]}</li>
+                                    ))}
+                                  </ul>
+                                </div>
+                                
+                                {request.message && (
+                                  <div className="request-message">
+                                    <strong>{t.intern.message}:</strong>
+                                    <p>{request.message}</p>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
+                      )}
+                    </>
+                  )}
+                  
+                  {/* Job Applications Tab */}
+                  {internActiveTab === 'jobs' && (
+                    <>
+                      <h3 className="requests-title">
+                        {language === 'de' ? 'Stellenbewerbungen' : 'Job Applications'}
+                      </h3>
+                      
+                      {jobApplications.length === 0 ? (
+                        <p className="no-requests">
+                          {language === 'de' ? 'Keine Bewerbungen vorhanden' : 'No applications available'}
+                        </p>
+                      ) : (
+                        <div className="requests-list">
+                          {jobApplications.map((application) => (
+                            <div key={application.id} className="request-card" data-testid="application-card">
+                              <div className="request-header">
+                                <h4 className="request-name">{application.name}</h4>
+                                <span className="request-date">
+                                  {new Date(application.timestamp).toLocaleString(language === 'de' ? 'de-DE' : 'en-US')}
+                                </span>
+                              </div>
+                              
+                              <div className="request-details">
+                                <p><strong>Email:</strong> {application.email}</p>
+                                <p><strong>{language === 'de' ? 'Telefon' : 'Phone'}:</strong> {application.phone}</p>
+                                
+                                {application.position && (
+                                  <p>
+                                    <strong>{language === 'de' ? 'Position' : 'Position'}:</strong>{' '}
+                                    {application.position === 'pflege' 
+                                      ? (language === 'de' ? 'Pflegefachkraft' : 'Nursing Professional')
+                                      : application.position === 'betreuung'
+                                      ? (language === 'de' ? 'Betreuungskraft' : 'Care Assistant')
+                                      : application.position === 'hauswirtschaft'
+                                      ? (language === 'de' ? 'Hauswirtschaft' : 'Household Staff')
+                                      : application.position === 'ehrenamt'
+                                      ? (language === 'de' ? 'Ehrenamtliche Tätigkeit' : 'Volunteer Work')
+                                      : application.position === 'sonstiges'
+                                      ? (language === 'de' ? 'Sonstiges' : 'Other')
+                                      : application.position}
+                                  </p>
+                                )}
+                                
+                                {application.message && (
+                                  <div className="request-message">
+                                    <strong>{language === 'de' ? 'Nachricht' : 'Message'}:</strong>
+                                    <p>{application.message}</p>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </>
                   )}
                 </div>
               )}
