@@ -625,10 +625,40 @@ function App() {
                                   </p>
                                 )}
                                 
-                                {application.message && (
+                                {application.number_of_children && (
+                                  <p>
+                                    <strong>{language === 'de' ? 'Anzahl der Kinder' : 'Number of Children'}:</strong>{' '}
+                                    {application.number_of_children === 'none' 
+                                      ? (language === 'de' ? 'Keine' : 'None')
+                                      : application.number_of_children}
+                                  </p>
+                                )}
+                                
+                                {application.about_yourself && (
                                   <div className="request-message">
-                                    <strong>{language === 'de' ? 'Nachricht' : 'Message'}:</strong>
-                                    <p>{application.message}</p>
+                                    <strong>{language === 'de' ? 'Über sich' : 'About Yourself'}:</strong>
+                                    <p>{application.about_yourself}</p>
+                                  </div>
+                                )}
+                                
+                                {application.qualifications && (
+                                  <div className="request-message">
+                                    <strong>{language === 'de' ? 'Qualifikationen' : 'Qualifications'}:</strong>
+                                    <p>{application.qualifications}</p>
+                                  </div>
+                                )}
+                                
+                                {application.empathic_abilities && (
+                                  <div className="request-message">
+                                    <strong>{language === 'de' ? 'Empathische Fähigkeiten' : 'Empathic Abilities'}:</strong>
+                                    <p>{application.empathic_abilities}</p>
+                                  </div>
+                                )}
+                                
+                                {application.why_work_here && (
+                                  <div className="request-message">
+                                    <strong>{language === 'de' ? 'Warum bei OCTA arbeiten?' : 'Why work at OCTA?'}:</strong>
+                                    <p>{application.why_work_here}</p>
                                   </div>
                                 )}
                               </div>
