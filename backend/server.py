@@ -81,6 +81,7 @@ class JobApplication(BaseModel):
     empathic_abilities: str
     number_of_children: str
     why_work_here: str
+    photo: Optional[str] = None  # Base64 encoded photo
     timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     language: str = "de"
 
@@ -100,6 +101,7 @@ class JobApplicationCreate(BaseModel):
     empathic_abilities: str
     number_of_children: str
     why_work_here: str
+    photo: Optional[str] = None  # Base64 encoded photo
     language: str = "de"
 
 # Add your routes to the router instead of directly to app
