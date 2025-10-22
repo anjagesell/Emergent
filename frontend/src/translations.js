@@ -425,7 +425,8 @@ export const translations = {
       z5: { title: 'Z5: Consulting & Assessment', desc: 'Competent consultation and individual needs assessment' },
       z6: { title: 'Z6: Facility Services', desc: 'Reliable handyman services for your home' },
       z7: { title: 'Z7: Assisted Living', desc: 'Independent living with needs-based support' },
-      z8: { title: 'Z8: Wellness Station', desc: 'Wellness and holistic promotion of body and mind' }
+      z8: { title: 'Z8: Wellness Station', desc: 'Wellness and holistic promotion of body and mind' },
+      z9: { title: 'Z9: Job Opportunities', desc: 'Career opportunities at OCTA – become part of our team' }
     },
     certifications: [
       { title: 'Nursing Professionals according to § 71 SGB XI', desc: 'Certified geriatric nurses and health and nursing professionals with state recognition' },
