@@ -146,7 +146,27 @@ export const translations = {
     contactText: 'Für weitere Informationen zu unseren Leistungen kontaktieren Sie uns gerne.',
     servicesHeading: 'Unsere Leistungen:',
     impressum: 'Impressum',
-    copyright: '© 2025 OCTA - Alle Rechte vorbehalten'
+    copyright: '© 2025 OCTA - Alle Rechte vorbehalten',
+    availability: {
+      title: 'Verfügbarkeits-Anfrage',
+      greeting: 'Sehr geehrte Damen und Herren,',
+      intro: 'hiermit möchte ich eine Verfügbarkeitsanfrage für folgende Dienstleistungen stellen:',
+      nameLabel: 'Vollständiger Name',
+      namePlaceholder: 'Max Mustermann',
+      emailLabel: 'E-Mail-Adresse',
+      emailPlaceholder: 'ihre.email@beispiel.de',
+      phoneLabel: 'Telefonnummer',
+      phonePlaceholder: '+49 123 456789',
+      messageLabel: 'Ihre Anfrage',
+      messagePlaceholder: 'Bitte beschreiben Sie Ihren Bedarf und eventuelle besondere Anforderungen...',
+      servicesLabel: 'Gewünschte Dienstleistungsbereiche:',
+      submitButton: 'Anfrage absenden',
+      closing: 'Mit freundlichen Grüßen',
+      required: 'Pflichtfeld',
+      successMessage: 'Vielen Dank! Ihre Anfrage wurde erfolgreich übermittelt. Wir werden uns baldmöglichst bei Ihnen melden.',
+      errorMessage: 'Bitte füllen Sie alle Pflichtfelder aus und wählen Sie mindestens einen Dienstleistungsbereich.',
+      selectAtLeastOne: 'Bitte wählen Sie mindestens einen Bereich aus'
+    }
   },
   en: {
     nav: {
