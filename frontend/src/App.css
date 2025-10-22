@@ -478,9 +478,18 @@ body {
   text-align: center;
   border-top: 2px solid #001f3f;
   margin-top: auto;
+  box-shadow: 0 -2px 4px rgba(0, 31, 63, 0.05);
 }
 
-.impressum-link {
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-link {
   background: none;
   border: none;
   color: #001f3f;
@@ -488,18 +497,61 @@ body {
   font-weight: 600;
   cursor: pointer;
   text-decoration: underline;
-  margin-bottom: 0.5rem;
   transition: color 0.3s ease;
+  padding: 0;
 }
 
-.impressum-link:hover {
+.footer-link:hover {
   color: #003366;
+}
+
+.footer-divider {
+  color: #001f3f;
+  font-weight: 600;
 }
 
 .footer-copyright {
   font-size: 0.9rem;
   color: #003366;
-  margin: 0.5rem 0 0 0;
+  margin: 0;
+}
+
+/* Legal Content (Impressum & Datenschutz) */
+.legal-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.legal-section {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.legal-section:last-child {
+  border-bottom: none;
+}
+
+.legal-section h3 {
+  font-size: 1.5rem;
+  color: #001f3f;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.legal-section h4 {
+  font-size: 1.2rem;
+  color: #003366;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.legal-section p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #001f3f;
+  margin-bottom: 1rem;
 }
 
 /* Availability Request Form - Letter Style */
