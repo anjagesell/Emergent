@@ -73,7 +73,7 @@ function App() {
       setIsReading(false);
     } else {
       // Start reading - get all visible text content
-      const mainContent = document.querySelector('.main-content');
+      const mainContent = document.querySelector('[data-testid="main-content"]');
       if (mainContent) {
         const textContent = mainContent.innerText;
         const utterance = new SpeechSynthesisUtterance(textContent);
