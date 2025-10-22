@@ -169,6 +169,22 @@ export const translations = {
           'Gesellige Runden und Gemeinschaftserlebnisse',
           'Biografiearbeit und Erinnerungspflege'
         ]
+      },
+      z9: {
+        title: 'Stellenangebote',
+        desc: 'Werden Sie Teil unseres Teams! Bei OCTA arbeiten Menschen mit Herz, die in der Pflege und Betreuung einen sinnvollen Beruf gefunden haben. Entdecken Sie unsere aktuellen Stellenangebote.',
+        fullText: 'Bei OCTA sind wir immer auf der Suche nach engagierten, einfühlsamen Menschen, die unsere Vision teilen: pflegebedürftigen und älteren Menschen ein würdevolles, selbstbestimmtes Leben zu ermöglichen. Wenn Sie Freude an der Arbeit mit Menschen haben, Verantwortung übernehmen möchten und in einem wertschätzenden Umfeld arbeiten wollen, sind Sie bei uns richtig.\n\nWir bieten Ihnen mehr als nur einen Job: Bei OCTA finden Sie ein Team, das zusammenhält, faire Arbeitsbedingungen, Weiterbildungsmöglichkeiten und die Chance, täglich einen echten Unterschied im Leben anderer Menschen zu machen. Ob Sie gerade Ihre Ausbildung abgeschlossen haben oder bereits jahrelange Erfahrung mitbringen – wir freuen uns auf Ihre Bewerbung.\n\nAktuell suchen wir Verstärkung in verschiedenen Bereichen: Von examinierten Pflegefachkräften über Betreuungskräfte bis hin zu Hauswirtschaftskräften. Auch Quereinsteiger mit dem Wunsch, in der Pflege Fuß zu fassen, sind bei uns herzlich willkommen. Nehmen Sie Kontakt mit uns auf – wir freuen uns darauf, Sie kennenzulernen!',
+        services: [
+          'Examinierte Pflegefachkräfte (Altenpflege, Gesundheits- und Krankenpflege)',
+          'Pflegehelfer/-innen und Pflegeassistent/-innen',
+          'Betreuungskräfte nach § 43b SGB XI',
+          'Hauswirtschaftskräfte für die häusliche Versorgung',
+          'Medizinische Fachangestellte (MFA) für ambulante Pflege',
+          'Quereinsteiger mit Interesse an der Pflege',
+          'Praktikanten und Auszubildende',
+          'Freiberufliche Kooperationspartner (Physiotherapie, Ergotherapie, etc.)',
+          'Minijobber für hauswirtschaftliche Tätigkeiten'
+        ]
       }
     },
     overviewItems: {
