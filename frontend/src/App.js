@@ -76,39 +76,84 @@ function App() {
       const mainContent = document.querySelector('[data-testid="main-content"]');
       if (mainContent) {
         const textContent = mainContent.innerText;
-        const utterance = new SpeechSynthesisUtterance(textContent);
-        utterance.lang = language === 'de' ? 'de-DE' : 'en-US';
         
-        // Get available voices
-        const voices = window.speechSynthesis.getVoices();
-        
-        if (language === 'en') {
-          // For English: Select American male voice
-          const americanMaleVoice = voices.find(voice => 
-            voice.lang.includes('en-US') && 
-            (voice.name.toLowerCase().includes('male') || 
-             voice.name.toLowerCase().includes('david') ||
-             voice.name.toLowerCase().includes('alex') ||
-             voice.name.toLowerCase().includes('james'))
-          ) || voices.find(voice => voice.lang.includes('en-US'));
+        // Function to speak with proper voice
+        const speakWithVoice = () => {
+          const utterance = new SpeechSynthesisUtterance(textContent);
+          utterance.lang = language === 'de' ? 'de-DE' : 'en-US';
           
-          if (americanMaleVoice) {
-            utterance.voice = americanMaleVoice;
+          // Get available voices
+          const voices = window.speechSynthesis.getVoices();
+          
+          if (language === 'en') {
+            // For English: Try multiple strategies to find male voice
+            let selectedVoice = null;
+            
+            // Strategy 1: Look for explicit male voice names
+            selectedVoice = voices.find(voice => 
+              voice.lang.includes('en') && 
+              voice.name.toLowerCase().includes('male')
+            );
+            
+            // Strategy 2: Look for common male voice names
+            if (!selectedVoice) {
+              selectedVoice = voices.find(voice => 
+                voice.lang.includes('en') && 
+                (voice.name.includes('David') ||
+                 voice.name.includes('Alex') ||
+                 voice.name.includes('James') ||
+                 voice.name.includes('Aaron') ||
+                 voice.name.includes('Fred') ||
+                 voice.name.includes('Daniel'))
+              );
+            }
+            
+            // Strategy 3: Look for any US English voice that's not explicitly female
+            if (!selectedVoice) {
+              selectedVoice = voices.find(voice => 
+                voice.lang.includes('en-US') && 
+                !voice.name.toLowerCase().includes('female') &&
+                !voice.name.toLowerCase().includes('woman') &&
+                !voice.name.toLowerCase().includes('samantha') &&
+                !voice.name.toLowerCase().includes('victoria') &&
+                !voice.name.toLowerCase().includes('karen')
+              );
+            }
+            
+            // Strategy 4: Fallback to any US English voice
+            if (!selectedVoice) {
+              selectedVoice = voices.find(voice => voice.lang.includes('en-US'));
+            }
+            
+            if (selectedVoice) {
+              utterance.voice = selectedVoice;
+              console.log('Selected voice:', selectedVoice.name);
+            }
+            
+            // Calming, mature male voice settings
+            utterance.rate = 0.85; // Slower, calm pace
+            utterance.pitch = 0.75; // Even lower pitch for deeper male voice
+            utterance.volume = 0.9; // Slightly softer
+          } else {
+            // German voice settings
+            utterance.rate = 0.9;
+            utterance.pitch = 1.0;
           }
           
-          // Calming, mature male voice settings
-          utterance.rate = 0.85; // Slower, calm pace
-          utterance.pitch = 0.8; // Lower pitch for mature male voice
-          utterance.volume = 0.9; // Slightly softer
-        } else {
-          // German voice settings
-          utterance.rate = 0.9;
-          utterance.pitch = 1.0;
-        }
+          utterance.onend = () => setIsReading(false);
+          window.speechSynthesis.speak(utterance);
+          setIsReading(true);
+        };
         
-        utterance.onend = () => setIsReading(false);
-        window.speechSynthesis.speak(utterance);
-        setIsReading(true);
+        // Ensure voices are loaded before speaking
+        if (window.speechSynthesis.getVoices().length > 0) {
+          speakWithVoice();
+        } else {
+          // Wait for voices to load
+          window.speechSynthesis.onvoiceschanged = () => {
+            speakWithVoice();
+          };
+        }
       }
     }
   };
