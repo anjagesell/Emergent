@@ -70,7 +70,11 @@ class JobApplication(BaseModel):
     email: EmailStr
     phone: str
     position: str
-    message: Optional[str] = ""
+    about_yourself: str
+    qualifications: str
+    empathic_abilities: str
+    number_of_children: str
+    why_work_here: str
     timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     language: str = "de"
 
@@ -79,7 +83,11 @@ class JobApplicationCreate(BaseModel):
     email: EmailStr
     phone: str
     position: str
-    message: Optional[str] = ""
+    about_yourself: str
+    qualifications: str
+    empathic_abilities: str
+    number_of_children: str
+    why_work_here: str
     language: str = "de"
 
 # Add your routes to the router instead of directly to app
