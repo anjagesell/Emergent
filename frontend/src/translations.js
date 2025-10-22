@@ -349,13 +349,18 @@ export const translations = {
       },
       z7: {
         title: 'Assisted Living',
-        desc: 'Independent living with security and support.',
+        desc: 'The perfect balance between independence and security – live independently in your own apartment while professional support is available at all times.',
+        fullText: 'Giving up your own home is difficult – and often not even necessary. Assisted living offers an ideal alternative between familiar independent living and comprehensive care in a nursing facility. You live in your own, barrier-free apartment, organize your daily life according to your wishes, and can rely on professional support and security whenever you need it.\n\nOur concept of assisted living combines modern, age-appropriate apartments with a comprehensive service and care offering. Basic care ensures that help is quickly available in emergencies and that you receive support with organizational matters. Beyond that, you can choose from a wide range of optional services exactly those you need – from household assistance through care to social activities.\n\nOur residents especially appreciate the community: regular events, coffee afternoons, and shared activities take place in the common rooms. This creates new contacts and friendships while you can still maintain your privacy in your own apartment. You decide for yourself when you want company and when you want to be alone.',
         services: [
-          'Barrier-free apartments',
-          'Emergency call service 24/7',
-          'Community offerings',
-          'Optional services as needed',
-          'Social care'
+          'Barrier-free, modern apartments with age-appropriate equipment',
+          '24-hour emergency call service for maximum security',
+          'Basic care with on-site contact persons',
+          'Common rooms and social meeting opportunities',
+          'Organized events and activities',
+          'Optional services according to individual needs (cleaning, meals, care)',
+          'Support with administrative errands and administrative tasks',
+          'Referral to other services (hairdresser, foot care, etc.)',
+          'Safe infrastructure with elevators, handrails, and seating'
         ]
       },
       z8: {
