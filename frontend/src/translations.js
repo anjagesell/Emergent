@@ -473,7 +473,7 @@ export const translations = {
     },
     availability: {
       title: 'Availability Request',
-      greeting: 'Dear Sir or Madam,',
+      greeting: 'Dear OCTA,',
       intro: 'I would like to request availability for the following services:',
       nameLabel: 'Full Name',
       namePlaceholder: 'John Doe',
