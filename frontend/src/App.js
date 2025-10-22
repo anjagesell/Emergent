@@ -113,6 +113,15 @@ function App() {
               <Home className="nav-icon" size={20} />
               <span>{t.nav.home}</span>
             </button>
+
+            <button
+              data-testid="nav-availability"
+              className={`nav-item ${activeCategory === 'availability' ? 'active' : ''}`}
+              onClick={() => setActiveCategory('availability')}
+            >
+              <FileText className="nav-icon" size={20} />
+              <span>{t.nav.availability}</span>
+            </button>
             
             <div className="nav-divider"></div>
             
