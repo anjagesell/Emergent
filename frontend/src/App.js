@@ -38,7 +38,7 @@ function App() {
   const [requests, setRequests] = useState([]);
   
   const t = translations[language];
-  const categoryKeys = ['z1', 'z2a', 'z2b', 'z3', 'z4', 'z5', 'z6', 'z7', 'z8'];
+  const categoryKeys = ['z1', 'z2a', 'z2b', 'z3', 'z4', 'z5', 'z6', 'z7', 'z8', 'z9'];
 
   const handleServiceToggle = (service) => {
     setFormData(prev => ({
