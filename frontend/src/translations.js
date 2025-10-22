@@ -284,13 +284,18 @@ export const translations = {
       },
       z3: {
         title: 'Care Support',
-        desc: 'Personal accompaniment and social support in daily life.',
+        desc: 'Human connection, social participation, and meaningful activities – our care assistants are there for you when you need company, activation, or simply a listening ear.',
+        fullText: 'A fulfilling life consists not only of care and support – social contacts, shared activities, and the feeling of participating in life are equally important for well-being. Especially with limited mobility or when relatives live far away, loneliness can become a burden.\n\nOur care assistants, qualified according to § 43b SGB XI, are specially trained to accompany people with limitations and enrich their daily lives. They take time for conversations, undertake activities together, and respond to your individual interests and preferences.\n\nThis is not about performance pressure or a rigid program – the focus is on shared experiences and joy in the moment. Whether during a walk in the park, reading aloud, playing board games, or looking at old photos: our care assistants design the time as it suits you best. Especially for people with dementia or cognitive impairments, we work with biography-oriented and validating approaches that strengthen self-esteem and provide security.',
         services: [
-          'Daily life assistance',
-          'Conversations and social contacts',
-          'Accompaniment to appointments',
-          'Leisure activities',
-          'Cognitive activation'
+          'Daily life companionship and shared activities in the home environment',
+          'Conversations, active listening, and emotional support',
+          'Accompaniment to doctor\'s appointments, administrative errands, or events',
+          'Walks and outdoor activities',
+          'Reading aloud, making music together, or singing',
+          'Games, puzzles, and cognitive activation',
+          'Support with hobbies and leisure activities',
+          'Help maintaining social contacts',
+          'Biography work and memory care'
         ]
       },
       z4: {
