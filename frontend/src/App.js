@@ -749,6 +749,11 @@ function App() {
               className="insurance-logo"
             />
             <img 
+              src="https://customer-assets.emergentagent.com/job_sprechen-sie-41/artifacts/vlyfala9_Allgemeine_Ortskrankenkasse_logo.svg.png" 
+              alt="AOK - Die Gesundheitskasse" 
+              className="insurance-logo"
+            />
+            <img 
               src="https://customer-assets.emergentagent.com/job_sprechen-sie-41/artifacts/2vdwdvf9_barmer-logo-png_seeklogo-16692.png" 
               alt="Barmer" 
               className="insurance-logo"
