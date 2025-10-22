@@ -1081,6 +1081,75 @@ function App() {
                         </div>
                       </div>
                       
+                      <div className="form-row">
+                        <div className="form-group">
+                          <label className="form-label">
+                            {language === 'de' ? 'Führerschein' : 'Driver\'s License'} <span className="required">*</span>
+                          </label>
+                          <select 
+                            className="form-input"
+                            value={jobFormData.drivers_license}
+                            onChange={(e) => setJobFormData({...jobFormData, drivers_license: e.target.value})}
+                            required
+                          >
+                            <option value="">{language === 'de' ? 'Bitte wählen...' : 'Please select...'}</option>
+                            <option value="yes">{language === 'de' ? 'Ja' : 'Yes'}</option>
+                            <option value="no">{language === 'de' ? 'Nein' : 'No'}</option>
+                          </select>
+                        </div>
+                        <div className="form-group">
+                          <label className="form-label">
+                            {language === 'de' ? 'Beschäftigungsart' : 'Employment Type'} <span className="required">*</span>
+                          </label>
+                          <select 
+                            className="form-input"
+                            value={jobFormData.employment_type}
+                            onChange={(e) => setJobFormData({...jobFormData, employment_type: e.target.value})}
+                            required
+                          >
+                            <option value="">{language === 'de' ? 'Bitte wählen...' : 'Please select...'}</option>
+                            <option value="fulltime">{language === 'de' ? 'Vollzeit' : 'Full-time'}</option>
+                            <option value="parttime">{language === 'de' ? 'Teilzeit' : 'Part-time'}</option>
+                            <option value="volunteer">{language === 'de' ? 'Ehrenamtlich' : 'Volunteer'}</option>
+                            <option value="under3hrs">{language === 'de' ? 'Unter 3 Stunden pro Tag' : 'Under 3 hrs a day'}</option>
+                          </select>
+                        </div>
+                      </div>
+                      
+                      <div className="form-row">
+                        <div className="form-group">
+                          <label className="form-label">
+                            {language === 'de' ? 'Bevorzugte Schicht' : 'Preferred Shift'} <span className="required">*</span>
+                          </label>
+                          <select 
+                            className="form-input"
+                            value={jobFormData.preferred_shift}
+                            onChange={(e) => setJobFormData({...jobFormData, preferred_shift: e.target.value})}
+                            required
+                          >
+                            <option value="">{language === 'de' ? 'Bitte wählen...' : 'Please select...'}</option>
+                            <option value="morning">{language === 'de' ? 'Frühschicht' : 'Morning shift'}</option>
+                            <option value="evening">{language === 'de' ? 'Spätschicht' : 'Evening shift'}</option>
+                          </select>
+                        </div>
+                        <div className="form-group">
+                          <label className="form-label">
+                            {language === 'de' ? 'Arbeitstage-Präferenz' : 'Work Days Preference'} <span className="required">*</span>
+                          </label>
+                          <select 
+                            className="form-input"
+                            value={jobFormData.work_days_preference}
+                            onChange={(e) => setJobFormData({...jobFormData, work_days_preference: e.target.value})}
+                            required
+                          >
+                            <option value="">{language === 'de' ? 'Bitte wählen...' : 'Please select...'}</option>
+                            <option value="weekends">{language === 'de' ? 'Wochenenden' : 'Weekends'}</option>
+                            <option value="weekdays">{language === 'de' ? 'Wochentage' : 'Weekdays'}</option>
+                            <option value="no_preference">{language === 'de' ? 'Ist mir egal' : 'Doesn\'t matter'}</option>
+                          </select>
+                        </div>
+                      </div>
+                      
                       <div className="form-group">
                         <label className="form-label">
                           {language === 'de' ? 'Erzählen Sie uns über sich' : 'Tell us about yourself'} <span className="required">*</span>
