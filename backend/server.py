@@ -328,6 +328,54 @@ async def get_job_applications():
     
     return applications
 
+# Update availability request status and notes
+@api_router.patch("/availability-requests/{request_id}")
+async def update_availability_request(request_id: str, status_processed: bool = None, notes: str = None):
+    """Update status and notes for an availability request"""
+    try:
+        update_data = {}
+        if status_processed is not None:
+            update_data['status_processed'] = status_processed
+        if notes is not None:
+            update_data['notes'] = notes
+            
+        result = await db.availability_requests.update_one(
+            {"id": request_id},
+            {"$set": update_data}
+        )
+        
+        if result.modified_count == 0:
+            raise HTTPException(status_code=404, detail="Request not found")
+            
+        return {"success": True, "message": "Updated successfully"}
+    except Exception as e:
+        logger.error(f"Error updating request: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to update request")
+
+# Update job application status and notes
+@api_router.patch("/job-applications/{application_id}")
+async def update_job_application(application_id: str, status_processed: bool = None, notes: str = None):
+    """Update status and notes for a job application"""
+    try:
+        update_data = {}
+        if status_processed is not None:
+            update_data['status_processed'] = status_processed
+        if notes is not None:
+            update_data['notes'] = notes
+            
+        result = await db.job_applications.update_one(
+            {"id": application_id},
+            {"$set": update_data}
+        )
+        
+        if result.modified_count == 0:
+            raise HTTPException(status_code=404, detail="Application not found")
+            
+        return {"success": True, "message": "Updated successfully"}
+    except Exception as e:
+        logger.error(f"Error updating application: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to update application")
+
 # Include the router in the main app
 app.include_router(api_router)
 
