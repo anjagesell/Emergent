@@ -263,8 +263,8 @@ function App() {
     <div className="app-container">
       {/* Header mit Logo */}
       <header className="app-header">
-        {/* Language Switcher */}
-        <div className="language-switcher">
+        {/* German Flag - Left */}
+        <div className="flag-left">
           <button
             className={`flag-button ${language === 'de' ? 'active' : ''}`}
             onClick={() => setLanguage('de')}
@@ -273,6 +273,10 @@ function App() {
           >
             🇩🇪
           </button>
+        </div>
+        
+        {/* US Flag - Right */}
+        <div className="flag-right">
           <button
             className={`flag-button ${language === 'en' ? 'active' : ''}`}
             onClick={() => setLanguage('en')}
