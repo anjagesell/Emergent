@@ -418,6 +418,7 @@ export const translations = {
     contactText: 'For more information about our services, please feel free to contact us.',
     servicesHeading: 'Our Services:',
     impressum: 'Imprint',
+    datenschutz: 'Privacy Policy',
     copyright: '© 2025 OCTA - All Rights Reserved',
     intern: {
       title: 'Internal Area',
