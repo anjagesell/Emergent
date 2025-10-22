@@ -418,6 +418,19 @@ export const translations = {
     servicesHeading: 'Our Services:',
     impressum: 'Imprint',
     copyright: '© 2025 OCTA - All Rights Reserved',
+    intern: {
+      title: 'Internal Area',
+      passwordLabel: 'Password',
+      loginButton: 'Login',
+      logoutButton: 'Logout',
+      requestsTitle: 'Received Requests',
+      noRequests: 'No requests available',
+      requestDetails: 'Request Details',
+      services: 'Requested Services',
+      message: 'Message',
+      date: 'Date',
+      language: 'Language'
+    },
     availability: {
       title: 'Availability Request',
       greeting: 'Dear Sir or Madam,',
