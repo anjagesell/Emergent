@@ -37,7 +37,11 @@ function App() {
     email: '',
     phone: '',
     position: '',
-    message: ''
+    about_yourself: '',
+    qualifications: '',
+    empathic_abilities: '',
+    number_of_children: '',
+    why_work_here: ''
   });
   const [jobFormSubmitted, setJobFormSubmitted] = useState(false);
   const [jobFormError, setJobFormError] = useState('');
