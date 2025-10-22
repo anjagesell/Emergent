@@ -139,18 +139,18 @@ export const translations = {
       },
       z7: {
         title: 'Betreutes Wohnen',
-        desc: 'Die perfekte Balance zwischen Selbstständigkeit und Sicherheit – leben Sie eigenständig in Ihrer eigenen Wohnung, während professionelle Unterstützung jederzeit verfügbar ist.',
-        fullText: 'Das eigene Zuhause aufzugeben fällt schwer – und ist oft auch gar nicht nötig. Betreutes Wohnen bietet eine ideale Alternative zwischen dem gewohnten eigenständigen Leben und der Rundum-Versorgung in einer Pflegeeinrichtung. Sie wohnen in Ihrer eigenen, barrierefreien Wohnung, gestalten Ihren Alltag nach Ihren Wünschen und können gleichzeitig auf professionelle Unterstützung und Sicherheit zurückgreifen, wann immer Sie diese benötigen.\n\nUnser Konzept des Betreuten Wohnens kombiniert moderne, altersgerechte Wohnungen mit einem umfassenden Service- und Betreuungsangebot. Die Grundbetreuung stellt sicher, dass im Notfall schnell Hilfe da ist und Sie bei organisatorischen Angelegenheiten Unterstützung erhalten. Darüber hinaus können Sie aus einem breiten Spektrum an Wahlleistungen genau die Dienste wählen, die Sie benötigen – von hauswirtschaftlicher Hilfe über Pflege bis zu sozialen Aktivitäten.\n\nBesonders schätzen unsere Bewohner die Gemeinschaft: In den Gemeinschaftsräumen finden regelmäßig Veranstaltungen, Kaffeenachmittage und gemeinsame Aktivitäten statt. So entstehen neue Kontakte und Freundschaften, während Sie dennoch Ihre Privatsphäre in Ihrer eigenen Wohnung wahren können. Sie entscheiden selbst, wann Sie Gesellschaft möchten und wann Sie für sich sein wollen.',
+        desc: 'Koordinierte Betreuung in Ihren eigenen vier Wänden oder in der OCTA Community – professionelle Unterstützung genau dort, wo Sie sich zu Hause fühlen.',
+        fullText: 'Betreutes Wohnen bei OCTA bedeutet flexible, auf Ihre Bedürfnisse zugeschnittene Betreuung. Wir koordinieren eine qualifizierte Betreuungskraft, die Sie in Ihrem gewohnten Zuhause unterstützt. Je nach Bedarf kann diese Kraft mit in Ihren eigenen Wohnräumen wohnen oder als Ganztagsbetreuung 8 Stunden vor Ort sein – Sie entscheiden, welche Form der Unterstützung für Sie am besten passt.\n\nDarüber hinaus bietet OCTA eine besondere Alternative zum klassischen Pflegeheim: Leben Sie als Mieter mit Benefits in unserer OCTA Community! Auf unserem Eigenland haben wir speziell für Senioren ausgestattete Tiny Houses errichtet – ebenerdig konstruiert, barrierefrei und mit allem Komfort, den Sie benötigen. Diese moderne Wohnform kombiniert Selbstständigkeit mit der Sicherheit einer professionellen Betreuungsinfrastruktur direkt vor Ort.\n\nIn der OCTA Community zu wohnen bietet extrem viele Vorteile: Sie sind Teil einer Gemeinschaft, haben Ihre eigenen vier Wände, profitieren von kurzen Wegen zu Betreuungsleistungen und müssen nicht den schweren Schritt ins Pflegeheim gehen. Die Tiny Houses auf unserem Gelände sind speziell auf die Bedürfnisse von Senioren abgestimmt – modern, sicher und mit einer herzlichen Nachbarschaft, die füreinander da ist.',
         services: [
-          'Barrierefreie, moderne Wohnungen mit altersgerechter Ausstattung',
-          '24-Stunden-Notrufservice für maximale Sicherheit',
-          'Grundbetreuung mit Ansprechpartnern vor Ort',
-          'Gemeinschaftsräume und soziale Begegnungsmöglichkeiten',
-          'Organisierte Veranstaltungen und Aktivitäten',
-          'Wahlleistungen nach individuellem Bedarf (Reinigung, Mahlzeiten, Pflege)',
-          'Unterstützung bei Behördengängen und Verwaltungsaufgaben',
-          'Vermittlung weiterer Dienstleistungen (Friseur, Fußpflege, etc.)',
-          'Sichere Infrastruktur mit Aufzügen, Handläufen und Sitzgelegenheiten'
+          'Koordination qualifizierter Betreuungskräfte für Ihr Zuhause',
+          'Flexible Betreuungsmodelle: Wohnen mit Betreuungskraft oder 8-Stunden-Ganztagsbetreuung',
+          'OCTA Community Tiny Houses auf Eigenland',
+          'Seniorengerechte, ebenerdige Tiny Houses',
+          'Barrierefreie Ausstattung und moderne Wohnqualität',
+          'Alternative zum Pflegeheim – Leben als Mieter mit Benefits',
+          'Gemeinschaft und soziale Kontakte in der OCTA Community',
+          'Kurze Wege zu professionellen Betreuungsleistungen',
+          'Selbstständiges Wohnen mit Sicherheit und Unterstützung vor Ort'
         ]
       },
       z8: {
