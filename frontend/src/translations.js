@@ -121,13 +121,18 @@ export const translations = {
       },
       z6: {
         title: 'Hausmeisterdienste',
-        desc: 'Zuverlässige Hausmeisterleistungen für Ihr Zuhause.',
+        desc: 'Kleine und größere handwerkliche Aufgaben können im Alter oder bei Einschränkungen zu unüberwindbaren Hürden werden – unsere Hausmeisterdienste schaffen schnell und zuverlässig Abhilfe.',
+        fullText: 'Es sind oft die kleinen Dinge, die im Alltag zu großen Problemen werden können: Eine defekte Glühbirne bleibt dunkel, weil die Leiter zu unsicher erscheint. Ein tropfender Wasserhahn nervt, aber der Griff zum Werkzeug fällt schwer. Bilder oder Regale sollen aufgehängt werden, doch fehlt die Kraft oder das richtige Werkzeug.\n\nUnser Hausmeisterservice kümmert sich um genau diese alltäglichen Herausforderungen. Unsere handwerklich geschulten Mitarbeiter kommen zu Ihnen nach Hause und erledigen die anfallenden Arbeiten schnell, sauber und zuverlässig. Dabei bringen sie nicht nur das nötige Werkzeug mit, sondern auch Geduld und Verständnis für Ihre Situation.\n\nVon der einfachen Glühbirne über Möbelmontage bis zu kleineren Reparaturen – wir helfen Ihnen dabei, dass Ihr Zuhause funktional und sicher bleibt. Auch bei größeren Anliegen, die Fachhandwerker erfordern, unterstützen wir Sie gerne bei der Organisation und Koordination. So können Sie weiterhin selbstbestimmt und komfortabel in Ihren eigenen vier Wänden leben, ohne sich um handwerkliche Herausforderungen sorgen zu müssen.',
         services: [
-          'Kleinreparaturen',
-          'Glühbirnenwechsel',
-          'Möbelmontage',
-          'Technische Wartung',
-          'Handwerkliche Unterstützung'
+          'Kleinreparaturen im Haushalt (tropfende Wasserhähne, knarrende Türen, etc.)',
+          'Glühbirnen- und Leuchtmittelwechsel',
+          'Möbelmontage und -aufbau',
+          'Aufhängen von Bildern, Regalen und Vorhängen',
+          'Batteriewechsel bei Rauchmeldern und Uhren',
+          'Technische Wartung und Funktionsprüfungen',
+          'Unterstützung bei Elektrogeräten und deren Bedienung',
+          'Koordination von Fachhandwerkern bei größeren Arbeiten',
+          'Saisonale Aufgaben (z.B. Heizung entlüften, Filter wechseln)'
         ]
       },
       z7: {
