@@ -137,13 +137,18 @@ export const translations = {
       },
       z7: {
         title: 'Betreutes Wohnen',
-        desc: 'Selbstständig leben mit Sicherheit und Betreuung.',
+        desc: 'Die perfekte Balance zwischen Selbstständigkeit und Sicherheit – leben Sie eigenständig in Ihrer eigenen Wohnung, während professionelle Unterstützung jederzeit verfügbar ist.',
+        fullText: 'Das eigene Zuhause aufzugeben fällt schwer – und ist oft auch gar nicht nötig. Betreutes Wohnen bietet eine ideale Alternative zwischen dem gewohnten eigenständigen Leben und der Rundum-Versorgung in einer Pflegeeinrichtung. Sie wohnen in Ihrer eigenen, barrierefreien Wohnung, gestalten Ihren Alltag nach Ihren Wünschen und können gleichzeitig auf professionelle Unterstützung und Sicherheit zurückgreifen, wann immer Sie diese benötigen.\n\nUnser Konzept des Betreuten Wohnens kombiniert moderne, altersgerechte Wohnungen mit einem umfassenden Service- und Betreuungsangebot. Die Grundbetreuung stellt sicher, dass im Notfall schnell Hilfe da ist und Sie bei organisatorischen Angelegenheiten Unterstützung erhalten. Darüber hinaus können Sie aus einem breiten Spektrum an Wahlleistungen genau die Dienste wählen, die Sie benötigen – von hauswirtschaftlicher Hilfe über Pflege bis zu sozialen Aktivitäten.\n\nBesonders schätzen unsere Bewohner die Gemeinschaft: In den Gemeinschaftsräumen finden regelmäßig Veranstaltungen, Kaffeenachmittage und gemeinsame Aktivitäten statt. So entstehen neue Kontakte und Freundschaften, während Sie dennoch Ihre Privatsphäre in Ihrer eigenen Wohnung wahren können. Sie entscheiden selbst, wann Sie Gesellschaft möchten und wann Sie für sich sein wollen.',
         services: [
-          'Barrierefreie Wohnungen',
-          'Notrufservice 24/7',
-          'Gemeinschaftsangebote',
-          'Wahlleistungen nach Bedarf',
-          'Soziale Betreuung'
+          'Barrierefreie, moderne Wohnungen mit altersgerechter Ausstattung',
+          '24-Stunden-Notrufservice für maximale Sicherheit',
+          'Grundbetreuung mit Ansprechpartnern vor Ort',
+          'Gemeinschaftsräume und soziale Begegnungsmöglichkeiten',
+          'Organisierte Veranstaltungen und Aktivitäten',
+          'Wahlleistungen nach individuellem Bedarf (Reinigung, Mahlzeiten, Pflege)',
+          'Unterstützung bei Behördengängen und Verwaltungsaufgaben',
+          'Vermittlung weiterer Dienstleistungen (Friseur, Fußpflege, etc.)',
+          'Sichere Infrastruktur mit Aufzügen, Handläufen und Sitzgelegenheiten'
         ]
       },
       z8: {
