@@ -711,6 +711,8 @@ function App() {
                                 <th>{language === 'de' ? 'Schicht' : 'Shift'}</th>
                                 <th>{language === 'de' ? 'Arbeitstage' : 'Work Days'}</th>
                                 <th>{language === 'de' ? 'Foto' : 'Photo'}</th>
+                                <th>{language === 'de' ? 'Status bearbeitet' : 'Status Processed'}</th>
+                                <th>{language === 'de' ? 'Notizen' : 'Notes'}</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -780,6 +782,35 @@ function App() {
                                         className="thumbnail-photo"
                                       />
                                     ) : '-'}
+                                  </td>
+                                  <td className="status-cell">
+                                    <input 
+                                      type="checkbox" 
+                                      checked={application.status_processed || false}
+                                      onChange={async (e) => {
+                                        const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+                                        await fetch(`${BACKEND_URL}/api/job-applications/${application.id}?status_processed=${e.target.checked}`, {
+                                          method: 'PATCH'
+                                        });
+                                        loadJobApplications();
+                                      }}
+                                      className="status-checkbox"
+                                    />
+                                  </td>
+                                  <td className="notes-cell">
+                                    <textarea
+                                      value={application.notes || ''}
+                                      onChange={async (e) => {
+                                        const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+                                        await fetch(`${BACKEND_URL}/api/job-applications/${application.id}?notes=${encodeURIComponent(e.target.value)}`, {
+                                          method: 'PATCH'
+                                        });
+                                      }}
+                                      onBlur={loadJobApplications}
+                                      className="notes-textarea"
+                                      placeholder={language === 'de' ? 'Notizen...' : 'Notes...'}
+                                      maxLength="500"
+                                    />
                                   </td>
                                 </tr>
                               ))}
