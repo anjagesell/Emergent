@@ -381,6 +381,96 @@ function App() {
                 </div>
               </div>
             </div>
+          ) : activeCategory === 'intern' ? (
+            <div className="content-wrapper">
+              <h2 className="content-title">{t.intern.title}</h2>
+              
+              {!isInternAuthenticated ? (
+                <div className="intern-login">
+                  <form onSubmit={handleInternLogin} className="login-form">
+                    <div className="form-group">
+                      <label htmlFor="intern-password" className="form-label">
+                        {t.intern.passwordLabel}
+                      </label>
+                      <input
+                        type="password"
+                        id="intern-password"
+                        data-testid="intern-password"
+                        className="form-input"
+                        value={internPassword}
+                        onChange={(e) => setInternPassword(e.target.value)}
+                        placeholder="••••••••"
+                        required
+                      />
+                    </div>
+                    
+                    {internError && (
+                      <div className="error-message">{internError}</div>
+                    )}
+                    
+                    <button type="submit" className="submit-button" data-testid="intern-login-btn">
+                      {t.intern.loginButton}
+                    </button>
+                  </form>
+                </div>
+              ) : (
+                <div className="intern-dashboard">
+                  <div className="intern-header">
+                    <button 
+                      className="logout-button" 
+                      onClick={() => {
+                        setIsInternAuthenticated(false);
+                        setInternPassword('');
+                        setRequests([]);
+                      }}
+                      data-testid="logout-btn"
+                    >
+                      {t.intern.logoutButton}
+                    </button>
+                  </div>
+                  
+                  <h3 className="requests-title">{t.intern.requestsTitle}</h3>
+                  
+                  {requests.length === 0 ? (
+                    <p className="no-requests">{t.intern.noRequests}</p>
+                  ) : (
+                    <div className="requests-list">
+                      {requests.map((request) => (
+                        <div key={request.id} className="request-card" data-testid="request-card">
+                          <div className="request-header">
+                            <h4 className="request-name">{request.name}</h4>
+                            <span className="request-date">
+                              {new Date(request.timestamp).toLocaleString(language === 'de' ? 'de-DE' : 'en-US')}
+                            </span>
+                          </div>
+                          
+                          <div className="request-details">
+                            <p><strong>Email:</strong> {request.email}</p>
+                            <p><strong>{language === 'de' ? 'Telefon' : 'Phone'}:</strong> {request.phone}</p>
+                            
+                            <div className="request-services">
+                              <strong>{t.intern.services}:</strong>
+                              <ul>
+                                {request.services.map((service, idx) => (
+                                  <li key={idx}>{t.nav[service]}</li>
+                                ))}
+                              </ul>
+                            </div>
+                            
+                            {request.message && (
+                              <div className="request-message">
+                                <strong>{t.intern.message}:</strong>
+                                <p>{request.message}</p>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
           ) : activeCategory === 'impressum' ? (
             <div className="content-wrapper">
               <h2 className="content-title">{t.impressum}</h2>
