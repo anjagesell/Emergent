@@ -953,6 +953,7 @@ function App() {
                           />
                         </div>
                       </div>
+                      
                       <div className="form-row">
                         <div className="form-group">
                           <label className="form-label">
@@ -985,22 +986,93 @@ function App() {
                           </select>
                         </div>
                       </div>
+                      
                       <div className="form-group">
                         <label className="form-label">
-                          {language === 'de' ? 'Ihre Nachricht' : 'Your Message'}
+                          {language === 'de' ? 'Erzählen Sie uns über sich' : 'Tell us about yourself'} <span className="required">*</span>
+                        </label>
+                        <textarea 
+                          className="form-textarea" 
+                          rows="4"
+                          placeholder={language === 'de' 
+                            ? 'Beschreiben Sie kurz Ihren Hintergrund, Ihre Persönlichkeit und Ihre Erfahrungen...' 
+                            : 'Briefly describe your background, personality and experience...'}
+                          value={jobFormData.about_yourself}
+                          onChange={(e) => setJobFormData({...jobFormData, about_yourself: e.target.value})}
+                          required
+                        />
+                      </div>
+                      
+                      <div className="form-group">
+                        <label className="form-label">
+                          {language === 'de' ? 'Qualifikationen' : 'Qualifications'} <span className="required">*</span>
+                        </label>
+                        <textarea 
+                          className="form-textarea" 
+                          rows="4"
+                          placeholder={language === 'de' 
+                            ? 'Listen Sie Ihre relevanten Qualifikationen, Zertifikate und Ausbildungen auf...' 
+                            : 'List your relevant qualifications, certificates and training...'}
+                          value={jobFormData.qualifications}
+                          onChange={(e) => setJobFormData({...jobFormData, qualifications: e.target.value})}
+                          required
+                        />
+                      </div>
+                      
+                      <div className="form-group">
+                        <label className="form-label">
+                          {language === 'de' ? 'Empathische Fähigkeiten' : 'Empathic Abilities'} <span className="required">*</span>
+                        </label>
+                        <textarea 
+                          className="form-textarea" 
+                          rows="4"
+                          placeholder={language === 'de' 
+                            ? 'Beschreiben Sie Ihre Fähigkeit, sich in andere Menschen einzufühlen und mitfühlend zu handeln...' 
+                            : 'Describe your ability to empathize with others and act compassionately...'}
+                          value={jobFormData.empathic_abilities}
+                          onChange={(e) => setJobFormData({...jobFormData, empathic_abilities: e.target.value})}
+                          required
+                        />
+                      </div>
+                      
+                      <div className="form-group">
+                        <label className="form-label">
+                          {language === 'de' ? 'Anzahl der Kinder' : 'Number of Children'} <span className="required">*</span>
+                        </label>
+                        <select 
+                          className="form-input"
+                          value={jobFormData.number_of_children}
+                          onChange={(e) => setJobFormData({...jobFormData, number_of_children: e.target.value})}
+                          required
+                        >
+                          <option value="">{language === 'de' ? 'Bitte wählen...' : 'Please select...'}</option>
+                          <option value="none">{language === 'de' ? 'Keine' : 'None'}</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5+">{language === 'de' ? '5 oder mehr' : '5 or more'}</option>
+                        </select>
+                      </div>
+                      
+                      <div className="form-group">
+                        <label className="form-label">
+                          {language === 'de' ? 'Warum möchten Sie bei OCTA arbeiten?' : 'Why do you want to work at OCTA?'} <span className="required">*</span>
                         </label>
                         <textarea 
                           className="form-textarea" 
                           rows="5"
                           placeholder={language === 'de' 
-                            ? 'Erzählen Sie uns etwas über sich und Ihre Motivation...' 
-                            : 'Tell us about yourself and your motivation...'}
-                          value={jobFormData.message}
-                          onChange={(e) => setJobFormData({...jobFormData, message: e.target.value})}
+                            ? 'Erklären Sie, was Sie an OCTA interessiert und warum Sie hier arbeiten möchten...' 
+                            : 'Explain what interests you about OCTA and why you want to work here...'}
+                          value={jobFormData.why_work_here}
+                          onChange={(e) => setJobFormData({...jobFormData, why_work_here: e.target.value})}
+                          required
                         />
                       </div>
+                      
                       <button type="submit" className="submit-button">
-                        {language === 'de' ? 'Interesse bekunden' : 'Express Interest'}
+                        {language === 'de' ? 'Bewerbung absenden' : 'Submit Application'}
                       </button>
                     </form>
                   )}
