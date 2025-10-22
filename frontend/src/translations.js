@@ -316,13 +316,19 @@ export const translations = {
       },
       z5: {
         title: 'Consulting & Assessment',
-        desc: 'Comprehensive consultation and needs assessment for your individual situation.',
+        desc: 'Entering care raises many questions. We advise you competently, neutrally, and empathetically on all aspects of care – from benefit entitlements through financing to optimal care planning.',
+        fullText: 'A care situation often arises suddenly and unexpectedly – after a hospital stay, an accident, or through progressive illnesses. Those affected and relatives then face a jungle of questions: What care level am I entitled to? What benefits can I claim? How do I apply for what? What form of care is right for me?\n\nOur certified care consultants stand by your side in this often overwhelming situation. In a detailed conversation, we jointly determine your individual needs, explain all options, and support you with all necessary steps. We work independently and exclusively in your interest.\n\nIt is particularly important to us that you not only receive information but also really understand it and can use it for yourself. We take time, answer all your questions, and accompany you even after the initial consultation – whether with application submissions, preparation for the medical service assessment, or adjustment of care when your needs change.',
         services: [
-          'Care consultation according to § 37.3 SGB XI',
-          'Needs assessment',
-          'Assistance with applications',
-          'Individual care planning',
-          'Family member consultation'
+          'Care consultation according to § 37 Para. 3 SGB XI (consultation visits)',
+          'Comprehensive assessment to determine your care needs',
+          'Consultation on care levels and benefit entitlements',
+          'Support with application submissions (care level, aids, etc.)',
+          'Preparation for assessment by the Medical Service',
+          'Individual care planning and coordination of care',
+          'Family counseling and training',
+          'Consultation on financing options and subsidies',
+          'Referral to other support services',
+          'Follow-up care and adjustment of care when changes occur'
         ]
       },
       z6: {
