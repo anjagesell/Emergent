@@ -477,44 +477,43 @@ function App() {
               <div className="impressum-content">
                 <section className="impressum-section">
                   <h3>{language === 'de' ? 'Angaben gemäß § 5 TMG' : 'Information according to § 5 TMG'}</h3>
-                  <p><strong>[{language === 'de' ? 'Firmenname' : 'Company Name'}]</strong></p>
-                  <p>[{language === 'de' ? 'Straße und Hausnummer' : 'Street and House Number'}]</p>
-                  <p>[{language === 'de' ? 'PLZ Ort' : 'Zip Code City'}]</p>
+                  <p><strong>OCTA</strong></p>
+                  <p>{language === 'de' ? 'Inhaber' : 'Owner'}: Lois Schmidt</p>
+                  <p>Gilmerdingen</p>
+                  <p>Niedersachsen, Deutschland</p>
                 </section>
 
                 <section className="impressum-section">
                   <h3>{language === 'de' ? 'Kontakt' : 'Contact'}</h3>
-                  <p>{language === 'de' ? 'Telefon' : 'Phone'}: [{language === 'de' ? 'Telefonnummer' : 'Phone Number'}]</p>
-                  <p>E-Mail: [{language === 'de' ? 'E-Mail-Adresse' : 'Email Address'}]</p>
+                  <p>E-Mail: Alltagshilfe007@web.de</p>
+                  <p>{language === 'de' ? 'Telefon' : 'Phone'}: [{language === 'de' ? 'Auf Anfrage' : 'Available upon request'}]</p>
                 </section>
 
                 <section className="impressum-section">
                   <h3>{language === 'de' ? 'Vertreten durch' : 'Represented by'}</h3>
-                  <p>[{language === 'de' ? 'Geschäftsführer/in' : 'Managing Director'}]</p>
-                </section>
-
-                <section className="impressum-section">
-                  <h3>{language === 'de' ? 'Registereintrag' : 'Register Entry'}</h3>
-                  <p>{language === 'de' ? 'Eintragung im Handelsregister' : 'Entry in Commercial Register'}</p>
-                  <p>{language === 'de' ? 'Registergericht' : 'Register Court'}: [{language === 'de' ? 'Gericht' : 'Court'}]</p>
-                  <p>{language === 'de' ? 'Registernummer' : 'Register Number'}: [{language === 'de' ? 'Nummer' : 'Number'}]</p>
-                </section>
-
-                <section className="impressum-section">
-                  <h3>{language === 'de' ? 'Umsatzsteuer-ID' : 'VAT ID'}</h3>
-                  <p>{language === 'de' ? 'Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz:' : 'VAT identification number according to §27a VAT Act:'}</p>
-                  <p>[{language === 'de' ? 'USt-IdNr.' : 'VAT ID'}]</p>
-                </section>
-
-                <section className="impressum-section">
-                  <h3>{language === 'de' ? 'Zuständige Aufsichtsbehörde' : 'Responsible Supervisory Authority'}</h3>
-                  <p>[{language === 'de' ? 'Behördenname' : 'Authority Name'}]</p>
-                  <p>[{language === 'de' ? 'Adresse' : 'Address'}]</p>
+                  <p>Lois Schmidt</p>
                 </section>
 
                 <section className="impressum-section">
                   <h3>{language === 'de' ? 'Berufsbezeichnung und berufsrechtliche Regelungen' : 'Professional Title and Professional Regulations'}</h3>
                   <p>{language === 'de' ? 'Zugelassener Pflegedienst gemäß § 72 SGB XI' : 'Approved care service according to § 72 SGB XI'}</p>
+                  <p>{language === 'de' ? 'Betreuungskräfte nach § 43b SGB XI' : 'Care assistants according to § 43b SGB XI'}</p>
+                  <p>{language === 'de' ? 'Hauswirtschaftskräfte nach § 53c SGB XI' : 'Household staff according to § 53c SGB XI'}</p>
+                </section>
+
+                <section className="impressum-section">
+                  <h3>{language === 'de' ? 'Haftungsausschluss' : 'Disclaimer'}</h3>
+                  <h4>{language === 'de' ? 'Haftung für Inhalte' : 'Liability for Content'}</h4>
+                  <p>{language === 'de' 
+                    ? 'Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.'
+                    : 'The content of our pages has been created with the greatest care. However, we cannot guarantee the accuracy, completeness and timeliness of the content.'}</p>
+                </section>
+
+                <section className="impressum-section">
+                  <h3>{language === 'de' ? 'Datenschutz' : 'Data Protection'}</h3>
+                  <p>{language === 'de'
+                    ? 'Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten erhoben werden, erfolgt dies auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.'
+                    : 'The use of our website is generally possible without providing personal data. Insofar as personal data is collected on our pages, this is done on a voluntary basis. This data will not be passed on to third parties without your express consent.'}</p>
                 </section>
               </div>
             </div>
