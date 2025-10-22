@@ -187,6 +187,129 @@ function App() {
                 <p className="cta-text">{t.home.ctaText}</p>
               </div>
             </div>
+          ) : activeCategory === 'availability' ? (
+            <div className="content-wrapper">
+              <div className="letter-form-container">
+                <div className="letter-header">
+                  <img src={LOGO_URL} alt="OCTA Logo" className="letter-logo" />
+                  <h2 className="letter-title">{t.availability.title}</h2>
+                </div>
+
+                <div className="letter-body">
+                  <p className="letter-greeting">{t.availability.greeting}</p>
+                  <p className="letter-intro">{t.availability.intro}</p>
+
+                  {formSubmitted ? (
+                    <div className="success-message" data-testid="success-message">
+                      <span className="success-icon">✓</span>
+                      <p>{t.availability.successMessage}</p>
+                    </div>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="availability-form">
+                      {formError && (
+                        <div className="error-message" data-testid="error-message">
+                          {formError}
+                        </div>
+                      )}
+
+                      <div className="form-section">
+                        <div className="form-group">
+                          <label htmlFor="name" className="form-label">
+                            {t.availability.nameLabel} <span className="required">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            id="name"
+                            data-testid="input-name"
+                            className="form-input"
+                            placeholder={t.availability.namePlaceholder}
+                            value={formData.name}
+                            onChange={(e) => setFormData({...formData, name: e.target.value})}
+                            required
+                          />
+                        </div>
+
+                        <div className="form-group">
+                          <label htmlFor="email" className="form-label">
+                            {t.availability.emailLabel} <span className="required">*</span>
+                          </label>
+                          <input
+                            type="email"
+                            id="email"
+                            data-testid="input-email"
+                            className="form-input"
+                            placeholder={t.availability.emailPlaceholder}
+                            value={formData.email}
+                            onChange={(e) => setFormData({...formData, email: e.target.value})}
+                            required
+                          />
+                        </div>
+
+                        <div className="form-group">
+                          <label htmlFor="phone" className="form-label">
+                            {t.availability.phoneLabel} <span className="required">*</span>
+                          </label>
+                          <input
+                            type="tel"
+                            id="phone"
+                            data-testid="input-phone"
+                            className="form-input"
+                            placeholder={t.availability.phonePlaceholder}
+                            value={formData.phone}
+                            onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                            required
+                          />
+                        </div>
+
+                        <div className="form-group">
+                          <label htmlFor="message" className="form-label">
+                            {t.availability.messageLabel}
+                          </label>
+                          <textarea
+                            id="message"
+                            data-testid="input-message"
+                            className="form-textarea"
+                            placeholder={t.availability.messagePlaceholder}
+                            value={formData.message}
+                            onChange={(e) => setFormData({...formData, message: e.target.value})}
+                            rows="5"
+                          />
+                        </div>
+
+                        <div className="form-group">
+                          <label className="form-label services-label">
+                            {t.availability.servicesLabel} <span className="required">*</span>
+                          </label>
+                          <div className="services-checkboxes">
+                            {categoryKeys.map((service) => (
+                              <label key={service} className="checkbox-label">
+                                <input
+                                  type="checkbox"
+                                  data-testid={`checkbox-${service}`}
+                                  checked={formData.services.includes(service)}
+                                  onChange={() => handleServiceToggle(service)}
+                                  className="checkbox-input"
+                                />
+                                <span className="checkbox-text">{t.nav[service]}</span>
+                              </label>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="letter-closing">
+                        <p>{t.availability.closing}</p>
+                        <div className="signature-line"></div>
+                      </div>
+
+                      <button type="submit" className="submit-button" data-testid="submit-button">
+                        {t.availability.submitButton}
+                      </button>
+                    </form>
+                  )}
+                </div>
+              </div>
+            </div>
           ) : activeCategory === 'impressum' ? (
             <div className="content-wrapper">
               <h2 className="content-title">{t.impressum}</h2>
