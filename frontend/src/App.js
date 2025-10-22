@@ -161,9 +161,33 @@ function App() {
     <div className="app-container">
       {/* Header mit Logo */}
       <header className="app-header">
+        {/* Language Switcher */}
+        <div className="language-switcher">
+          <button
+            className={`flag-button ${language === 'de' ? 'active' : ''}`}
+            onClick={() => setLanguage('de')}
+            title="Deutsch"
+            data-testid="flag-de"
+          >
+            🇩🇪
+          </button>
+          <button
+            className={`flag-button ${language === 'en' ? 'active' : ''}`}
+            onClick={() => setLanguage('en')}
+            title="English"
+            data-testid="flag-en"
+          >
+            🇺🇸
+          </button>
+        </div>
+        
         <img src={LOGO_URL} alt="OCTA Logo" className="logo" />
         <h1 className="company-name">OCTA</h1>
-        <p className="company-tagline">Ganzheitliche Pflege- und Betreuungsdienstleistungen</p>
+        <p className="company-tagline">
+          {language === 'de' 
+            ? 'Ganzheitliche Pflege- und Betreuungsdienstleistungen'
+            : 'Comprehensive Care and Support Services'}
+        </p>
       </header>
 
       <div className="main-layout">
