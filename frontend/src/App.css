@@ -16,6 +16,8 @@ body {
   min-height: 100vh;
   background-color: #ffffff;
   color: #001f3f;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header mit Logo */
@@ -41,10 +43,18 @@ body {
   margin: 0;
 }
 
+.company-tagline {
+  font-size: 1rem;
+  color: #003366;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
 /* Main Layout */
 .main-layout {
   display: flex;
-  min-height: calc(100vh - 180px);
+  flex: 1;
+  min-height: calc(100vh - 240px);
 }
 
 /* Sidebar */
@@ -55,7 +65,7 @@ body {
   padding: 2rem 0;
   position: sticky;
   top: 0;
-  height: calc(100vh - 180px);
+  height: calc(100vh - 240px);
   overflow-y: auto;
 }
 
@@ -64,6 +74,13 @@ body {
   flex-direction: column;
   gap: 0.5rem;
   padding: 0 1rem;
+}
+
+.nav-divider {
+  height: 2px;
+  background-color: #001f3f;
+  margin: 0.5rem 0.5rem;
+  opacity: 0.3;
 }
 
 .nav-item {
@@ -105,10 +122,11 @@ body {
   flex: 1;
   padding: 3rem;
   background-color: #ffffff;
+  overflow-y: auto;
 }
 
 .content-wrapper {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -126,6 +144,143 @@ body {
   color: #003366;
   line-height: 1.8;
   margin-bottom: 2.5rem;
+}
+
+/* Home Content */
+.home-content .content-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.welcome-intro {
+  margin-bottom: 3rem;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #001f3f;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+/* Services Overview */
+.services-overview {
+  margin-bottom: 3rem;
+}
+
+.overview-title {
+  font-size: 1.8rem;
+  color: #001f3f;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.overview-item {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #001f3f;
+  box-shadow: 0 2px 4px rgba(0, 31, 63, 0.08);
+  transition: all 0.3s ease;
+}
+
+.overview-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 31, 63, 0.15);
+}
+
+.overview-item strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #001f3f;
+  margin-bottom: 0.5rem;
+}
+
+.overview-item p {
+  font-size: 0.95rem;
+  color: #003366;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Certifications Section */
+.certifications-section {
+  background-color: #e3f2fd;
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin-bottom: 2.5rem;
+  border: 2px solid #001f3f;
+}
+
+.cert-title {
+  font-size: 1.8rem;
+  color: #001f3f;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.cert-intro {
+  font-size: 1.1rem;
+  color: #001f3f;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.cert-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cert-item {
+  background-color: #ffffff;
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #001f3f;
+  box-shadow: 0 2px 4px rgba(0, 31, 63, 0.1);
+}
+
+.cert-item strong {
+  display: block;
+  font-size: 1.15rem;
+  color: #001f3f;
+  margin-bottom: 0.5rem;
+}
+
+.cert-desc {
+  display: block;
+  font-size: 0.95rem;
+  color: #003366;
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid #001f3f;
+}
+
+.cta-text {
+  font-size: 1.15rem;
+  color: #001f3f;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.8;
 }
 
 /* Services Section */
@@ -192,6 +347,117 @@ body {
   margin: 0;
 }
 
+/* Footer */
+.app-footer {
+  background-color: #f8f9fa;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-top: 2px solid #001f3f;
+  margin-top: auto;
+}
+
+.impressum-link {
+  background: none;
+  border: none;
+  color: #001f3f;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.impressum-link:hover {
+  color: #003366;
+}
+
+.footer-copyright {
+  font-size: 0.9rem;
+  color: #003366;
+  margin: 0.5rem 0 0 0;
+}
+
+/* Modal for Impressum */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 31, 63, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 3rem;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 31, 63, 0.3);
+  border: 2px solid #001f3f;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #001f3f;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background-color: #001f3f;
+  color: #ffffff;
+}
+
+.modal-title {
+  font-size: 2rem;
+  color: #001f3f;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #001f3f;
+}
+
+.impressum-content {
+  color: #001f3f;
+}
+
+.impressum-section {
+  margin-bottom: 2rem;
+}
+
+.impressum-section h3 {
+  font-size: 1.3rem;
+  color: #001f3f;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.impressum-section p {
+  font-size: 1rem;
+  color: #003366;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .sidebar {
@@ -200,6 +466,10 @@ body {
   
   .content {
     padding: 2rem;
+  }
+  
+  .overview-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
 
@@ -231,22 +501,42 @@ body {
   .company-name {
     font-size: 2rem;
   }
+  
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-content {
+    padding: 2rem;
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+  }
 }
 
 /* Scrollbar Styling */
-.sidebar::-webkit-scrollbar {
+.sidebar::-webkit-scrollbar,
+.content::-webkit-scrollbar,
+.modal-content::-webkit-scrollbar {
   width: 8px;
 }
 
-.sidebar::-webkit-scrollbar-track {
+.sidebar::-webkit-scrollbar-track,
+.content::-webkit-scrollbar-track,
+.modal-content::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
-.sidebar::-webkit-scrollbar-thumb {
+.sidebar::-webkit-scrollbar-thumb,
+.content::-webkit-scrollbar-thumb,
+.modal-content::-webkit-scrollbar-thumb {
   background: #001f3f;
   border-radius: 4px;
 }
 
-.sidebar::-webkit-scrollbar-thumb:hover {
+.sidebar::-webkit-scrollbar-thumb:hover,
+.content::-webkit-scrollbar-thumb:hover,
+.modal-content::-webkit-scrollbar-thumb:hover {
   background: #003366;
 }
