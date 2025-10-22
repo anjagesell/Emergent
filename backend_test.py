@@ -45,16 +45,16 @@ def test_post_job_application():
             response_data = response.json()
             print(f"Response Data: {json.dumps(response_data, indent=2, default=str)}")
             
-            # Verify response contains expected fields
-            required_fields = ["id", "name", "email", "phone", "position", "message", "timestamp", "language"]
+            # Verify response contains expected fields (enhanced model)
+            required_fields = ["id", "name", "email", "phone", "position", "about_yourself", "qualifications", "empathic_abilities", "number_of_children", "why_work_here", "timestamp", "language"]
             missing_fields = [field for field in required_fields if field not in response_data]
             
             if missing_fields:
                 print(f"❌ FAIL: Missing fields in response: {missing_fields}")
                 return False, None
             
-            # Verify data matches input
-            for field in ["name", "email", "phone", "position", "message", "language"]:
+            # Verify data matches input (enhanced fields)
+            for field in ["name", "email", "phone", "position", "about_yourself", "qualifications", "empathic_abilities", "number_of_children", "why_work_here", "language"]:
                 if response_data[field] != test_data[field]:
                     print(f"❌ FAIL: Field {field} mismatch. Expected: {test_data[field]}, Got: {response_data[field]}")
                     return False, None
