@@ -123,6 +123,7 @@ function App() {
     setJobFormError('');
     
     if (!jobFormData.name || !jobFormData.email || !jobFormData.phone || 
+        !jobFormData.marital_status || !jobFormData.foreign_languages ||
         !jobFormData.about_yourself || !jobFormData.qualifications || 
         !jobFormData.empathic_abilities || !jobFormData.number_of_children || 
         !jobFormData.why_work_here) {
