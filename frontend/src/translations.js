@@ -268,13 +268,18 @@ export const translations = {
       },
       z2b: {
         title: 'Care Plus',
-        desc: 'Extended care services for special needs.',
+        desc: 'When special life circumstances require more intensive or specialized care, we are here for you with our extended range of services – around the clock and with the highest professional competence.',
+        fullText: 'Some care situations require more than standard care: with complex illnesses, in advanced disease stages, or with special needs such as dementia, specialized knowledge, particular experience, and sometimes intensive care throughout the day are needed.\n\nOur Care Plus is aimed at people who require particularly comprehensive or specialized care due to their health situation. Our nursing professionals have additional qualifications in various areas – from intensive care to dementia care to palliative care.\n\nWe know that an intensive care situation challenges not only those affected but the entire family. That is why we also see ourselves as relief and support for family caregivers. With our 24-hour service, we ensure that someone is always there – even at night and on weekends. This allows you as a relative to take a breath, knowing that your loved one is in the best hands.',
         services: [
-          'Intensive care',
-          'Specialized dementia care',
-          '24-hour care',
-          'Palliative care',
-          'Individual care concepts'
+          'Out-of-hospital intensive care with specially trained personnel',
+          'Specialized dementia care using validating concepts',
+          '24-hour care and comprehensive support',
+          'Palliative care for a dignified life until the end',
+          'Care for neurological diseases (Parkinson\'s, MS, stroke)',
+          'Care of ventilated patients',
+          'Individual care concepts according to your specific needs',
+          'Family counseling and training',
+          'Coordination with specialists and therapists'
         ]
       },
       z3: {
