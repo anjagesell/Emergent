@@ -333,13 +333,18 @@ export const translations = {
       },
       z6: {
         title: 'Facility Services',
-        desc: 'Reliable facility services for your home.',
+        desc: 'Small and larger handyman tasks can become insurmountable hurdles with age or limitations – our facility services provide quick and reliable solutions.',
+        fullText: 'It is often the small things that can become big problems in everyday life: A defective light bulb remains dark because the ladder seems too unsafe. A dripping faucet is annoying, but reaching for tools is difficult. Pictures or shelves need to be hung, but strength or the right tools are lacking.\n\nOur facility service takes care of exactly these everyday challenges. Our craftsmen-trained employees come to your home and complete the tasks quickly, cleanly, and reliably. They not only bring the necessary tools but also patience and understanding for your situation.\n\nFrom simple light bulbs through furniture assembly to minor repairs – we help you ensure that your home remains functional and safe. Even for larger concerns that require specialist craftsmen, we gladly support you with organization and coordination. This way you can continue to live independently and comfortably in your own home without worrying about handyman challenges.',
         services: [
-          'Minor repairs',
-          'Light bulb replacement',
-          'Furniture assembly',
-          'Technical maintenance',
-          'Handyman support'
+          'Minor household repairs (dripping faucets, squeaking doors, etc.)',
+          'Light bulb and lamp replacement',
+          'Furniture assembly and construction',
+          'Hanging pictures, shelves, and curtains',
+          'Battery replacement in smoke detectors and clocks',
+          'Technical maintenance and function checks',
+          'Support with electrical appliances and their operation',
+          'Coordination of specialist craftsmen for larger work',
+          'Seasonal tasks (e.g., bleeding radiators, changing filters)'
         ]
       },
       z7: {
