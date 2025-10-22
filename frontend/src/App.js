@@ -663,8 +663,28 @@ function App() {
                           {language === 'de' ? 'Keine Bewerbungen vorhanden' : 'No applications available'}
                         </p>
                       ) : (
-                        <div className="requests-list">
-                          {jobApplications.map((application) => (
+                        <div className="spreadsheet-container">
+                          <table className="spreadsheet-table">
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>{language === 'de' ? 'Zeitstempel' : 'Timestamp'}</th>
+                                <th>{language === 'de' ? 'Name' : 'Name'}</th>
+                                <th>Email</th>
+                                <th>{language === 'de' ? 'Telefon' : 'Phone'}</th>
+                                <th>{language === 'de' ? 'Position' : 'Position'}</th>
+                                <th>{language === 'de' ? 'Familienstand' : 'Marital Status'}</th>
+                                <th>{language === 'de' ? 'Kinder' : 'Children'}</th>
+                                <th>{language === 'de' ? 'Fremdsprachen' : 'Languages'}</th>
+                                <th>{language === 'de' ? 'Führerschein' : 'License'}</th>
+                                <th>{language === 'de' ? 'Beschäftigungsart' : 'Employment'}</th>
+                                <th>{language === 'de' ? 'Schicht' : 'Shift'}</th>
+                                <th>{language === 'de' ? 'Arbeitstage' : 'Work Days'}</th>
+                                <th>{language === 'de' ? 'Foto' : 'Photo'}</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {[...jobApplications].sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp)).map((application, index) => (
                             <div key={application.id} className="request-card" data-testid="application-card">
                               <div className="request-header">
                                 <h4 className="request-name">{application.name}</h4>
