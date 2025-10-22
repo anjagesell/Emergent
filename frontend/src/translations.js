@@ -104,13 +104,19 @@ export const translations = {
       },
       z5: {
         title: 'Beratung und Assessment',
-        desc: 'Umfassende Beratung und Bedarfsermittlung für Ihre individuelle Situation.',
+        desc: 'Der Einstieg in die Pflege wirft viele Fragen auf. Wir beraten Sie kompetent, neutral und einfühlsam zu allen Aspekten der Pflege – von Leistungsansprüchen über Finanzierung bis zur optimalen Versorgungsplanung.',
+        fullText: 'Eine Pflegesituation entsteht oft plötzlich und unerwartet – nach einem Krankenhausaufenthalt, einem Unfall oder durch fortschreitende Erkrankungen. Betroffene und Angehörige stehen dann vor einem Dschungel aus Fragen: Welcher Pflegegrad steht mir zu? Welche Leistungen kann ich in Anspruch nehmen? Wie beantrage ich was? Welche Form der Versorgung ist die richtige für mich?\n\nUnsere zertifizierten Pflegeberater/innen stehen Ihnen in dieser oft überwältigenden Situation zur Seite. In einem ausführlichen Gespräch ermitteln wir gemeinsam Ihren individuellen Bedarf, erklären Ihnen alle Möglichkeiten und unterstützen Sie bei allen notwendigen Schritten. Dabei arbeiten wir unabhängig und ausschließlich in Ihrem Interesse.\n\nBesonders wichtig ist uns, dass Sie nicht nur Informationen erhalten, sondern diese auch wirklich verstehen und für sich nutzen können. Wir nehmen uns Zeit, beantworten alle Ihre Fragen und begleiten Sie auch nach dem ersten Beratungsgespräch weiter – sei es bei der Antragstellung, bei der Vorbereitung auf die MDK-Begutachtung oder bei der Anpassung der Versorgung, wenn sich Ihr Bedarf ändert.',
         services: [
-          'Pflegeberatung nach § 37.3 SGB XI',
-          'Bedarfsermittlung und Assessment',
-          'Hilfe bei Antragsstellung',
-          'Individuelle Pflegeplanung',
-          'Angehörigenberatung'
+          'Pflegeberatung nach § 37 Abs. 3 SGB XI (Beratungsbesuche)',
+          'Umfassendes Assessment zur Ermittlung Ihres Pflegebedarfs',
+          'Beratung zu Pflegegraden und Leistungsansprüchen',
+          'Unterstützung bei der Antragstellung (Pflegegrad, Hilfsmittel, etc.)',
+          'Vorbereitung auf die Begutachtung durch den Medizinischen Dienst',
+          'Individuelle Pflegeplanung und Koordination der Versorgung',
+          'Angehörigenberatung und -schulung',
+          'Beratung zu Finanzierungsmöglichkeiten und Zuschüssen',
+          'Vermittlung weiterer Unterstützungsangebote',
+          'Nachbetreuung und Anpassung der Versorgung bei Veränderungen'
         ]
       },
       z6: {
