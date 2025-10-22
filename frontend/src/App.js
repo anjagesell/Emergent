@@ -101,7 +101,7 @@ function App() {
   const handleInternLogin = (e) => {
     e.preventDefault();
     // Simple password check - in production, use backend authentication
-    if (internPassword === 'OCTA2025') {
+    if (internPassword === 'Morpheus') {
       setIsInternAuthenticated(true);
       setInternError('');
       loadRequests();
