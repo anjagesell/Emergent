@@ -253,13 +253,17 @@ export const translations = {
       },
       z2a: {
         title: 'Professional Care',
-        desc: 'Professional nursing care by qualified personnel.',
+        desc: 'Professional nursing care at the highest professional level – provided by certified nursing professionals who master their craft and practice it with warmth.',
+        fullText: 'When care needs arise, those affected and their relatives face many questions: What happens next? Who can help? Can I stay in my home? Our answer is clear: with professional nursing support, a dignified life in your own home is possible.\n\nOur team consists of state-certified geriatric nurses and health and nursing professionals who work according to current nursing standards and continuously pursue further education. They possess sound medical knowledge while bringing the human warmth that is so important in care.\n\nWe understand care as a holistic concept: in addition to medical-nursing care, we take time for conversations, pay attention to your needs, and – if desired – actively involve your relatives. Together with you, your relatives, and the treating physicians, we develop an individual care concept that is oriented to your personal situation and can be flexibly adapted.',
         services: [
-          'Basic and treatment care',
-          'Medication administration',
-          'Wound care',
-          'Vital signs monitoring',
-          'Documentation according to standards'
+          'Basic care: personal hygiene, dressing and undressing, mobilization',
+          'Treatment care according to medical prescription',
+          'Professional medication administration and medication monitoring',
+          'Professional wound care according to modern standards',
+          'Regular vital sign monitoring and health observation',
+          'Injections and infusions',
+          'Catheter care and stoma care',
+          'Complete nursing documentation and communication with physicians'
         ]
       },
       z2b: {
