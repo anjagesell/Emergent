@@ -42,7 +42,7 @@ function App() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setFormError('');
     
@@ -51,21 +51,45 @@ function App() {
       return;
     }
     
-    // Here you would normally send the data to a backend
-    console.log('Form submitted:', formData);
-    setFormSubmitted(true);
-    
-    // Reset form after 5 seconds
-    setTimeout(() => {
-      setFormSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: '',
-        services: []
+    try {
+      const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+      const response = await fetch(`${BACKEND_URL}/api/availability-request`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          language: language
+        })
       });
-    }, 5000);
+      
+      if (!response.ok) {
+        throw new Error('Failed to submit request');
+      }
+      
+      const result = await response.json();
+      console.log('Form submitted successfully:', result);
+      setFormSubmitted(true);
+      
+      // Reset form after 5 seconds
+      setTimeout(() => {
+        setFormSubmitted(false);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: '',
+          services: []
+        });
+      }, 5000);
+      
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setFormError(language === 'de' 
+        ? 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.'
+        : 'An error occurred. Please try again later.');
+    }
   };
 
   return (
