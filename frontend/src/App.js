@@ -302,7 +302,8 @@ function App() {
               title={isReading ? 'Vorlesen stoppen' : 'Vorlesen starten'}
               data-testid="tts-de"
             >
-              {isReading ? '🔊' : '🔇'} {isReading ? 'Stopp' : 'Vorlesen'}
+              <span className="tts-icon">{isReading ? '⏸' : '▶'}</span>
+              <span className="tts-text">{isReading ? 'Stopp' : 'Vorlesen'}</span>
             </button>
           )}
         </div>
