@@ -56,13 +56,18 @@ export const translations = {
       },
       z2b: {
         title: 'Pflege Plus',
-        desc: 'Erweiterte Pflegeleistungen für besondere Bedürfnisse.',
+        desc: 'Wenn besondere Lebensumstände eine intensivere oder spezialisierte Pflege erfordern, sind wir mit unserem erweiterten Leistungsspektrum für Sie da – rund um die Uhr und mit höchster Fachkompetenz.',
+        fullText: 'Manche Pflegesituationen erfordern mehr als die Standardversorgung: Bei komplexen Erkrankungen, im fortgeschrittenen Krankheitsstadium oder bei besonderen Bedürfnissen wie Demenz braucht es spezialisiertes Wissen, besondere Erfahrung und manchmal auch eine intensive Betreuung über den ganzen Tag.\n\nUnsere Pflege Plus richtet sich an Menschen, die aufgrund ihrer gesundheitlichen Situation eine besonders umfassende oder spezialisierte Versorgung benötigen. Unsere Pflegefachkräfte verfügen über Zusatzqualifikationen in verschiedenen Bereichen – von der Intensivpflege über die Demenzbetreuung bis hin zur Palliativversorgung.\n\nWir wissen, dass eine intensive Pflegesituation nicht nur den Betroffenen, sondern die ganze Familie fordert. Deshalb verstehen wir uns auch als Entlastung und Stütze für pflegende Angehörige. Mit unserem 24-Stunden-Service sorgen wir dafür, dass immer jemand da ist – auch nachts und an Wochenenden. So können Sie als Angehöriger auch einmal durchatmen, während Sie wissen, dass Ihr Liebster in besten Händen ist.',
         services: [
-          'Intensivpflege',
-          'Spezialisierte Demenzbetreuung',
-          '24-Stunden-Betreuung',
-          'Palliativpflege',
-          'Individuelle Pflegekonzepte'
+          'Außerklinische Intensivpflege mit speziell geschultem Personal',
+          'Spezialisierte Demenzbetreuung nach validierenden Konzepten',
+          '24-Stunden-Betreuung und Rundum-Versorgung',
+          'Palliativpflege für ein würdevolles Leben bis zuletzt',
+          'Pflege bei neurologischen Erkrankungen (Parkinson, MS, Schlaganfall)',
+          'Versorgung von beatmeten Patienten',
+          'Individuelle Pflegekonzepte nach Ihren spezifischen Bedürfnissen',
+          'Angehörigenberatung und -schulung',
+          'Koordination mit Fachärzten und Therapeuten'
         ]
       },
       z3: {
