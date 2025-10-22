@@ -40,6 +40,27 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+# Availability Request Model
+class AvailabilityRequest(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    name: str
+    email: EmailStr
+    phone: str
+    message: Optional[str] = ""
+    services: List[str]
+    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    language: str = "de"
+
+class AvailabilityRequestCreate(BaseModel):
+    name: str
+    email: EmailStr
+    phone: str
+    message: Optional[str] = ""
+    services: List[str]
+    language: str = "de"
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
