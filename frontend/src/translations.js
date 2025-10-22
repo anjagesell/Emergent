@@ -228,7 +228,7 @@ export const translations = {
     },
     availability: {
       title: 'Verfügbarkeits-Anfrage',
-      greeting: 'Sehr geehrte Damen und Herren,',
+      greeting: 'Liebes OCTA-Team,',
       intro: 'hiermit möchte ich eine Verfügbarkeitsanfrage für folgende Dienstleistungen stellen:',
       nameLabel: 'Vollständiger Name',
       namePlaceholder: 'Max Mustermann',
