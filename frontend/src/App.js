@@ -290,7 +290,6 @@ function App() {
         </div>
         
         <img src={LOGO_URL} alt="OCTA Logo" className="logo" />
-        <h1 className="company-name">OCTA</h1>
         <p className="company-slogan">
           {language === 'de' 
             ? 'Der individuelle Dienst für Sie als unverkennbar individuellen Menschen'
