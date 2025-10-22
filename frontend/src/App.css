@@ -474,11 +474,56 @@ body {
 /* Footer */
 .app-footer {
   background-color: #f8f9fa;
-  padding: 1.5rem 2rem;
+  padding: 2rem 2rem 1.5rem 2rem;
   text-align: center;
   border-top: 2px solid #001f3f;
   margin-top: auto;
   box-shadow: 0 -2px 4px rgba(0, 31, 63, 0.05);
+}
+
+/* Insurance Logos Section */
+.insurance-logos {
+  margin-bottom: 1.5rem;
+}
+
+.insurance-text {
+  font-size: 0.95rem;
+  color: #003366;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.logos-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+
+.insurance-logo {
+  height: 50px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+  filter: grayscale(20%);
+}
+
+.insurance-logo:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.footer-divider-line {
+  height: 1px;
+  background-color: #001f3f;
+  margin: 1.5rem auto;
+  max-width: 80%;
+  opacity: 0.3;
 }
 
 .footer-links {
@@ -514,6 +559,22 @@ body {
   font-size: 0.9rem;
   color: #003366;
   margin: 0;
+}
+
+/* Mobile Footer */
+@media (max-width: 768px) {
+  .logos-container {
+    gap: 1.5rem;
+  }
+  
+  .insurance-logo {
+    height: 40px;
+    max-width: 120px;
+  }
+  
+  .insurance-text {
+    font-size: 0.85rem;
+  }
 }
 
 /* Legal Content (Impressum & Datenschutz) */
