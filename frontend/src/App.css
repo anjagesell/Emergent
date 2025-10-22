@@ -30,6 +30,39 @@ body {
   justify-content: center;
   border-bottom: 2px solid #001f3f;
   box-shadow: 0 2px 4px rgba(0, 31, 63, 0.1);
+  position: relative;
+}
+
+/* Language Switcher */
+.language-switcher {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.flag-button {
+  background: none;
+  border: 2px solid transparent;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  line-height: 1;
+}
+
+.flag-button:hover {
+  transform: scale(1.1);
+  border-color: #001f3f;
+}
+
+.flag-button.active {
+  border-color: #001f3f;
+  background-color: #e3f2fd;
+  box-shadow: 0 2px 8px rgba(0, 31, 63, 0.2);
 }
 
 .logo {
