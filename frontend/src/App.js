@@ -140,6 +140,13 @@ function App() {
             utterance.volume = 0.9; // Slightly softer
           } else {
             // German voice settings
+            const germanVoice = voices.find(voice => voice.lang.includes('de'));
+            if (germanVoice) {
+              utterance.voice = germanVoice;
+              console.log('🔊 GERMAN Voice Selected:', germanVoice.name, '| Lang:', germanVoice.lang);
+            } else {
+              console.log('⚠️ No German voice found, using default');
+            }
             utterance.rate = 0.9;
             utterance.pitch = 1.0;
           }
