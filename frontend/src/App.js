@@ -1022,6 +1022,37 @@ function App() {
                         </div>
                       </div>
                       
+                      <div className="form-row">
+                        <div className="form-group">
+                          <label className="form-label">
+                            {language === 'de' ? 'Familienstand' : 'Marital Status'} <span className="required">*</span>
+                          </label>
+                          <select 
+                            className="form-input"
+                            value={jobFormData.marital_status}
+                            onChange={(e) => setJobFormData({...jobFormData, marital_status: e.target.value})}
+                            required
+                          >
+                            <option value="">{language === 'de' ? 'Bitte wählen...' : 'Please select...'}</option>
+                            <option value="married">{language === 'de' ? 'Verheiratet' : 'Married'}</option>
+                            <option value="unmarried">{language === 'de' ? 'Unverheiratet' : 'Unmarried'}</option>
+                          </select>
+                        </div>
+                        <div className="form-group">
+                          <label className="form-label">
+                            {language === 'de' ? 'Fremdsprachen (außer Deutsch)' : 'Foreign Languages (besides German)'} <span className="required">*</span>
+                          </label>
+                          <input 
+                            type="text" 
+                            className="form-input" 
+                            placeholder={language === 'de' ? 'z.B. Englisch, Französisch, Spanisch...' : 'e.g. English, French, Spanish...'}
+                            value={jobFormData.foreign_languages}
+                            onChange={(e) => setJobFormData({...jobFormData, foreign_languages: e.target.value})}
+                            required 
+                          />
+                        </div>
+                      </div>
+                      
                       <div className="form-group">
                         <label className="form-label">
                           {language === 'de' ? 'Erzählen Sie uns über sich' : 'Tell us about yourself'} <span className="required">*</span>
