@@ -291,7 +291,7 @@ function App() {
         <h1 className="company-name">OCTA</h1>
         <p className="company-slogan">
           {language === 'de' 
-            ? 'Der individuelle Dienst für Sie als unverkennbar individueller Mensch'
+            ? 'Der individuelle Dienst für Sie als unverkennbar individuellen Menschen'
             : 'The individual service for you as an unmistakably individual person'}
         </p>
       </header>
