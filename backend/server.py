@@ -86,6 +86,8 @@ class JobApplication(BaseModel):
     photo: Optional[str] = None  # Base64 encoded photo
     timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     language: str = "de"
+    status_processed: bool = False
+    notes: Optional[str] = ""
 
 class JobApplicationCreate(BaseModel):
     name: str
