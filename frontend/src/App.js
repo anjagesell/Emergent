@@ -824,78 +824,96 @@ function App() {
                   <h3 className="form-section-title">
                     {language === 'de' ? 'Interesse geweckt? Kontaktieren Sie uns!' : 'Interested? Contact us!'}
                   </h3>
-                  <form className="job-application-form" onSubmit={(e) => {
-                    e.preventDefault();
-                    alert(language === 'de' 
-                      ? 'Vielen Dank für Ihr Interesse! Wir melden uns in Kürze bei Ihnen.' 
-                      : 'Thank you for your interest! We will contact you shortly.');
-                  }}>
-                    <div className="form-row">
+                  
+                  {jobFormSubmitted ? (
+                    <div className="success-message">
+                      <p>{language === 'de' 
+                        ? 'Vielen Dank! Ihre Bewerbung wird in Kürze geprüft.' 
+                        : 'Thank you! Your application will be reviewed shortly.'}</p>
+                    </div>
+                  ) : (
+                    <form className="job-application-form" onSubmit={handleJobApplicationSubmit}>
+                      {jobFormError && <div className="error-message">{jobFormError}</div>}
+                      
+                      <div className="form-row">
+                        <div className="form-group">
+                          <label className="form-label">
+                            {language === 'de' ? 'Vor- und Nachname' : 'Full Name'} <span className="required">*</span>
+                          </label>
+                          <input 
+                            type="text" 
+                            className="form-input" 
+                            placeholder={language === 'de' ? 'Max Mustermann' : 'John Doe'}
+                            value={jobFormData.name}
+                            onChange={(e) => setJobFormData({...jobFormData, name: e.target.value})}
+                            required 
+                          />
+                        </div>
+                        <div className="form-group">
+                          <label className="form-label">
+                            {language === 'de' ? 'E-Mail-Adresse' : 'Email Address'} <span className="required">*</span>
+                          </label>
+                          <input 
+                            type="email" 
+                            className="form-input" 
+                            placeholder={language === 'de' ? 'ihre.email@beispiel.de' : 'your.email@example.com'}
+                            value={jobFormData.email}
+                            onChange={(e) => setJobFormData({...jobFormData, email: e.target.value})}
+                            required 
+                          />
+                        </div>
+                      </div>
+                      <div className="form-row">
+                        <div className="form-group">
+                          <label className="form-label">
+                            {language === 'de' ? 'Telefonnummer' : 'Phone Number'} <span className="required">*</span>
+                          </label>
+                          <input 
+                            type="tel" 
+                            className="form-input" 
+                            placeholder="+49 123 456789"
+                            value={jobFormData.phone}
+                            onChange={(e) => setJobFormData({...jobFormData, phone: e.target.value})}
+                            required 
+                          />
+                        </div>
+                        <div className="form-group">
+                          <label className="form-label">
+                            {language === 'de' ? 'Position/Bereich' : 'Position/Area'}
+                          </label>
+                          <select 
+                            className="form-input"
+                            value={jobFormData.position}
+                            onChange={(e) => setJobFormData({...jobFormData, position: e.target.value})}
+                          >
+                            <option value="">{language === 'de' ? 'Bitte wählen...' : 'Please select...'}</option>
+                            <option value="pflege">{language === 'de' ? 'Pflegefachkraft' : 'Nursing Professional'}</option>
+                            <option value="betreuung">{language === 'de' ? 'Betreuungskraft' : 'Care Assistant'}</option>
+                            <option value="hauswirtschaft">{language === 'de' ? 'Hauswirtschaft' : 'Household Staff'}</option>
+                            <option value="ehrenamt">{language === 'de' ? 'Ehrenamtliche Tätigkeit' : 'Volunteer Work'}</option>
+                            <option value="sonstiges">{language === 'de' ? 'Sonstiges' : 'Other'}</option>
+                          </select>
+                        </div>
+                      </div>
                       <div className="form-group">
                         <label className="form-label">
-                          {language === 'de' ? 'Vor- und Nachname' : 'Full Name'} <span className="required">*</span>
+                          {language === 'de' ? 'Ihre Nachricht' : 'Your Message'}
                         </label>
-                        <input 
-                          type="text" 
-                          className="form-input" 
-                          placeholder={language === 'de' ? 'Max Mustermann' : 'John Doe'}
-                          required 
+                        <textarea 
+                          className="form-textarea" 
+                          rows="5"
+                          placeholder={language === 'de' 
+                            ? 'Erzählen Sie uns etwas über sich und Ihre Motivation...' 
+                            : 'Tell us about yourself and your motivation...'}
+                          value={jobFormData.message}
+                          onChange={(e) => setJobFormData({...jobFormData, message: e.target.value})}
                         />
                       </div>
-                      <div className="form-group">
-                        <label className="form-label">
-                          {language === 'de' ? 'E-Mail-Adresse' : 'Email Address'} <span className="required">*</span>
-                        </label>
-                        <input 
-                          type="email" 
-                          className="form-input" 
-                          placeholder={language === 'de' ? 'ihre.email@beispiel.de' : 'your.email@example.com'}
-                          required 
-                        />
-                      </div>
-                    </div>
-                    <div className="form-row">
-                      <div className="form-group">
-                        <label className="form-label">
-                          {language === 'de' ? 'Telefonnummer' : 'Phone Number'} <span className="required">*</span>
-                        </label>
-                        <input 
-                          type="tel" 
-                          className="form-input" 
-                          placeholder="+49 123 456789"
-                          required 
-                        />
-                      </div>
-                      <div className="form-group">
-                        <label className="form-label">
-                          {language === 'de' ? 'Position/Bereich' : 'Position/Area'}
-                        </label>
-                        <select className="form-input">
-                          <option value="">{language === 'de' ? 'Bitte wählen...' : 'Please select...'}</option>
-                          <option value="pflege">{language === 'de' ? 'Pflegefachkraft' : 'Nursing Professional'}</option>
-                          <option value="betreuung">{language === 'de' ? 'Betreuungskraft' : 'Care Assistant'}</option>
-                          <option value="hauswirtschaft">{language === 'de' ? 'Hauswirtschaft' : 'Household Staff'}</option>
-                          <option value="ehrenamt">{language === 'de' ? 'Ehrenamtliche Tätigkeit' : 'Volunteer Work'}</option>
-                          <option value="sonstiges">{language === 'de' ? 'Sonstiges' : 'Other'}</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div className="form-group">
-                      <label className="form-label">
-                        {language === 'de' ? 'Ihre Nachricht' : 'Your Message'}
-                      </label>
-                      <textarea 
-                        className="form-textarea" 
-                        rows="5"
-                        placeholder={language === 'de' 
-                          ? 'Erzählen Sie uns etwas über sich und Ihre Motivation...' 
-                          : 'Tell us about yourself and your motivation...'}
-                      />
-                    </div>
-                    <button type="submit" className="submit-button">
-                      {language === 'de' ? 'Interesse bekunden' : 'Express Interest'}
-                    </button>
-                  </form>
+                      <button type="submit" className="submit-button">
+                        {language === 'de' ? 'Interesse bekunden' : 'Express Interest'}
+                      </button>
+                    </form>
+                  )}
                 </div>
               )}
 
