@@ -70,6 +70,8 @@ class JobApplication(BaseModel):
     email: EmailStr
     phone: str
     position: str
+    marital_status: str
+    foreign_languages: str
     about_yourself: str
     qualifications: str
     empathic_abilities: str
@@ -83,6 +85,8 @@ class JobApplicationCreate(BaseModel):
     email: EmailStr
     phone: str
     position: str
+    marital_status: str
+    foreign_languages: str
     about_yourself: str
     qualifications: str
     empathic_abilities: str
