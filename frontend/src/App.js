@@ -30,6 +30,12 @@ function App() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formError, setFormError] = useState('');
   
+  // Intern section state
+  const [isInternAuthenticated, setIsInternAuthenticated] = useState(false);
+  const [internPassword, setInternPassword] = useState('');
+  const [internError, setInternError] = useState('');
+  const [requests, setRequests] = useState([]);
+  
   const t = translations[language];
   const categoryKeys = ['z1', 'z2a', 'z2b', 'z3', 'z4', 'z5', 'z6', 'z7', 'z8'];
 
