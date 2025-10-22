@@ -140,17 +140,18 @@ export const translations = {
       z7: {
         title: 'Betreutes Wohnen',
         desc: 'Koordinierte Betreuung in Ihren eigenen vier Wänden oder in der OCTA Community – professionelle Unterstützung genau dort, wo Sie sich zu Hause fühlen.',
-        fullText: 'Betreutes Wohnen bei OCTA bedeutet flexible, auf Ihre Bedürfnisse zugeschnittene Betreuung. Wir koordinieren eine qualifizierte Betreuungskraft, die Sie in Ihrem gewohnten Zuhause unterstützt. Je nach Bedarf kann diese Kraft mit in Ihren eigenen Wohnräumen wohnen oder als Ganztagsbetreuung 8 Stunden vor Ort sein – Sie entscheiden, welche Form der Unterstützung für Sie am besten passt.\n\nDarüber hinaus bietet OCTA eine besondere Alternative zum klassischen Pflegeheim: Leben Sie als Mieter mit Benefits in unserer OCTA Community! Auf unserem Eigenland haben wir speziell für Senioren ausgestattete Tiny Houses errichtet – ebenerdig konstruiert, barrierefrei und mit allem Komfort, den Sie benötigen. Diese moderne Wohnform kombiniert Selbstständigkeit mit der Sicherheit einer professionellen Betreuungsinfrastruktur direkt vor Ort.\n\nIn der OCTA Community zu wohnen bietet extrem viele Vorteile: Sie sind Teil einer Gemeinschaft, haben Ihre eigenen vier Wände, profitieren von kurzen Wegen zu Betreuungsleistungen und müssen nicht den schweren Schritt ins Pflegeheim gehen. Die Tiny Houses auf unserem Gelände sind speziell auf die Bedürfnisse von Senioren abgestimmt – modern, sicher und mit einer herzlichen Nachbarschaft, die füreinander da ist.',
+        fullText: 'Betreutes Wohnen bei OCTA bedeutet flexible, auf Ihre Bedürfnisse zugeschnittene Betreuung. Wir koordinieren eine qualifizierte Betreuungskraft, die Sie in Ihrem gewohnten Zuhause unterstützt. Je nach Bedarf kann diese Kraft mit in Ihren eigenen Wohnräumen wohnen oder als Ganztagsbetreuung 8 Stunden vor Ort sein – Sie entscheiden, welche Form der Unterstützung für Sie am besten passt.\n\nDarüber hinaus bietet OCTA eine besondere Alternative zum klassischen Pflegeheim: Leben Sie als Mieter mit Benefits in unserer OCTA Community! Auf unserem Eigenland, eingebettet in einer herrlichen Umgebung der Natur mit wunderschönem Baumbestand, haben wir speziell für Senioren ausgestattete Tiny Houses errichtet – ebenerdig konstruiert, barrierefrei und mit integrierter moderner Technik. Diese moderne Wohnform kombiniert Selbstständigkeit mit der Sicherheit einer professionellen Betreuungsinfrastruktur direkt vor Ort.\n\nIn der OCTA Community zu wohnen bietet extrem viele Vorteile: Sie sind Teil einer Gemeinschaft, haben Ihre eigenen vier Wände und genießen täglich frische Mahlzeiten in Ihrem eigenen gemieteten Wohnraum mit Betreuung. Für Ihre Mobilität auf dem weitläufigen Gelände stehen Ihnen zugeteilte Golfwagen zur Verfügung, während Sie auf schönen Natur-Gehwegen die Umgebung erkunden können. Hier lässt es sich als Einzel-Senior wirklich gut gehen! Durch unsere Zusammenarbeit mit Dienstleistern aus verschiedenen Bereichen wird Ihr Lebensabend zu einem wahren Stück Paradies – modern, sicher und mit einer herzlichen Nachbarschaft, die füreinander da ist.',
         services: [
           'Koordination qualifizierter Betreuungskräfte für Ihr Zuhause',
           'Flexible Betreuungsmodelle: Wohnen mit Betreuungskraft oder 8-Stunden-Ganztagsbetreuung',
-          'OCTA Community Tiny Houses auf Eigenland',
-          'Seniorengerechte, ebenerdige Tiny Houses',
+          'OCTA Community Tiny Houses eingebettet in herrlicher Naturumgebung mit Baumbestand',
+          'Seniorengerechte, ebenerdige Tiny Houses mit integrierter moderner Technik',
+          'Natur-Gehwege und zugeteilte Golfwagen für Mobilität auf dem Gelände',
+          'Täglich frische Mahlzeiten im eigenen gemieteten Wohnraum mit Betreuung',
           'Barrierefreie Ausstattung und moderne Wohnqualität',
           'Alternative zum Pflegeheim – Leben als Mieter mit Benefits',
-          'Gemeinschaft und soziale Kontakte in der OCTA Community',
-          'Kurze Wege zu professionellen Betreuungsleistungen',
-          'Selbstständiges Wohnen mit Sicherheit und Unterstützung vor Ort'
+          'Zusammenarbeit mit Dienstleistern aus verschiedenen Bereichen',
+          'Ideal für Einzel-Senioren – Ihr Lebensabend als Stück Paradies'
         ]
       },
       z8: {
