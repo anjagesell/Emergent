@@ -56,19 +56,19 @@ export const translations = {
         ]
       },
       z2b: {
-        title: 'Pflege Plus',
-        desc: 'Wenn besondere Lebensumstände eine intensivere oder spezialisierte Pflege erfordern, sind wir mit unserem erweiterten Leistungsspektrum für Sie da – rund um die Uhr und mit höchster Fachkompetenz.',
-        fullText: 'Manche Pflegesituationen erfordern mehr als die Standardversorgung: Bei komplexen Erkrankungen, im fortgeschrittenen Krankheitsstadium oder bei besonderen Bedürfnissen wie Demenz braucht es spezialisiertes Wissen, besondere Erfahrung und manchmal auch eine intensive Betreuung über den ganzen Tag.\n\nUnsere Pflege Plus richtet sich an Menschen, die aufgrund ihrer gesundheitlichen Situation eine besonders umfassende oder spezialisierte Versorgung benötigen. Unsere Pflegefachkräfte verfügen über Zusatzqualifikationen in verschiedenen Bereichen – von der Intensivpflege über die Demenzbetreuung bis hin zur Palliativversorgung.\n\nWir wissen, dass eine intensive Pflegesituation nicht nur den Betroffenen, sondern die ganze Familie fordert. Deshalb verstehen wir uns auch als Entlastung und Stütze für pflegende Angehörige. Mit unserem 24-Stunden-Service sorgen wir dafür, dass immer jemand da ist – auch nachts und an Wochenenden. So können Sie als Angehöriger auch einmal durchatmen, während Sie wissen, dass Ihr Liebster in besten Händen ist.',
+        title: 'PflegePlus',
+        desc: 'Wohlbefinden und Lebensqualität gehen über die reine Pflege hinaus. Mit PflegePlus vermitteln wir Ihnen qualifizierte private Dienstleister, die direkt zu Ihnen nach Hause kommen – für Ihre persönliche Pflege, Ihr Wohlbefinden und Ihre Gesundheit.',
+        fullText: 'Ein gepflegtes Äußeres, professionelle Behandlungen und das Gefühl, gut umsorgt zu sein, tragen wesentlich zum Wohlbefinden bei. Doch bei eingeschränkter Mobilität wird der Gang zum Friseur, zur Kosmetikerin oder zur Fußpflege oft zur unüberwindbaren Hürde. Genau hier setzt unser PflegePlus-Konzept an.\n\nWir haben ein Netzwerk vertrauenswürdiger, qualifizierter Dienstleister aufgebaut, die ambulant arbeiten und ihre Leistungen direkt bei Ihnen zu Hause erbringen. Alle unsere Kooperationspartner sind geprüft, erfahren im Umgang mit pflegebedürftigen Menschen und arbeiten mit höchster Professionalität. So können Sie auch bei eingeschränkter Mobilität weiterhin gepflegt aussehen, sich etwas Gutes tun und Ihre Gesundheit ganzheitlich fördern.\n\nDas Besondere: Sie müssen sich um nichts kümmern. Wir koordinieren die Termine, stellen den Kontakt her und sorgen dafür, dass alles reibungslos abläuft. Die Dienstleister kommen mit allem notwendigen Equipment zu Ihnen nach Hause und erbringen ihre Leistungen in gewohnter Umgebung – diskret, professionell und auf Ihre Bedürfnisse abgestimmt.',
         services: [
-          'Außerklinische Intensivpflege mit speziell geschultem Personal',
-          'Spezialisierte Demenzbetreuung nach validierenden Konzepten',
-          '24-Stunden-Betreuung und Rundum-Versorgung',
-          'Palliativpflege für ein würdevolles Leben bis zuletzt',
-          'Pflege bei neurologischen Erkrankungen (Parkinson, MS, Schlaganfall)',
-          'Versorgung von beatmeten Patienten',
-          'Individuelle Pflegekonzepte nach Ihren spezifischen Bedürfnissen',
-          'Angehörigenberatung und -schulung',
-          'Koordination mit Fachärzten und Therapeuten'
+          'Mobile Friseurdienstleistungen – Waschen, Schneiden, Färben im eigenen Zuhause',
+          'Professionelle Kosmetikbehandlungen für Gesichtspflege und Wohlbefinden',
+          'Medizinische Fußpflege (Podologie) bei Diabetes, Nagelproblemen oder Hornhaut',
+          'Maniküre und Pediküre für gepflegte Hände und Füße',
+          'Ganzheitliche Heilpraktiker-Behandlungen (Akupunktur, Naturheilkunde, etc.)',
+          'Mobile Massage-Therapie zur Entspannung und Schmerzlinderung',
+          'Physiotherapeutische Hausbesuche nach ärztlicher Verordnung',
+          'Ergotherapie im häuslichen Umfeld',
+          'Vermittlung weiterer Gesundheitsdienstleister nach Bedarf'
         ]
       },
       z3: {
