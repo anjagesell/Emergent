@@ -365,13 +365,19 @@ export const translations = {
       },
       z8: {
         title: 'Wellness Station',
-        desc: 'Wellness and well-being for body and soul.',
+        desc: 'Quality of life means more than care – in our Wellness Station, your personal well-being is the focus. Here you recharge, relax, and activate body and mind.',
+        fullText: 'Care does not only mean medical care and support with daily activities – it also includes promoting joy in life, well-being, and quality of life. Our Wellness Station is a special place where you can find peace, gather new energy, and pursue activities that bring you joy.\n\nIn a pleasant atmosphere, we offer you a diverse program that addresses body, mind, and soul equally. Whether you want to relax with gentle wellness applications, express your creativity through creative activities, or make new contacts in social gatherings – you will find the space for it here.\n\nWe have developed special offerings particularly for people with dementia or cognitive impairments, based on scientifically founded concepts. Through targeted sensory stimulation, biography-oriented activities, and validating interaction, we create moments of joy and recognition. Relatives also appreciate our Wellness Station: they know their loved ones are well cared for and can take a breath themselves while they spend enriching time in a beautiful place.',
         services: [
-          'Relaxation offerings',
-          'Activating care',
-          'Wellness treatments',
-          'Memory training',
-          'Cultural activities'
+          'Relaxation offerings: massage, hand and foot care, aromatherapy',
+          'Activating care to maintain and promote abilities',
+          'Gentle wellness treatments for body and soul',
+          'Memory training and cognitive activation',
+          'Creative offerings: painting, crafting, needlework',
+          'Music therapy and singing together',
+          'Cultural activities: readings, films, excursions',
+          'Exercise offerings: seated gymnastics, walks, dancing',
+          'Social gatherings and community experiences',
+          'Biography work and memory care'
         ]
       }
     },
