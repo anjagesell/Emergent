@@ -90,6 +90,162 @@ async def get_status_checks():
     
     return status_checks
 
+# Helper function to send email
+async def send_availability_email(request_data: AvailabilityRequest):
+    """Send availability request email"""
+    smtp_server = os.environ.get('SMTP_SERVER')
+    smtp_port = int(os.environ.get('SMTP_PORT', 587))
+    smtp_username = os.environ.get('SMTP_USERNAME')
+    smtp_password = os.environ.get('SMTP_PASSWORD')
+    smtp_from = os.environ.get('SMTP_FROM_EMAIL')
+    recipient = os.environ.get('RECIPIENT_EMAIL', 'Alltagshilfe007@web.de')
+    
+    # Check if SMTP is configured
+    if not all([smtp_server, smtp_username, smtp_password, smtp_from]):
+        logger.warning("SMTP not configured. Email not sent, but request saved to database.")
+        return False
+    
+    try:
+        # Service names mapping
+        service_names_de = {
+            'z1': 'Z1: Hauswirtschaftliche Hilfe',
+            'z2a': 'Z2a: Pflegefach',
+            'z2b': 'Z2b: Pflege Plus',
+            'z3': 'Z3: Betreuungshilfe',
+            'z4': 'Z4: Garten Dienste',
+            'z5': 'Z5: Beratung und Assessment',
+            'z6': 'Z6: Hausmeisterdienste',
+            'z7': 'Z7: Betreutes Wohnen',
+            'z8': 'Z8: Wohlfühlstation'
+        }
+        
+        service_names_en = {
+            'z1': 'Z1: Household Assistance',
+            'z2a': 'Z2a: Professional Care',
+            'z2b': 'Z2b: Care Plus',
+            'z3': 'Z3: Care Support',
+            'z4': 'Z4: Garden Services',
+            'z5': 'Z5: Consulting & Assessment',
+            'z6': 'Z6: Facility Services',
+            'z7': 'Z7: Assisted Living',
+            'z8': 'Z8: Wellness Station'
+        }
+        
+        service_map = service_names_de if request_data.language == 'de' else service_names_en
+        services_list = '\n'.join([f"• {service_map.get(s, s)}" for s in request_data.services])
+        
+        # Create email
+        msg = MIMEMultipart('alternative')
+        msg['Subject'] = f"Neue Verfügbarkeitsanfrage von {request_data.name}"
+        msg['From'] = smtp_from
+        msg['To'] = recipient
+        
+        # Email body
+        if request_data.language == 'de':
+            email_body = f"""
+Neue Verfügbarkeitsanfrage über die OCTA-Webseite
+================================================
+
+Kontaktdaten:
+-------------
+Name: {request_data.name}
+E-Mail: {request_data.email}
+Telefon: {request_data.phone}
+
+Gewünschte Dienstleistungen:
+-----------------------------
+{services_list}
+
+Nachricht:
+----------
+{request_data.message if request_data.message else 'Keine zusätzliche Nachricht'}
+
+Datum/Uhrzeit: {request_data.timestamp.strftime('%d.%m.%Y um %H:%M Uhr')}
+Anfrage-ID: {request_data.id}
+
+---
+Diese Anfrage wurde automatisch über das Kontaktformular auf der OCTA-Webseite erstellt.
+            """
+        else:
+            email_body = f"""
+New Availability Request via OCTA Website
+==========================================
+
+Contact Information:
+--------------------
+Name: {request_data.name}
+Email: {request_data.email}
+Phone: {request_data.phone}
+
+Requested Services:
+-------------------
+{services_list}
+
+Message:
+--------
+{request_data.message if request_data.message else 'No additional message'}
+
+Date/Time: {request_data.timestamp.strftime('%m/%d/%Y at %H:%M')}
+Request ID: {request_data.id}
+
+---
+This request was automatically created via the contact form on the OCTA website.
+            """
+        
+        part = MIMEText(email_body, 'plain', 'utf-8')
+        msg.attach(part)
+        
+        # Send email
+        with smtplib.SMTP(smtp_server, smtp_port) as server:
+            server.starttls()
+            server.login(smtp_username, smtp_password)
+            server.send_message(msg)
+        
+        logger.info(f"Email sent successfully for request {request_data.id}")
+        return True
+        
+    except Exception as e:
+        logger.error(f"Failed to send email: {str(e)}")
+        return False
+
+@api_router.post("/availability-request", response_model=AvailabilityRequest)
+async def create_availability_request(request_input: AvailabilityRequestCreate):
+    """Create and process availability request"""
+    try:
+        # Create request object
+        request_obj = AvailabilityRequest(**request_input.model_dump())
+        
+        # Save to database
+        doc = request_obj.model_dump()
+        doc['timestamp'] = doc['timestamp'].isoformat()
+        await db.availability_requests.insert_one(doc)
+        
+        # Try to send email
+        email_sent = await send_availability_email(request_obj)
+        
+        if email_sent:
+            logger.info(f"Availability request {request_obj.id} saved and email sent")
+        else:
+            logger.info(f"Availability request {request_obj.id} saved to database (email not configured)")
+        
+        return request_obj
+        
+    except Exception as e:
+        logger.error(f"Error processing availability request: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to process request")
+
+@api_router.get("/availability-requests", response_model=List[AvailabilityRequest])
+async def get_availability_requests():
+    """Get all availability requests"""
+    requests = await db.availability_requests.find({}, {"_id": 0}).to_list(1000)
+    
+    # Convert ISO string timestamps back to datetime objects
+    for req in requests:
+        if isinstance(req['timestamp'], str):
+            req['timestamp'] = datetime.fromisoformat(req['timestamp'])
+    
+    return requests
+
 # Include the router in the main app
 app.include_router(api_router)
 
