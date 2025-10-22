@@ -112,6 +112,58 @@ function App() {
     }
   };
 
+  const handleJobApplicationSubmit = async (e) => {
+    e.preventDefault();
+    setJobFormError('');
+    
+    if (!jobFormData.name || !jobFormData.email || !jobFormData.phone) {
+      setJobFormError(language === 'de' 
+        ? 'Bitte füllen Sie alle Pflichtfelder aus.' 
+        : 'Please fill in all required fields.');
+      return;
+    }
+    
+    try {
+      const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+      const response = await fetch(`${BACKEND_URL}/api/job-applications`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...jobFormData,
+          language: language
+        })
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to submit application');
+      }
+      
+      const result = await response.json();
+      console.log('Job application submitted successfully:', result);
+      setJobFormSubmitted(true);
+      
+      // Reset form after 8 seconds
+      setTimeout(() => {
+        setJobFormSubmitted(false);
+        setJobFormData({
+          name: '',
+          email: '',
+          phone: '',
+          position: '',
+          message: ''
+        });
+      }, 8000);
+      
+    } catch (error) {
+      console.error('Error submitting job application:', error);
+      setJobFormError(language === 'de' 
+        ? 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.'
+        : 'An error occurred. Please try again later.');
+    }
+  };
+
   const handleInternLogin = (e) => {
     e.preventDefault();
     // Simple password check - in production, use backend authentication
@@ -119,6 +171,7 @@ function App() {
       setIsInternAuthenticated(true);
       setInternError('');
       loadRequests();
+      loadJobApplications();
     } else {
       setInternError(language === 'de' ? 'Falsches Passwort' : 'Incorrect password');
     }
@@ -134,6 +187,19 @@ function App() {
       }
     } catch (error) {
       console.error('Error loading requests:', error);
+    }
+  };
+
+  const loadJobApplications = async () => {
+    try {
+      const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+      const response = await fetch(`${BACKEND_URL}/api/job-applications`);
+      if (response.ok) {
+        const data = await response.json();
+        setJobApplications(data);
+      }
+    } catch (error) {
+      console.error('Error loading job applications:', error);
     }
   };
 
