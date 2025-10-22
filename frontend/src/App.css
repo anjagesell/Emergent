@@ -449,64 +449,7 @@ body {
   margin: 0.5rem 0 0 0;
 }
 
-/* Modal for Impressum */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 31, 63, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  padding: 2rem;
-}
-
-.modal-content {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 3rem;
-  max-width: 800px;
-  max-height: 90vh;
-  overflow-y: auto;
-  position: relative;
-  box-shadow: 0 8px 32px rgba(0, 31, 63, 0.3);
-  border: 2px solid #001f3f;
-}
-
-.modal-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: #001f3f;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.modal-close:hover {
-  background-color: #001f3f;
-  color: #ffffff;
-}
-
-.modal-title {
-  font-size: 2rem;
-  color: #001f3f;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid #001f3f;
-}
-
+/* Impressum Content */
 .impressum-content {
   color: #001f3f;
 }
