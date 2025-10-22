@@ -1066,6 +1066,23 @@ function App() {
                     <form className="job-application-form" onSubmit={handleJobApplicationSubmit}>
                       {jobFormError && <div className="error-message">{jobFormError}</div>}
                       
+                      <div className="form-group">
+                        <label className="form-label">
+                          {language === 'de' ? 'Foto hochladen (optional)' : 'Upload Photo (optional)'}
+                        </label>
+                        <input 
+                          type="file" 
+                          className="form-input" 
+                          accept="image/*"
+                          onChange={handlePhotoUpload}
+                        />
+                        {jobFormData.photo && (
+                          <div className="photo-preview">
+                            <img src={jobFormData.photo} alt="Preview" style={{maxWidth: '200px', maxHeight: '200px', marginTop: '10px', borderRadius: '8px'}} />
+                          </div>
+                        )}
+                      </div>
+                      
                       <div className="form-row">
                         <div className="form-group">
                           <label className="form-label">
