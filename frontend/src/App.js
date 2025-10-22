@@ -1246,6 +1246,7 @@ function App() {
                             <option value="">{language === 'de' ? 'Bitte wählen...' : 'Please select...'}</option>
                             <option value="fulltime">{language === 'de' ? 'Vollzeit' : 'Full-time'}</option>
                             <option value="parttime">{language === 'de' ? 'Teilzeit' : 'Part-time'}</option>
+                            <option value="internship">{language === 'de' ? 'Praktikum' : 'Internship'}</option>
                             <option value="volunteer">{language === 'de' ? 'Ehrenamtlich' : 'Volunteer'}</option>
                             <option value="under3hrs">{language === 'de' ? 'Unter 3 Stunden pro Tag' : 'Under 3 hrs a day'}</option>
                           </select>
