@@ -257,7 +257,8 @@ export const translations = {
       z5: 'Z5: Consulting & Assessment',
       z6: 'Z6: Facility Services',
       z7: 'Z7: Assisted Living',
-      z8: 'Z8: Wellness Station'
+      z8: 'Z8: Wellness Station',
+      z9: 'Z9: Job Opportunities'
     },
     home: {
       title: 'Welcome to OCTA',
