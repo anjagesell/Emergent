@@ -239,13 +239,16 @@ export const translations = {
     categories: {
       z1: {
         title: 'Household Assistance',
-        desc: 'Professional household support for independent living.',
+        desc: 'A well-maintained and pleasant living environment contributes significantly to quality of life and well-being. Our household assistance supports you in managing your household according to your individual needs – without feeling overwhelmed.',
+        fullText: 'As we age or face health challenges, everyday household tasks can become difficult. This is where our qualified household staff come in: they take over the tasks that have become challenging for you, enabling you to continue living independently in your familiar home.\n\nOur staff members are specially trained and have many years of experience in household management. They work according to your wishes and preferences while naturally respecting your privacy and personal habits.\n\nWhether you need occasional support or regular assistance – we flexibly adapt our services to your situation. We place special emphasis on continuity: whenever possible, you will be cared for by the same familiar faces, allowing personal relationships to develop.',
         services: [
-          'Cleaning and maintenance of living spaces',
-          'Washing and ironing laundry',
-          'Shopping and errands',
-          'Meal preparation',
-          'Support with household management'
+          'Cleaning and maintenance of living spaces according to your individual wishes',
+          'Washing, ironing, and neat storage of laundry',
+          'Shopping and errands – also gladly together with you',
+          'Preparation of balanced and tasty meals',
+          'Support with household organization and administration',
+          'Plant care and small decoration work',
+          'Waste disposal and recycling'
         ]
       },
       z2a: {
