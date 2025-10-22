@@ -177,6 +177,18 @@ function App() {
               <FileText className="nav-icon" size={20} />
               <span>{t.nav.availability}</span>
             </button>
+
+            <button
+              data-testid="nav-intern"
+              className={`nav-item ${activeCategory === 'intern' ? 'active' : ''}`}
+              onClick={() => {
+                setActiveCategory('intern');
+                if (isInternAuthenticated) loadRequests();
+              }}
+            >
+              <UserCheck className="nav-icon" size={20} />
+              <span>{t.nav.intern}</span>
+            </button>
             
             <div className="nav-divider"></div>
             
