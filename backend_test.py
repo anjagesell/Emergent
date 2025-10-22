@@ -13,16 +13,20 @@ from datetime import datetime
 BACKEND_URL = "https://octa-pflege.preview.emergentagent.com/api"
 
 def test_post_job_application():
-    """Test POST /api/job-applications endpoint"""
-    print("\n=== Testing POST /api/job-applications ===")
+    """Test POST /api/job-applications endpoint with enhanced fields"""
+    print("\n=== Testing POST /api/job-applications (Enhanced Model) ===")
     
-    # Sample data as specified in the review request
+    # Enhanced sample data as specified in the review request
     test_data = {
-        "name": "Max Mustermann",
-        "email": "max@test.de",
-        "phone": "+49 123 456789",
-        "position": "pflege",
-        "message": "Ich bin sehr interessiert an der Position als Pflegefachkraft.",
+        "name": "Anna Schmidt",
+        "email": "anna.schmidt@test.de",
+        "phone": "+49 171 2345678",
+        "position": "betreuung",
+        "about_yourself": "Ich bin eine fürsorgliche und geduldige Person mit 5 Jahren Erfahrung in der Betreuung älterer Menschen. Meine Leidenschaft liegt darin, anderen zu helfen und ihr Leben angenehmer zu gestalten.",
+        "qualifications": "Staatlich anerkannte Betreuungskraft nach §43b SGB XI, Erste-Hilfe-Kurs, Demenzbetreuung Zertifikat",
+        "empathic_abilities": "Ich kann mich sehr gut in die Lage anderer Menschen versetzen und verstehe ihre Bedürfnisse. Durch aktives Zuhören und Geduld schaffe ich eine vertrauensvolle Atmosphäre.",
+        "number_of_children": "2",
+        "why_work_here": "OCTA bietet mit dem Eltern-Arbeitsmodul eine einzigartige Work-Life-Balance, die es mir ermöglicht, für meine Familie da zu sein und gleichzeitig meiner Berufung nachzugehen. Die Werte und die professionelle Arbeitsumgebung von OCTA entsprechen genau meinen Vorstellungen.",
         "language": "de"
     }
     
