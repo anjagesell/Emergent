@@ -630,12 +630,30 @@ function App() {
                                   </p>
                                 )}
                                 
+                                {application.marital_status && (
+                                  <p>
+                                    <strong>{language === 'de' ? 'Familienstand' : 'Marital Status'}:</strong>{' '}
+                                    {application.marital_status === 'married' 
+                                      ? (language === 'de' ? 'Verheiratet' : 'Married')
+                                      : application.marital_status === 'unmarried'
+                                      ? (language === 'de' ? 'Unverheiratet' : 'Unmarried')
+                                      : application.marital_status}
+                                  </p>
+                                )}
+                                
                                 {application.number_of_children && (
                                   <p>
                                     <strong>{language === 'de' ? 'Anzahl der Kinder' : 'Number of Children'}:</strong>{' '}
                                     {application.number_of_children === 'none' 
                                       ? (language === 'de' ? 'Keine' : 'None')
                                       : application.number_of_children}
+                                  </p>
+                                )}
+                                
+                                {application.foreign_languages && (
+                                  <p>
+                                    <strong>{language === 'de' ? 'Fremdsprachen' : 'Foreign Languages'}:</strong>{' '}
+                                    {application.foreign_languages}
                                   </p>
                                 )}
                                 
