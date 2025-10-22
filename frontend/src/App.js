@@ -1486,6 +1486,7 @@ function App() {
           </button>
         </div>
         <p className="footer-copyright">{t.copyright}</p>
+        <p className="footer-designer">© Designed by Larsen</p>
       </footer>
     </div>
   );
