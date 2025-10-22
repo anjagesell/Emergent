@@ -267,6 +267,41 @@ async def get_availability_requests():
     
     return requests
 
+# Job Application endpoints
+@api_router.post("/job-applications", response_model=JobApplication)
+async def create_job_application(application_input: JobApplicationCreate):
+    """Create and process job application"""
+    try:
+        # Create application object
+        application_obj = JobApplication(**application_input.model_dump())
+        
+        # Save to database
+        doc = application_obj.model_dump()
+        doc['timestamp'] = doc['timestamp'].isoformat()
+        await db.job_applications.insert_one(doc)
+        
+        logger.info(f"Job application {application_obj.id} saved to database")
+        
+        # TODO: Send email notification (will be implemented when SMTP is configured)
+        
+        return application_obj
+        
+    except Exception as e:
+        logger.error(f"Error processing job application: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to process application")
+
+@api_router.get("/job-applications", response_model=List[JobApplication])
+async def get_job_applications():
+    """Get all job applications"""
+    applications = await db.job_applications.find({}, {"_id": 0}).to_list(1000)
+    
+    # Convert ISO string timestamps back to datetime objects
+    for app in applications:
+        if isinstance(app['timestamp'], str):
+            app['timestamp'] = datetime.fromisoformat(app['timestamp'])
+    
+    return applications
+
 # Include the router in the main app
 app.include_router(api_router)
 
