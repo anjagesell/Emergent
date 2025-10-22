@@ -153,13 +153,19 @@ export const translations = {
       },
       z8: {
         title: 'Wohlfühlstation',
-        desc: 'Wellness und Wohlbefinden für Körper und Seele.',
+        desc: 'Lebensqualität bedeutet mehr als Versorgung – in unserer Wohlfühlstation steht Ihr persönliches Wohlbefinden im Mittelpunkt. Hier tanken Sie Kraft, entspannen und aktivieren Körper und Geist.',
+        fullText: 'Pflege bedeutet nicht nur medizinische Versorgung und Unterstützung bei alltäglichen Verrichtungen – sie umfasst auch die Förderung von Lebensfreude, Wohlbefinden und Lebensqualität. Unsere Wohlfühlstation ist ein besonderer Ort, an dem Sie zur Ruhe kommen, neue Energie schöpfen und Aktivitäten nachgehen können, die Ihnen Freude bereiten.\n\nIn angenehmer Atmosphäre bieten wir Ihnen ein vielfältiges Angebot, das Körper, Geist und Seele gleichermaßen anspricht. Ob Sie sich bei sanften Wellness-Anwendungen entspannen, bei kreativen Tätigkeiten Ihre Kreativität ausleben oder bei geselligen Runden neue Kontakte knüpfen möchten – hier finden Sie den Raum dafür.\n\nBesonders für Menschen mit Demenz oder kognitiven Einschränkungen haben wir spezielle Angebote entwickelt, die auf wissenschaftlich fundierten Konzepten beruhen. Durch gezielte Sinnesanregung, biografieorientierte Aktivitäten und validierenden Umgang schaffen wir Momente der Freude und des Erkennens. Auch Angehörige schätzen unsere Wohlfühlstation: Sie wissen ihre Liebsten gut aufgehoben und können selbst einmal durchatmen, während diese an einem schönen Ort eine bereichernde Zeit verbringen.',
         services: [
-          'Entspannungsangebote',
-          'Aktivierende Pflege',
-          'Wellness-Behandlungen',
-          'Gedächtnistraining',
-          'Kulturelle Aktivitäten'
+          'Entspannungsangebote: Massage, Hand- und Fußpflege, Aromatherapie',
+          'Aktivierende Pflege zur Erhaltung und Förderung von Fähigkeiten',
+          'Sanfte Wellness-Behandlungen für Körper und Seele',
+          'Gedächtnistraining und kognitive Aktivierung',
+          'Kreativangebote: Malen, Basteln, Handarbeiten',
+          'Musiktherapie und gemeinsames Singen',
+          'Kulturelle Aktivitäten: Lesungen, Filme, Ausflüge',
+          'Bewegungsangebote: Sitzgymnastik, Spaziergänge, Tanzen',
+          'Gesellige Runden und Gemeinschaftserlebnisse',
+          'Biografiearbeit und Erinnerungspflege'
         ]
       }
     },
