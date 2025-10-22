@@ -101,3 +101,119 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: |
+  OCTA care services website with job application feature:
+  1. Job application form on Stellenangebote page
+  2. Form submissions should be saved to database
+  3. After submission, user should see thank you message
+  4. Applications should appear in Intern section under "Bewerbungen" tab
+  5. Intern section should have tabs for "Verfügbarkeitsanfragen" and "Bewerbungen"
+
+backend:
+  - task: "Job Application API - POST /api/job-applications"
+    implemented: true
+    working: "NA"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Created JobApplication and JobApplicationCreate Pydantic models, added POST endpoint to save job applications to MongoDB"
+
+  - task: "Job Application API - GET /api/job-applications"
+    implemented: true
+    working: "NA"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Added GET endpoint to retrieve all job applications from MongoDB"
+
+frontend:
+  - task: "Job Application Form on Stellenangebote Page"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Connected job application form to state management (jobFormData), integrated form submission handler (handleJobApplicationSubmit), added thank you message display after successful submission"
+
+  - task: "Intern Section with Tabs"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Updated Intern section with tabs: 'Verfügbarkeitsanfragen' and 'Bewerbungen'. Added tab state management (internActiveTab), displays count of each type, shows appropriate data based on selected tab"
+
+  - task: "Intern Tab Styling"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/App.css"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Added CSS styles for intern-tabs, intern-tab, and active tab state"
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 0
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "Job Application API - POST /api/job-applications"
+    - "Job Application API - GET /api/job-applications"
+    - "Job Application Form on Stellenangebote Page"
+    - "Intern Section with Tabs"
+  stuck_tasks: []
+  test_all: true
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "main"
+    message: |
+      Implementation complete for job application feature:
+      
+      Backend Changes:
+      - Added JobApplication and JobApplicationCreate models with fields: name, email, phone, position, message, timestamp, language
+      - Created POST /api/job-applications endpoint to save applications to MongoDB
+      - Created GET /api/job-applications endpoint to retrieve all applications
+      
+      Frontend Changes:
+      - Updated job application form with proper state management (jobFormData)
+      - Added handleJobApplicationSubmit function to submit form data to backend
+      - Added success message display after submission: "Vielen Dank! Ihre Bewerbung wird in Kürze geprüft"
+      - Updated Intern section with two tabs: "Verfügbarkeitsanfragen" and "Bewerbungen"
+      - Each tab shows the count of items and displays appropriate data
+      - Added loadJobApplications function to fetch applications when logging into Intern section
+      - Added CSS styling for tabs
+      
+      Testing Requirements:
+      1. Test POST /api/job-applications with sample data
+      2. Test GET /api/job-applications to retrieve data
+      3. Test frontend form submission flow
+      4. Verify thank you message appears after submission
+      5. Test Intern section login and verify both tabs work
+      6. Verify job applications appear correctly in "Bewerbungen" tab
+      
+      Backend is running on port 8001, frontend on port 3000.
+      Intern password: Morpheus
