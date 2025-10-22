@@ -295,6 +295,16 @@ function App() {
           >
             🇩🇪
           </button>
+          {language === 'de' && (
+            <button
+              className={`tts-button ${isReading ? 'reading' : ''}`}
+              onClick={toggleTextToSpeech}
+              title={isReading ? 'Vorlesen stoppen' : 'Vorlesen starten'}
+              data-testid="tts-de"
+            >
+              {isReading ? '🔊' : '🔇'} {isReading ? 'Stopp' : 'Vorlesen'}
+            </button>
+          )}
         </div>
         
         {/* US Flag - Right */}
