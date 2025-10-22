@@ -1439,9 +1439,6 @@ function App() {
       <footer className="app-footer">
         {/* Krankenkassen Logos */}
         <div className="insurance-logos">
-          <p className="insurance-text">
-            {language === 'de' ? 'Akzeptierte Krankenkassen:' : 'Accepted Health Insurance:'}
-          </p>
           <div className="logos-container">
             <img 
               src="https://customer-assets.emergentagent.com/job_sprechen-sie-41/artifacts/p6hgsljo_Untitled-design-3.jpg" 
