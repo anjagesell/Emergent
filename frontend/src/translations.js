@@ -180,10 +180,12 @@ export const translations = {
           'Betreuungskräfte nach § 43b SGB XI',
           'Hauswirtschaftskräfte für die häusliche Versorgung',
           'Medizinische Fachangestellte (MFA) für ambulante Pflege',
+          'Flexible Arbeitszeitmodelle: Vollzeit, Teilzeit, Minijobs, Springerdienste',
+          'Variable Schichtmodelle nach Ihren persönlichen Bedürfnissen',
+          'Ehrenamtliche Mitarbeiter für Besuchsdienste und Betreuung',
           'Quereinsteiger mit Interesse an der Pflege',
           'Praktikanten und Auszubildende',
-          'Freiberufliche Kooperationspartner (Physiotherapie, Ergotherapie, etc.)',
-          'Minijobber für hauswirtschaftliche Tätigkeiten'
+          'FSJ und Bundesfreiwilligendienst (BFD) möglich'
         ]
       }
     },
