@@ -667,6 +667,54 @@ function App() {
                                   </p>
                                 )}
                                 
+                                {application.drivers_license && (
+                                  <p>
+                                    <strong>{language === 'de' ? 'Führerschein' : 'Driver\'s License'}:</strong>{' '}
+                                    {application.drivers_license === 'yes' 
+                                      ? (language === 'de' ? 'Ja' : 'Yes')
+                                      : (language === 'de' ? 'Nein' : 'No')}
+                                  </p>
+                                )}
+                                
+                                {application.employment_type && (
+                                  <p>
+                                    <strong>{language === 'de' ? 'Beschäftigungsart' : 'Employment Type'}:</strong>{' '}
+                                    {application.employment_type === 'fulltime' 
+                                      ? (language === 'de' ? 'Vollzeit' : 'Full-time')
+                                      : application.employment_type === 'parttime'
+                                      ? (language === 'de' ? 'Teilzeit' : 'Part-time')
+                                      : application.employment_type === 'volunteer'
+                                      ? (language === 'de' ? 'Ehrenamtlich' : 'Volunteer')
+                                      : application.employment_type === 'under3hrs'
+                                      ? (language === 'de' ? 'Unter 3 Stunden pro Tag' : 'Under 3 hrs a day')
+                                      : application.employment_type}
+                                  </p>
+                                )}
+                                
+                                {application.preferred_shift && (
+                                  <p>
+                                    <strong>{language === 'de' ? 'Bevorzugte Schicht' : 'Preferred Shift'}:</strong>{' '}
+                                    {application.preferred_shift === 'morning' 
+                                      ? (language === 'de' ? 'Frühschicht' : 'Morning shift')
+                                      : application.preferred_shift === 'evening'
+                                      ? (language === 'de' ? 'Spätschicht' : 'Evening shift')
+                                      : application.preferred_shift}
+                                  </p>
+                                )}
+                                
+                                {application.work_days_preference && (
+                                  <p>
+                                    <strong>{language === 'de' ? 'Arbeitstage-Präferenz' : 'Work Days Preference'}:</strong>{' '}
+                                    {application.work_days_preference === 'weekends' 
+                                      ? (language === 'de' ? 'Wochenenden' : 'Weekends')
+                                      : application.work_days_preference === 'weekdays'
+                                      ? (language === 'de' ? 'Wochentage' : 'Weekdays')
+                                      : application.work_days_preference === 'no_preference'
+                                      ? (language === 'de' ? 'Ist mir egal' : 'Doesn\'t matter')
+                                      : application.work_days_preference}
+                                  </p>
+                                )}
+                                
                                 {application.about_yourself && (
                                   <div className="request-message">
                                     <strong>{language === 'de' ? 'Über sich' : 'About Yourself'}:</strong>
