@@ -386,6 +386,14 @@ function App() {
               <h2 className="content-title" data-testid="content-title">{t.categories[activeCategory].title}</h2>
               <p className="content-description">{t.categories[activeCategory].desc}</p>
               
+              {t.categories[activeCategory].fullText && (
+                <div className="full-text-section">
+                  {t.categories[activeCategory].fullText.split('\n\n').map((paragraph, index) => (
+                    <p key={index} className="full-text-paragraph">{paragraph}</p>
+                  ))}
+                </div>
+              )}
+              
               <div className="services-section">
                 <h3 className="services-title">{t.servicesHeading}</h3>
                 <ul className="services-list">
