@@ -78,7 +78,34 @@ function App() {
         const textContent = mainContent.innerText;
         const utterance = new SpeechSynthesisUtterance(textContent);
         utterance.lang = language === 'de' ? 'de-DE' : 'en-US';
-        utterance.rate = 0.9; // Slightly slower for better understanding
+        
+        // Get available voices
+        const voices = window.speechSynthesis.getVoices();
+        
+        if (language === 'en') {
+          // For English: Select American male voice
+          const americanMaleVoice = voices.find(voice => 
+            voice.lang.includes('en-US') && 
+            (voice.name.toLowerCase().includes('male') || 
+             voice.name.toLowerCase().includes('david') ||
+             voice.name.toLowerCase().includes('alex') ||
+             voice.name.toLowerCase().includes('james'))
+          ) || voices.find(voice => voice.lang.includes('en-US'));
+          
+          if (americanMaleVoice) {
+            utterance.voice = americanMaleVoice;
+          }
+          
+          // Calming, mature male voice settings
+          utterance.rate = 0.85; // Slower, calm pace
+          utterance.pitch = 0.8; // Lower pitch for mature male voice
+          utterance.volume = 0.9; // Slightly softer
+        } else {
+          // German voice settings
+          utterance.rate = 0.9;
+          utterance.pitch = 1.0;
+        }
+        
         utterance.onend = () => setIsReading(false);
         window.speechSynthesis.speak(utterance);
         setIsReading(true);
