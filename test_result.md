@@ -143,11 +143,11 @@ backend:
 
   - task: "PATCH /api/availability-requests/{id} - Update notes and status"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 1
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: false
         agent: "user"
@@ -155,14 +155,17 @@ backend:
       - working: "NA"
         agent: "main"
         comment: "Fixed root cause: Added Query import from fastapi and updated PATCH endpoint to properly extract query parameters (status_processed and notes) from URL. Changed from using modified_count to matched_count for better error handling. Endpoint now properly receives and processes query parameters."
+      - working: true
+        agent: "testing"
+        comment: "✅ PASS: PATCH endpoint fully functional. Successfully tested: 1) Status update (status_processed=true/false), 2) Notes update with German umlauts (äöüß) and special characters (€@#!🏠), 3) Combined parameter updates, 4) Data persistence verification via GET, 5) Proper 404 error for non-existent IDs. Fixed HTTPException handling to return correct 404 status codes. All 5/5 tests passed."
 
   - task: "PATCH /api/job-applications/{id} - Update notes and status"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 1
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: false
         agent: "user"
@@ -170,6 +173,9 @@ backend:
       - working: "NA"
         agent: "main"
         comment: "Fixed root cause: Added Query import from fastapi and updated PATCH endpoint to properly extract query parameters (status_processed and notes) from URL. Changed from using modified_count to matched_count for better error handling. Endpoint now properly receives and processes query parameters."
+      - working: true
+        agent: "testing"
+        comment: "✅ PASS: PATCH endpoint fully functional. Successfully tested: 1) Status update (status_processed=true/false), 2) Notes update with German umlauts and special characters, 3) Combined parameter updates, 4) Data persistence verification via GET, 5) Proper 404 error for non-existent IDs. Fixed HTTPException handling to return correct 404 status codes. All 5/5 tests passed."
 
 frontend:
   - task: "Job Application Form on Stellenangebote Page"
