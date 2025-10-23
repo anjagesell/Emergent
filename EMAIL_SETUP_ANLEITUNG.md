@@ -109,7 +109,7 @@ db.availability_requests.find().pretty()
 
 Oder über die API:
 ```
-GET https://octa-pflege.preview.emergentagent.com/api/availability-requests
+GET https://octa-care-platform.preview.emergentagent.com/api/availability-requests
 ```
 
 ## Sicherheitshinweise
