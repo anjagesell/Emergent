@@ -330,7 +330,11 @@ async def get_job_applications():
 
 # Update availability request status and notes
 @api_router.patch("/availability-requests/{request_id}")
-async def update_availability_request(request_id: str, status_processed: bool = None, notes: str = None):
+async def update_availability_request(
+    request_id: str, 
+    status_processed: Optional[bool] = Query(None),
+    notes: Optional[str] = Query(None)
+):
     """Update status and notes for an availability request"""
     try:
         update_data = {}
@@ -344,7 +348,7 @@ async def update_availability_request(request_id: str, status_processed: bool = 
             {"$set": update_data}
         )
         
-        if result.modified_count == 0:
+        if result.matched_count == 0:
             raise HTTPException(status_code=404, detail="Request not found")
             
         return {"success": True, "message": "Updated successfully"}
