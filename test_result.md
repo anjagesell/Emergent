@@ -216,12 +216,10 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Job Application API - POST /api/job-applications"
-    - "Job Application API - GET /api/job-applications"
-    - "Job Application Form on Stellenangebote Page"
-    - "Intern Section with Tabs"
+    - "PATCH /api/availability-requests/{id} - Update notes and status"
+    - "PATCH /api/job-applications/{id} - Update notes and status"
   stuck_tasks: []
-  test_all: true
+  test_all: false
   test_priority: "high_first"
 
 agent_communication:
