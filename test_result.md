@@ -141,6 +141,36 @@ backend:
         agent: "testing"
         comment: "✅ PASS: Enhanced job application GET endpoint working correctly. Successfully retrieves all applications with complete enhanced model fields. Initially failed due to old applications in database missing new fields, but after clearing old data, endpoint works perfectly. Verified with multiple applications."
 
+  - task: "PATCH /api/availability-requests/{id} - Update notes and status"
+    implemented: true
+    working: "NA"
+    file: "/app/backend/server.py"
+    stuck_count: 1
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: false
+        agent: "user"
+        comment: "User reported error in bright red when attempting to write in Notizen field. MongoDB document ID field mismatch causing update failures."
+      - working: "NA"
+        agent: "main"
+        comment: "Fixed root cause: Added Query import from fastapi and updated PATCH endpoint to properly extract query parameters (status_processed and notes) from URL. Changed from using modified_count to matched_count for better error handling. Endpoint now properly receives and processes query parameters."
+
+  - task: "PATCH /api/job-applications/{id} - Update notes and status"
+    implemented: true
+    working: "NA"
+    file: "/app/backend/server.py"
+    stuck_count: 1
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: false
+        agent: "user"
+        comment: "User reported error in bright red when attempting to write in Notizen field. MongoDB document ID field mismatch causing update failures."
+      - working: "NA"
+        agent: "main"
+        comment: "Fixed root cause: Added Query import from fastapi and updated PATCH endpoint to properly extract query parameters (status_processed and notes) from URL. Changed from using modified_count to matched_count for better error handling. Endpoint now properly receives and processes query parameters."
+
 frontend:
   - task: "Job Application Form on Stellenangebote Page"
     implemented: true
