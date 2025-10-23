@@ -102,7 +102,7 @@ def test_get_job_applications():
                 print(f"Sample application: {json.dumps(response_data[0], indent=2, default=str)}")
                 
                 # Verify structure of first application (enhanced model)
-                required_fields = ["id", "name", "email", "phone", "position", "about_yourself", "qualifications", "empathic_abilities", "number_of_children", "why_work_here", "timestamp", "language"]
+                required_fields = ["id", "name", "email", "phone", "position", "marital_status", "foreign_languages", "drivers_license", "employment_type", "preferred_shift", "work_days_preference", "about_yourself", "qualifications", "empathic_abilities", "number_of_children", "why_work_here", "timestamp", "language"]
                 first_app = response_data[0]
                 missing_fields = [field for field in required_fields if field not in first_app]
                 
