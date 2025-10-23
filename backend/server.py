@@ -181,8 +181,6 @@ async def create_job_application(application_input: JobApplicationCreate):
         
         logger.info(f"Job application {application_obj.id} saved to database")
         
-        # TODO: Send email notification (will be implemented when SMTP is configured)
-        
         return application_obj
         
     except Exception as e:
