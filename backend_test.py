@@ -60,7 +60,7 @@ def test_post_job_application():
                 return False, None
             
             # Verify data matches input (enhanced fields)
-            for field in ["name", "email", "phone", "position", "about_yourself", "qualifications", "empathic_abilities", "number_of_children", "why_work_here", "language"]:
+            for field in ["name", "email", "phone", "position", "marital_status", "foreign_languages", "drivers_license", "employment_type", "preferred_shift", "work_days_preference", "about_yourself", "qualifications", "empathic_abilities", "number_of_children", "why_work_here", "language"]:
                 if response_data[field] != test_data[field]:
                     print(f"❌ FAIL: Field {field} mismatch. Expected: {test_data[field]}, Got: {response_data[field]}")
                     return False, None
