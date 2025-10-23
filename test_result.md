@@ -313,3 +313,36 @@ agent_communication:
       4. Verify data persists after page refresh
       
       Backend restarted successfully - ready for testing.
+  - agent: "testing"
+    message: |
+      🎉 PATCH ENDPOINTS FIX VERIFIED - Notizen Field Issue RESOLVED!
+      
+      Comprehensive Testing Results:
+      
+      ✅ PATCH /api/availability-requests/{id}:
+      - Status updates (checkbox): Working perfectly
+      - Notes updates: Working with German umlauts (äöüß) and special characters (€@#!🏠)
+      - Combined updates: Both parameters can be updated together
+      - Data persistence: Changes saved correctly to MongoDB
+      - Error handling: Proper 404 for non-existent IDs
+      - All 5/5 tests passed
+      
+      ✅ PATCH /api/job-applications/{id}:
+      - Status updates (checkbox): Working perfectly  
+      - Notes updates: Working with German umlauts and special characters
+      - Combined updates: Both parameters can be updated together
+      - Data persistence: Changes saved correctly to MongoDB
+      - Error handling: Proper 404 for non-existent IDs
+      - All 5/5 tests passed
+      
+      🔧 Additional Fix Applied:
+      - Fixed HTTPException handling in both endpoints to prevent 404 errors being returned as 500 errors
+      - Added proper exception re-raising for HTTPExceptions
+      
+      ✅ Character Encoding Verification:
+      - German umlauts (äöüß) save and retrieve correctly
+      - Special characters (€@#!) work properly
+      - Emoji characters (🏠) supported
+      - URL encoding/decoding working correctly
+      
+      The original user-reported "bright red error" when writing in Notizen fields has been completely resolved. Both availability requests and job applications can now have their status_processed and notes fields updated successfully through the PATCH endpoints.
