@@ -278,3 +278,32 @@ agent_communication:
       - ✅ No errors in backend logs
       
       Backend enhanced job application feature is fully functional and ready for frontend integration.
+  - agent: "main"
+    message: |
+      🔧 CRITICAL FIX - Notizen Field Error (MongoDB ID Mismatch)
+      
+      Root Cause Identified:
+      - PATCH endpoints were not properly extracting query parameters from URL
+      - FastAPI requires explicit Query() declaration for URL query parameters
+      - Parameters defaulted to None, causing no updates to occur
+      
+      Changes Made to /app/backend/server.py:
+      1. Added Query import: `from fastapi import FastAPI, APIRouter, HTTPException, Query`
+      
+      2. Updated PATCH /api/availability-requests/{request_id}:
+         - Added explicit Query parameters: `status_processed: Optional[bool] = Query(None)`
+         - Added explicit Query parameters: `notes: Optional[str] = Query(None)`
+         - Changed error check from `modified_count` to `matched_count` for better debugging
+      
+      3. Updated PATCH /api/job-applications/{application_id}:
+         - Added explicit Query parameters: `status_processed: Optional[bool] = Query(None)`
+         - Added explicit Query parameters: `notes: Optional[str] = Query(None)`
+         - Changed error check from `modified_count` to `matched_count` for better debugging
+      
+      Testing Plan:
+      1. Test PATCH endpoint for availability requests (checkbox and notes)
+      2. Test PATCH endpoint for job applications (checkbox and notes)
+      3. Verify no red error messages appear in frontend
+      4. Verify data persists after page refresh
+      
+      Backend restarted successfully - ready for testing.
