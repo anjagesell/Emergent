@@ -221,9 +221,7 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus:
-    - "PATCH /api/availability-requests/{id} - Update notes and status"
-    - "PATCH /api/job-applications/{id} - Update notes and status"
+  current_focus: []
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
