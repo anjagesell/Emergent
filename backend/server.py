@@ -382,6 +382,8 @@ async def update_job_application(
             raise HTTPException(status_code=404, detail="Application not found")
             
         return {"success": True, "message": "Updated successfully"}
+    except HTTPException:
+        raise  # Re-raise HTTPExceptions (like 404) as-is
     except Exception as e:
         logger.error(f"Error updating application: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to update application")
