@@ -16,12 +16,18 @@ def test_post_job_application():
     """Test POST /api/job-applications endpoint with enhanced fields"""
     print("\n=== Testing POST /api/job-applications (Enhanced Model) ===")
     
-    # Enhanced sample data as specified in the review request
+    # Enhanced sample data with all required fields
     test_data = {
         "name": "Anna Schmidt",
         "email": "anna.schmidt@test.de",
         "phone": "+49 171 2345678",
         "position": "betreuung",
+        "marital_status": "verheiratet",
+        "foreign_languages": "Englisch, Französisch",
+        "drivers_license": "Ja, Klasse B",
+        "employment_type": "Teilzeit",
+        "preferred_shift": "Tagschicht",
+        "work_days_preference": "Montag bis Freitag",
         "about_yourself": "Ich bin eine fürsorgliche und geduldige Person mit 5 Jahren Erfahrung in der Betreuung älterer Menschen. Meine Leidenschaft liegt darin, anderen zu helfen und ihr Leben angenehmer zu gestalten.",
         "qualifications": "Staatlich anerkannte Betreuungskraft nach §43b SGB XI, Erste-Hilfe-Kurs, Demenzbetreuung Zertifikat",
         "empathic_abilities": "Ich kann mich sehr gut in die Lage anderer Menschen versetzen und verstehe ihre Bedürfnisse. Durch aktives Zuhören und Geduld schaffe ich eine vertrauensvolle Atmosphäre.",
