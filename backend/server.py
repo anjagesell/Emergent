@@ -352,6 +352,8 @@ async def update_availability_request(
             raise HTTPException(status_code=404, detail="Request not found")
             
         return {"success": True, "message": "Updated successfully"}
+    except HTTPException:
+        raise  # Re-raise HTTPExceptions (like 404) as-is
     except Exception as e:
         logger.error(f"Error updating request: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to update request")
