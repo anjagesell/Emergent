@@ -1678,14 +1678,32 @@ body {
   transform: translateX(100px);
 }
 
+/* Title with logos container */
+.origin-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.origin-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  opacity: 0.85;
+}
+
 .origin-story-title {
   font-family: 'Dancing Script', cursive;
   font-size: 3rem;
+  font-weight: 700;
   color: #4a3620;
   text-align: center;
-  margin-bottom: 3rem;
-  text-shadow: 1px 1px 2px rgba(74, 54, 32, 0.1);
+  text-shadow: 2px 2px 3px rgba(74, 54, 32, 0.15);
   letter-spacing: 0.5px;
+  margin: 0;
 }
 
 .origin-story-content {
