@@ -1528,4 +1528,40 @@ body {
 .content::-webkit-scrollbar-thumb:hover,
 .modal-content::-webkit-scrollbar-thumb:hover {
   background: #003366;
+
+}
+
+/* Sort Toggle Button */
+.sort-toggle-container {
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px 0 15px 0;
+  padding: 0 20px;
+}
+
+.sort-toggle-button {
+  background: linear-gradient(135deg, #0a2e4e 0%, #1a4d7a 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sort-toggle-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.sort-toggle-button:active {
+  transform: translateY(0);
+}
+
 }
