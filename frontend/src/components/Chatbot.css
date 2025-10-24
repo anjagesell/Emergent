@@ -61,6 +61,17 @@
   flex-direction: column;
   overflow: hidden;
   animation: slideUp 0.3s ease-out;
+  position: absolute;
+  top: 60px;
+  z-index: 1000;
+}
+
+.chatbot-container.left .chatbot-window {
+  left: 0;
+}
+
+.chatbot-container.right .chatbot-window {
+  right: 0;
 }
 
 @keyframes slideUp {
