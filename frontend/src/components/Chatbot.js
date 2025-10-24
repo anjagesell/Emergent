@@ -123,7 +123,9 @@ const Chatbot = ({ name, language, position }) => {
           title={language === 'de' ? `Chat mit ${name}` : `Chat with ${name}`}
         >
           <div className="chatbot-avatar">{name[0]}</div>
-          <span className="chatbot-name">{name}</span>
+          <span className="chatbot-name">
+            {language === 'de' ? 'Frag' : 'Ask'} {name}
+          </span>
         </button>
       )}
 
