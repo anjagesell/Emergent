@@ -61,6 +61,7 @@ function App() {
   const [requests, setRequests] = useState([]);
   const [jobApplications, setJobApplications] = useState([]);
   const [internActiveTab, setInternActiveTab] = useState('availability'); // 'availability' or 'jobs'
+  const [sortOrder, setSortOrder] = useState('newest'); // 'newest' or 'oldest'
   
   const t = translations[language];
   const categoryKeys = ['z1', 'z2a', 'z2b', 'z3', 'z4', 'z5', 'z6', 'z7', 'z8', 'z9'];
