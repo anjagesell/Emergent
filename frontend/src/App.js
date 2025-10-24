@@ -836,13 +836,22 @@ function App() {
                                   <td className="notes-cell">
                                     <textarea
                                       value={application.notes || ''}
-                                      onChange={async (e) => {
+                                      onChange={(e) => {
+                                        // Update local state immediately for responsive typing
+                                        const newValue = e.target.value;
+                                        setJobApplications(prevApplications =>
+                                          prevApplications.map(app =>
+                                            app.id === application.id ? { ...app, notes: newValue } : app
+                                          )
+                                        );
+                                      }}
+                                      onBlur={async (e) => {
+                                        // Save to backend when user clicks away
                                         const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
                                         await fetch(`${BACKEND_URL}/api/job-applications/${application.id}?notes=${encodeURIComponent(e.target.value)}`, {
                                           method: 'PATCH'
                                         });
                                       }}
-                                      onBlur={loadJobApplications}
                                       className="notes-textarea"
                                       placeholder={language === 'de' ? 'Notizen...' : 'Notes...'}
                                       maxLength="500"
