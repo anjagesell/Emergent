@@ -1113,7 +1113,6 @@ function App() {
           ) : activeCategory === 'origin' ? (
             <div className="origin-story-wrapper">
               <div className="parchment-paper">
-                <div className="parchment-ornament-top"></div>
                 
                 {/* Title with Logo */}
                 <div className="origin-title-container">
