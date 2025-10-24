@@ -106,6 +106,16 @@ class JobApplicationCreate(BaseModel):
     photo: Optional[str] = None  # Base64 encoded photo
     language: str = "de"
 
+# Chat Message Models
+class ChatMessage(BaseModel):
+    session_id: str
+    message: str
+    language: str = "de"
+
+class ChatResponse(BaseModel):
+    response: str
+    session_id: str
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
