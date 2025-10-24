@@ -1466,10 +1466,6 @@ function App() {
         <p className="footer-copyright">{t.copyright}</p>
         <p className="footer-designer">© Designed by Larsen</p>
       </footer>
-
-      {/* AI Customer Service Chatbots */}
-      <Chatbot name="Anna" language="de" position="left" />
-      <Chatbot name="Thomas" language="en" position="right" />
     </div>
   );
 }
