@@ -446,7 +446,7 @@ export const translations = {
         ]
       },
       origin: {
-        title: 'The Origin Story',
+        title: 'The Origin Story of OCTA',
         desc: 'The moving story behind OCTA',
         fullText: '[Your story will be beautifully displayed here. Share the emotional journey of how OCTA was born, the challenges you faced, the people who inspired you, and the vision that drives you forward. This will be the heart and soul of your message to clients and staff.]',
         storyPlaceholder: true  // Marker that content needs to be added
