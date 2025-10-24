@@ -608,6 +608,19 @@ function App() {
                     </button>
                   </div>
                   
+                  {/* Sort Toggle Button */}
+                  <div className="sort-toggle-container">
+                    <button
+                      className="sort-toggle-button"
+                      onClick={() => setSortOrder(prev => prev === 'newest' ? 'oldest' : 'newest')}
+                    >
+                      {sortOrder === 'newest' 
+                        ? (language === 'de' ? '↓ Neueste zuerst' : '↓ Newest First')
+                        : (language === 'de' ? '↑ Älteste zuerst' : '↑ Oldest First')
+                      }
+                    </button>
+                  </div>
+                  
                   {/* Availability Requests Tab */}
                   {internActiveTab === 'availability' && (
                     <>
