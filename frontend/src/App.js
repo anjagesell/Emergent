@@ -1114,7 +1114,22 @@ function App() {
             <div className="origin-story-wrapper">
               <div className="parchment-paper">
                 <div className="parchment-ornament-top"></div>
-                <h2 className="origin-story-title">{t.categories.origin.title}</h2>
+                
+                {/* Title with Logo */}
+                <div className="origin-title-container">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_octa-care-platform/artifacts/l43trtnp_octagon-simplex-300x300.jpg" 
+                    alt="OCTA Logo" 
+                    className="origin-logo origin-logo-left"
+                  />
+                  <h2 className="origin-story-title">{t.categories.origin.title}</h2>
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_octa-care-platform/artifacts/l43trtnp_octagon-simplex-300x300.jpg" 
+                    alt="OCTA Logo" 
+                    className="origin-logo origin-logo-right"
+                  />
+                </div>
+                
                 <div className="origin-story-content">
                   {t.categories.origin.fullText.split('\n\n').map((paragraph, index) => (
                     <p key={index} className="origin-story-paragraph">{paragraph}</p>
