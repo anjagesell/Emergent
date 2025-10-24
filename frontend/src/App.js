@@ -1110,6 +1110,19 @@ function App() {
                 </section>
               </div>
             </div>
+          ) : activeCategory === 'origin' ? (
+            <div className="origin-story-wrapper">
+              <div className="parchment-paper">
+                <div className="parchment-ornament-top"></div>
+                <h2 className="origin-story-title">{t.categories.origin.title}</h2>
+                <div className="origin-story-content">
+                  {t.categories.origin.fullText.split('\n\n').map((paragraph, index) => (
+                    <p key={index} className="origin-story-paragraph">{paragraph}</p>
+                  ))}
+                </div>
+                <div className="parchment-ornament-bottom"></div>
+              </div>
+            </div>
           ) : (
             <div className="content-wrapper">
               <h2 className="content-title" data-testid="content-title">{t.categories[activeCategory].title}</h2>
