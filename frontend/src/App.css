@@ -54,6 +54,10 @@ body {
   top: 1rem;
   left: 1rem;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
 }
 
 .flag-right {
@@ -61,6 +65,10 @@ body {
   top: 1rem;
   right: 1rem;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
 }
 
 .flag-button {
