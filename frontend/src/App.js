@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import { Home, Users, Stethoscope, HeartHandshake, UserCheck, Leaf, ClipboardCheck, Wrench, Building2, Sparkles, FileText, Briefcase } from 'lucide-react';
 import { translations } from './translations';
+import Chatbot from './components/Chatbot';
 
 const LOGO_URL = 'https://customer-assets.emergentagent.com/job_83b4cff2-49f6-4a31-92ed-46338170884e/artifacts/t7nw5ufh_Screenshot_20251022_190713_Word.jpg';
 
