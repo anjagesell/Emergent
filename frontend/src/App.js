@@ -277,6 +277,8 @@ function App() {
           >
             🇩🇪
           </button>
+          {/* Anna Chatbot - Below German Flag */}
+          <Chatbot name="Anna" language="de" position="left" />
         </div>
         
         {/* US Flag - Right */}
@@ -289,6 +291,8 @@ function App() {
           >
             🇺🇸
           </button>
+          {/* Thomas Chatbot - Below US Flag */}
+          <Chatbot name="Thomas" language="en" position="right" />
         </div>
         
         <img src={LOGO_URL} alt="OCTA Logo" className="logo" />
