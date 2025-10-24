@@ -1116,11 +1116,6 @@ function App() {
                 
                 {/* Title with Logo */}
                 <div className="origin-title-container">
-                  <img 
-                    src="https://customer-assets.emergentagent.com/job_octa-care-platform/artifacts/l43trtnp_octagon-simplex-300x300.jpg" 
-                    alt="OCTA Logo" 
-                    className="origin-logo origin-logo-left"
-                  />
                   <h2 className="origin-story-title">{t.categories.origin.title}</h2>
                   <img 
                     src="https://customer-assets.emergentagent.com/job_octa-care-platform/artifacts/l43trtnp_octagon-simplex-300x300.jpg" 
