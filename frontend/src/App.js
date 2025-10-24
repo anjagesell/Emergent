@@ -417,7 +417,7 @@ function App() {
               </div>
             </div>
           ) : activeCategory === 'availability' ? (
-            <div className="content-wrapper">
+            <div className="content-wrapper" data-section="availability">
               <div className="letter-form-container">
                 <div className="letter-header">
                   <img src={LOGO_URL} alt="OCTA Logo" className="letter-logo" />
