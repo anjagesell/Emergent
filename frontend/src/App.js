@@ -645,7 +645,11 @@ function App() {
                               </tr>
                             </thead>
                             <tbody>
-                              {[...requests].sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp)).map((request, index) => (
+                              {[...requests].sort((a, b) => {
+                                const dateA = new Date(a.timestamp);
+                                const dateB = new Date(b.timestamp);
+                                return sortOrder === 'newest' ? dateB - dateA : dateA - dateB;
+                              }).map((request, index) => (
                                 <tr key={request.id} data-testid="request-row">
                                   <td className="row-number">{index + 1}</td>
                                   <td className="timestamp-cell">
