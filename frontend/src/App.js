@@ -419,6 +419,16 @@ function App() {
                   {language === 'de' ? 'Ihr Browser unterstützt das Video-Tag nicht.' : 'Your browser does not support the video tag.'}
                 </video>
               </div>
+              
+              {/* Origin Story Link */}
+              <div className="origin-story-link-container">
+                <button
+                  className="origin-story-link"
+                  onClick={() => setActiveCategory('origin')}
+                >
+                  {t.nav.origin}
+                </button>
+              </div>
             </div>
           ) : activeCategory === 'availability' ? (
             <div className="content-wrapper" data-section="availability">
