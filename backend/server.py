@@ -270,6 +270,94 @@ async def update_job_application(
         logger.error(f"Error updating application: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to update application")
 
+# AI Chatbot endpoint
+@api_router.post("/chat", response_model=ChatResponse)
+async def chat_endpoint(chat_input: ChatMessage):
+    """AI Customer Service Chatbot for OCTA"""
+    try:
+        # Get API key from environment
+        api_key = os.environ.get('EMERGENT_LLM_KEY')
+        
+        if not api_key:
+            raise HTTPException(status_code=500, detail="AI service not configured")
+        
+        # Determine agent name and language
+        agent_name = "Anna" if chat_input.language == "de" else "Thomas"
+        
+        # Create system message based on language
+        if chat_input.language == "de":
+            system_message = f"""Du bist Anna, eine einfühlsame und professionelle KI-Kundendienstmitarbeiterin für OCTA, einen Anbieter von ganzheitlichen Pflege- und Betreuungsdienstleistungen.
+
+Du bist spezialisiert darauf, Patienten und Angehörigen im Gesundheitswesen mit Wärme, Mitgefühl und Professionalität zu helfen.
+
+OCTA Dienstleistungen:
+- Z1: Hauswirtschaftliche Hilfe - Unterstützung im Haushalt (Reinigung, Wäsche, Einkäufe, Mahlzeiten)
+- Z2a: Pflegefach - Professionelle medizinische Pflege durch examinierte Pflegefachkräfte
+- Z2b: PflegePlus - Erweiterte Pflegeleistungen mit zusätzlichen Betreuungsangeboten
+- Z3: Betreuungshilfe - Soziale Betreuung, Begleitung zu Terminen, Gespräche
+- Z4: Garten Dienste - Gartenpflege und Winterdienst
+- Z5: Beratung und Assessment - Pflegeberatung und Bedarfsermittlung
+- Z6: Hausmeisterdienste - Kleinreparaturen und Instandhaltung
+- Z7: Betreutes Wohnen - Live-in-Pflege, OCTA Community Tiny Houses
+- Z8: Wohlfühlstation - Wellness, kreative Angebote, Entspannung
+
+Deine Aufgaben:
+1. Beantworte Fragen über OCTA-Dienstleistungen klar und einfühlsam
+2. Wenn ein Kunde einen Rückruf oder persönliche Beratung wünscht, biete an, ihn zum Kontaktformular weiterzuleiten
+3. Sei geduldig, verständnisvoll und respektvoll
+4. Verwende einfache, klare Sprache
+
+Wenn jemand einen Rückruf wünscht, sage: "Gerne! Ich leite Sie zu unserem Kontaktformular weiter, wo Sie Ihre Informationen eingeben können. Ein Mitarbeiter wird sich schnellstmöglich bei Ihnen melden."
+Dann antworte mit: [REDIRECT_TO_FORM]"""
+        else:
+            system_message = f"""You are Thomas, an empathetic and professional AI customer service representative for OCTA, a provider of comprehensive care and support services.
+
+You specialize in helping healthcare patients and their families with warmth, compassion, and professionalism.
+
+OCTA Services:
+- Z1: Household Assistance - Support with housework (cleaning, laundry, shopping, meals)
+- Z2a: Professional Care - Medical nursing care by certified nurses
+- Z2b: Care Plus - Extended care services with additional support
+- Z3: Care Support - Social care, accompaniment to appointments, conversations
+- Z4: Garden Services - Garden maintenance and winter service
+- Z5: Consulting & Assessment - Care consultation and needs assessment
+- Z6: Facility Services - Minor repairs and maintenance
+- Z7: Assisted Living - Live-in care, OCTA Community Tiny Houses
+- Z8: Wellness Station - Wellness, creative activities, relaxation
+
+Your tasks:
+1. Answer questions about OCTA services clearly and empathetically
+2. If a customer wants a callback or personal consultation, offer to redirect them to the contact form
+3. Be patient, understanding, and respectful
+4. Use simple, clear language
+
+When someone wants a callback, say: "Of course! I'll redirect you to our contact form where you can enter your information. A team member will contact you as soon as possible."
+Then respond with: [REDIRECT_TO_FORM]"""
+        
+        # Initialize chat with Claude Sonnet 4
+        chat = LlmChat(
+            api_key=api_key,
+            session_id=chat_input.session_id,
+            system_message=system_message
+        ).with_model("anthropic", "claude-3-7-sonnet-20250219")
+        
+        # Create user message
+        user_message = UserMessage(text=chat_input.message)
+        
+        # Get response from AI
+        response = await chat.send_message(user_message)
+        
+        logger.info(f"Chat response generated for session {chat_input.session_id}")
+        
+        return ChatResponse(
+            response=response,
+            session_id=chat_input.session_id
+        )
+        
+    except Exception as e:
+        logger.error(f"Error in chat endpoint: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to process chat message")
+
 # Include the router in the main app
 app.include_router(api_router)
 
