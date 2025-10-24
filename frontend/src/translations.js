@@ -462,7 +462,7 @@ Dies ist OCTA. Dies ist unsere Geschichte. Dies ist unser Versprechen.`,
       origin: {
         title: 'The Origin Story of OCTA',
         desc: 'The moving story behind OCTA',
-        fullText: `Our leader, Lois Schmidt, is far more than just a trained healthcare professional. She is a visionary with foresight, whose heart beats for people. Her character overflows with creativity, dedication, solution-oriented thinking, and a deeply rooted love for humanity that touches everyone she encounters. This is no coincidence – it is the legacy of a family that has dedicated its life to serving others.
+        fullText: `Our Chief Executive, Lois Schmidt, is far more than just a trained healthcare professional. She is a visionary with foresight, whose heart beats for people. Her character overflows with creativity, dedication, solution-oriented thinking, and a deeply rooted love for humanity that touches everyone she encounters. This is no coincidence – it is the legacy of a family that has dedicated its life to serving others.
 
 Andreas and Anna Schmidt. Two names that stand for unconditional compassion. Both devoted their lives to healthcare, both lived for the wellbeing of their fellow human beings. Together with ten more loving siblings, Lois grew up in a home where community, empathy, and a deep connection to nature and animals were not merely words, but lived values. In this cradle of humanity, the seed for OCTA was planted.
 
