@@ -1731,7 +1731,7 @@ body {
   font-family: 'Georgia', serif;
 }
 
-/* Paper texture overlay */
+/* Wrinkles and creases effect */
 .parchment-paper::before {
   content: '';
   position: absolute;
@@ -1740,11 +1740,33 @@ body {
   right: 0;
   bottom: 0;
   background-image: 
-    radial-gradient(circle at 20% 30%, rgba(139, 115, 85, 0.02) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(139, 115, 85, 0.02) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(139, 115, 85, 0.02) 0%, transparent 50%);
+    /* Vertical creases */
+    linear-gradient(90deg, transparent 30%, rgba(139, 115, 85, 0.03) 30.5%, transparent 31%),
+    linear-gradient(90deg, transparent 60%, rgba(139, 115, 85, 0.04) 60.5%, transparent 61%),
+    /* Diagonal wrinkles */
+    linear-gradient(135deg, transparent 45%, rgba(139, 115, 85, 0.025) 45.5%, transparent 46%),
+    linear-gradient(45deg, transparent 75%, rgba(139, 115, 85, 0.025) 75.5%, transparent 76%),
+    /* Random age spots */
+    radial-gradient(circle at 40% 40%, rgba(139, 115, 85, 0.06) 0%, transparent 15%),
+    radial-gradient(circle at 75% 65%, rgba(139, 115, 85, 0.04) 0%, transparent 10%),
+    radial-gradient(circle at 20% 80%, rgba(139, 115, 85, 0.05) 0%, transparent 12%);
   pointer-events: none;
-  border-radius: 4px;
+  border-radius: 2px;
+  /* Rough edges effect */
+  clip-path: polygon(
+    1% 0%, 3% 0.5%, 5% 0%, 8% 0.3%, 12% 0%, 15% 0.4%, 20% 0.2%, 25% 0%, 
+    30% 0.3%, 35% 0.1%, 40% 0%, 45% 0.4%, 50% 0.2%, 55% 0%, 60% 0.3%, 
+    65% 0.1%, 70% 0%, 75% 0.5%, 80% 0%, 85% 0.4%, 90% 0.2%, 95% 0%, 98% 0.3%, 99% 0%,
+    99.5% 5%, 99.8% 10%, 99.5% 15%, 100% 20%, 99.7% 25%, 99.5% 30%, 100% 35%,
+    99.6% 40%, 99.8% 45%, 99.5% 50%, 100% 55%, 99.7% 60%, 99.5% 65%, 100% 70%,
+    99.6% 75%, 99.8% 80%, 99.5% 85%, 100% 90%, 99.7% 95%, 99.5% 98%, 99% 100%,
+    95% 99.7%, 90% 99.8%, 85% 99.6%, 80% 100%, 75% 99.5%, 70% 99.8%, 65% 99.9%, 
+    60% 99.7%, 55% 100%, 50% 99.8%, 45% 99.6%, 40% 100%, 35% 99.9%, 30% 99.7%, 
+    25% 100%, 20% 99.8%, 15% 99.6%, 10% 100%, 5% 99.8%, 2% 99.5%, 0% 99%,
+    0.5% 95%, 0.2% 90%, 0.5% 85%, 0% 80%, 0.3% 75%, 0.5% 70%, 0% 65%,
+    0.4% 60%, 0.2% 55%, 0.5% 50%, 0% 45%, 0.3% 40%, 0.5% 35%, 0% 30%,
+    0.4% 25%, 0.2% 20%, 0.5% 15%, 0% 10%, 0.3% 5%, 0.5% 2%
+  );
 }
 
 /* Mobile responsive for origin story */
