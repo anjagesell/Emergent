@@ -14,7 +14,8 @@ export const translations = {
       z6: 'Z6: Hausmeisterdienste',
       z7: 'Z7: Betreutes Wohnen',
       z8: 'Z8: Wohlfühlstation',
-      z9: 'Stellenangebote'
+      z9: 'Stellenangebote',
+      origin: 'Die Entstehungsgeschichte'
     },
     home: {
       title: 'Willkommen bei OCTA',
