@@ -334,21 +334,26 @@
 /* Mobile responsive */
 @media (max-width: 768px) {
   .chatbot-container {
-    margin-top: 5px;
+    margin-top: 8px;
   }
 
   .chatbot-trigger {
     padding: 8px 12px;
+    min-width: 110px;
+    gap: 6px;
+    font-size: 12px;
+    border-radius: 10px;
   }
 
   .chatbot-avatar {
-    width: 35px;
-    height: 35px;
-    font-size: 18px;
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+    border-radius: 6px;
   }
 
   .chatbot-name {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .chatbot-window {
