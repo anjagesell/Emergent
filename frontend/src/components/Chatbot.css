@@ -336,26 +336,25 @@
 /* Mobile responsive */
 @media (max-width: 768px) {
   .chatbot-container {
-    margin-top: 8px;
+    margin-top: 5px;
   }
 
   .chatbot-trigger {
-    padding: 8px 12px;
-    min-width: 110px;
-    gap: 6px;
-    font-size: 12px;
-    border-radius: 10px;
-  }
-
-  .chatbot-avatar {
-    width: 26px;
-    height: 26px;
-    font-size: 13px;
+    padding: 0.15rem 0.3rem;
+    gap: 4px;
+    font-size: 0.65rem;
     border-radius: 6px;
   }
 
+  .chatbot-avatar {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    border-radius: 3px;
+  }
+
   .chatbot-name {
-    font-size: 11px;
+    font-size: 0.65rem;
   }
 
   .chatbot-window {
