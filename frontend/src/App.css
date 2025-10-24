@@ -1607,30 +1607,35 @@ body {
 .parchment-paper {
   max-width: 850px;
   width: 100%;
-  background: linear-gradient(to bottom, #f4f1e8 0%, #fdf8f0 15%, #fdf8f0 85%, #f4f1e8 100%);
+  background: linear-gradient(to bottom, #ebe5d8 0%, #f9f3e8 15%, #f9f3e8 85%, #ebe5d8 100%);
   padding: 4rem 5rem;
   box-shadow: 
-    0 10px 40px rgba(0, 0, 0, 0.3),
-    inset 0 0 120px rgba(139, 115, 85, 0.08),
-    inset -10px 0 20px rgba(139, 115, 85, 0.05),
-    inset 10px 0 20px rgba(139, 115, 85, 0.05);
-  border: 1px solid #c4b49a;
-  border-radius: 2px;
+    0 15px 50px rgba(0, 0, 0, 0.4),
+    inset 0 0 150px rgba(139, 115, 85, 0.15),
+    inset -15px 0 30px rgba(139, 115, 85, 0.1),
+    inset 15px 0 30px rgba(139, 115, 85, 0.1),
+    inset 0 -15px 30px rgba(139, 115, 85, 0.08);
+  border: 2px solid #b8a88a;
+  border-radius: 3px;
   position: relative;
-  /* Realistic paper texture with horizontal lines */
+  /* Much stronger paper texture and age spots */
   background-image: 
     repeating-linear-gradient(
       0deg,
       transparent,
-      transparent 30px,
-      rgba(139, 115, 85, 0.04) 30px,
-      rgba(139, 115, 85, 0.04) 31px
+      transparent 29px,
+      rgba(139, 115, 85, 0.08) 29px,
+      rgba(139, 115, 85, 0.08) 31px
     ),
-    /* Age spots and stains */
-    radial-gradient(ellipse at 15% 20%, rgba(139, 115, 85, 0.08) 0%, transparent 25%),
-    radial-gradient(ellipse at 85% 80%, rgba(139, 115, 85, 0.06) 0%, transparent 30%),
-    radial-gradient(ellipse at 70% 15%, rgba(139, 115, 85, 0.05) 0%, transparent 20%),
-    radial-gradient(ellipse at 30% 90%, rgba(139, 115, 85, 0.07) 0%, transparent 25%);
+    /* Darker, more visible age spots and stains */
+    radial-gradient(ellipse at 18% 25%, rgba(139, 115, 85, 0.18) 0%, transparent 30%),
+    radial-gradient(ellipse at 82% 75%, rgba(139, 115, 85, 0.15) 0%, transparent 35%),
+    radial-gradient(ellipse at 65% 18%, rgba(139, 115, 85, 0.12) 0%, transparent 25%),
+    radial-gradient(ellipse at 35% 88%, rgba(139, 115, 85, 0.16) 0%, transparent 30%),
+    radial-gradient(ellipse at 50% 50%, rgba(139, 115, 85, 0.08) 0%, transparent 40%),
+    /* Coffee stains effect */
+    radial-gradient(circle at 25% 40%, rgba(101, 67, 33, 0.12) 0%, transparent 15%),
+    radial-gradient(circle at 78% 60%, rgba(101, 67, 33, 0.10) 0%, transparent 18%);
 }
 
 /* Old Germanic Metallic Emblem Style Ornament */
