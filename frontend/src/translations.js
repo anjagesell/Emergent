@@ -490,7 +490,7 @@ This is OCTA. This is our story. This is our promise.`,
       z6: { title: 'Z6: Facility Services', desc: 'Reliable handyman services for your home' },
       z7: { title: 'Z7: Assisted Living', desc: 'Independent living with needs-based support' },
       z8: { title: 'Z8: Wellness Station', desc: 'Wellness and holistic promotion of body and mind' },
-      z9: { title: 'Z9: Job Opportunities', desc: 'Career opportunities at OCTA – become part of our team' }
+      z9: { title: 'Job Opportunities', desc: 'Career opportunities at OCTA – become part of our team' }
     },
     certifications: [
       { title: 'Nursing Professionals according to § 71 SGB XI', desc: 'Certified geriatric nurses and health and nursing professionals with state recognition' },
