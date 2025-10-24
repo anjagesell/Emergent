@@ -1611,18 +1611,26 @@ body {
   padding: 4rem 5rem;
   box-shadow: 
     0 10px 40px rgba(0, 0, 0, 0.3),
-    inset 0 0 120px rgba(139, 115, 85, 0.05);
-  border: 1px solid #d4c4a8;
-  border-radius: 4px;
+    inset 0 0 120px rgba(139, 115, 85, 0.08),
+    inset -10px 0 20px rgba(139, 115, 85, 0.05),
+    inset 10px 0 20px rgba(139, 115, 85, 0.05);
+  border: 1px solid #c4b49a;
+  border-radius: 2px;
   position: relative;
+  /* Realistic paper texture with horizontal lines */
   background-image: 
     repeating-linear-gradient(
       0deg,
       transparent,
       transparent 30px,
-      rgba(139, 115, 85, 0.03) 30px,
-      rgba(139, 115, 85, 0.03) 31px
-    );
+      rgba(139, 115, 85, 0.04) 30px,
+      rgba(139, 115, 85, 0.04) 31px
+    ),
+    /* Age spots and stains */
+    radial-gradient(ellipse at 15% 20%, rgba(139, 115, 85, 0.08) 0%, transparent 25%),
+    radial-gradient(ellipse at 85% 80%, rgba(139, 115, 85, 0.06) 0%, transparent 30%),
+    radial-gradient(ellipse at 70% 15%, rgba(139, 115, 85, 0.05) 0%, transparent 20%),
+    radial-gradient(ellipse at 30% 90%, rgba(139, 115, 85, 0.07) 0%, transparent 25%);
 }
 
 /* Ornamental decorations */
