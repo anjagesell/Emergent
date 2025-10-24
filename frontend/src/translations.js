@@ -194,8 +194,18 @@ export const translations = {
       origin: {
         title: 'Die Entstehungsgeschichte von OCTA',
         desc: 'Die bewegende Geschichte hinter OCTA',
-        fullText: '[Your story will be beautifully displayed here. Share the emotional journey of how OCTA was born, the challenges you faced, the people who inspired you, and the vision that drives you forward. This will be the heart and soul of your message to clients and staff.]',
-        storyPlaceholder: true  // Marker that content needs to be added
+        fullText: `Unsere Chefin, Lois Schmidt, ist eine ausgebildete Fachkraft aus dem Heilwesen – nicht nur mit fachlicher Kompetenz ausgestattet, sondern auch mit vorausschauender Vision. Ihr persönliches Wesen sprudelt geradezu über vor Kreativität, Hingabe, Lösungsorientierung und Wohlwollen gegenüber ihren Mitmenschen. Dies ist kein Wunder, wenn man die Wiege betrachtet, aus der sie entstammt.
+
+Andreas und Anna Schmidt – beide Elternteile stets im Heilwesen präsent und dem Wohl der Menschen dienend. Zehn weitere liebevolle Geschwister mit echtem Sinn für Gemeinschaft und einer tiefen Liebe zu Natur und Tieren. Es war nur eine Frage der Zeit, bis Lois ihr Potenzial für die nächste Generation entfaltete – eine Inspiration zur Veränderung in der ambulanten Krankenpflege, sei es in der Pflege am Menschen selbst oder in der hauswirtschaftlichen Unterstützung.
+
+Doch Lois sind nicht nur die Nöten der Patienten und Klienten wichtig, sondern insbesondere auch die der Mitarbeiter von heute und morgen. Sie erkannte, dass viele engagierte Pflegekräfte, die ihren Beruf mit Herz und Seele angetreten hatten, von altmodischen Konzepten, alteingesessener Methodik und eingefahrenen Umgangsformen regelrecht ausgebrannt wurden und letztlich selbst auf der Strecke blieben.
+
+So entschied sich Lois, Menschen um sich zu versammeln, die ihre visionären Ideen mittragen würden: diverse Fachärzte, erfahrene Haushaltshilfen, leidenschaftliche Pflegekräfte – allesamt Menschen, die ihre Berufung mit Hingabe leben. Auf ihrem Weg lernte sie zwei ältere Menschen kennen, die ihre Vorstellungskraft nicht belächelten, sondern sie stattdessen ermutigten, den Lebenstraum ihrer verstorbenen Mutter und ihrer selbst zu verwirklichen.
+
+Es begann mit der Auswahl des Firmenlogos. Im Logo erkennt man acht rote Punkte – jeder steht für eine Abteilung. Sie sind allesamt vernetzt und arbeiten gemeinsam, doch eigenständig. Die Abteilungen werden von acht verschiedenen Direktoren geführt, wahren Fachmännern und Fachfrauen ihrer Bereiche, die empathisch veranlagt sind und ihre eigene Berufung ebenso lieben und verwirklichen. Jeder Direktor trägt Verantwortung für seine Abteilung und zugleich für die Gesamtaufgabe der Firma.
+
+Die Mitwirkung privater Dienstleister, kombiniert mit neuen Berufszweigen und Berufsbezeichnungen, die Implementierung neuartiger Technologien und ein außergewöhnliches Arbeitsmodell – all dies macht OCTA zu dem, was es heute ist: Ein Ort, an dem Menschlichkeit, Professionalität und Innovation Hand in Hand gehen, getragen vom Vermächtnis einer Familie, die dem Dienst am Menschen ihr Leben gewidmet hat.`,
+        storyPlaceholder: false
       }
     },
     overviewItems: {
