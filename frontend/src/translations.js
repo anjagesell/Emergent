@@ -284,7 +284,7 @@ Dies ist OCTA. Dies ist unsere Geschichte. Dies ist unser Versprechen.`,
       z6: 'Z6: Facility Services',
       z7: 'Z7: Assisted Living',
       z8: 'Z8: Wellness Station',
-      z9: 'Z9: Job Opportunities',
+      z9: 'Job Opportunities',
       origin: 'The Origin Story'
     },
     home: {
