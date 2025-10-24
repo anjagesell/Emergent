@@ -458,8 +458,18 @@ Die Mitwirkung privater Dienstleister, kombiniert mit neuen Berufszweigen und Be
       origin: {
         title: 'The Origin Story of OCTA',
         desc: 'The moving story behind OCTA',
-        fullText: '[Your story will be beautifully displayed here. Share the emotional journey of how OCTA was born, the challenges you faced, the people who inspired you, and the vision that drives you forward. This will be the heart and soul of your message to clients and staff.]',
-        storyPlaceholder: true  // Marker that content needs to be added
+        fullText: `Our leader, Lois Schmidt, is a trained healthcare professional – equipped not only with technical expertise, but also with forward-thinking vision. Her personal character overflows with creativity, dedication, solution-oriented thinking, and benevolence toward her fellow human beings. This is no wonder when one considers the cradle from which she comes.
+
+Andreas and Anna Schmidt – both parents always present in healthcare and serving the wellbeing of people. Ten more loving siblings with a genuine sense of community and a deep love for nature and animals. It was only a matter of time before Lois would unfold her potential for the next generation – an inspiration for change in outpatient nursing care, whether in direct patient care or in household assistance.
+
+But Lois cares not only about the needs of patients and clients, but especially also about the needs of employees, today and tomorrow. She recognized that many dedicated caregivers who had entered their profession with heart and soul were being burned out by outdated concepts, entrenched methods, and ingrained practices, ultimately falling by the wayside themselves.
+
+So Lois decided to gather around her people who would support her visionary ideas: various medical specialists, experienced household helpers, passionate care workers – all people who live their calling with dedication. On her journey, she met two elderly people who did not ridicule her imagination, but instead encouraged her to realize the life dream of her deceased mother and herself.
+
+It began with the selection of the company logo. In the logo, one recognizes eight red dots – each representing a department. They are all interconnected and work together, yet independently. The departments are led by eight different directors, true experts in their fields, who are empathetically inclined and likewise love and fulfill their own calling. Each director bears responsibility for their department and at the same time for the overall mission of the company.
+
+The collaboration of private service providers, combined with new professional fields and job titles, the implementation of innovative technologies, and an extraordinary work model – all of this makes OCTA what it is today: A place where humanity, professionalism, and innovation go hand in hand, carried by the legacy of a family that has dedicated its life to serving people.`,
+        storyPlaceholder: false
       }
     },
     overviewItems: {
