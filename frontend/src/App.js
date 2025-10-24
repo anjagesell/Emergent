@@ -683,13 +683,22 @@ function App() {
                                   <td className="notes-cell">
                                     <textarea
                                       value={request.notes || ''}
-                                      onChange={async (e) => {
+                                      onChange={(e) => {
+                                        // Update local state immediately for responsive typing
+                                        const newValue = e.target.value;
+                                        setRequests(prevRequests =>
+                                          prevRequests.map(r =>
+                                            r.id === request.id ? { ...r, notes: newValue } : r
+                                          )
+                                        );
+                                      }}
+                                      onBlur={async (e) => {
+                                        // Save to backend when user clicks away
                                         const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
                                         await fetch(`${BACKEND_URL}/api/availability-requests/${request.id}?notes=${encodeURIComponent(e.target.value)}`, {
                                           method: 'PATCH'
                                         });
                                       }}
-                                      onBlur={loadRequests}
                                       className="notes-textarea"
                                       placeholder={language === 'de' ? 'Notizen...' : 'Notes...'}
                                       maxLength="500"
