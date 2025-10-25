@@ -675,10 +675,17 @@ function App() {
                                           : 'Are you sure you want to delete this entry?')) {
                                           const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
                                           try {
-                                            await fetch(`${BACKEND_URL}/api/availability-requests/${request.id}`, {
+                                            const response = await fetch(`${BACKEND_URL}/api/availability-requests/${request.id}`, {
                                               method: 'DELETE'
                                             });
-                                            loadRequests(); // Refresh the list
+                                            if (response.ok) {
+                                              alert(language === 'de' 
+                                                ? '✓ Eintrag erfolgreich gelöscht' 
+                                                : '✓ Entry successfully deleted');
+                                              loadRequests(); // Refresh the list
+                                            } else {
+                                              throw new Error('Delete failed');
+                                            }
                                           } catch (error) {
                                             alert(language === 'de' 
                                               ? 'Fehler beim Löschen' 
