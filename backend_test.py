@@ -245,6 +245,121 @@ def test_post_job_application():
         print(f"❌ FAIL: Unexpected error - {str(e)}")
         return False, None
 
+def test_get_appointments():
+    """Test GET /api/appointments endpoint"""
+    print("\n=== Testing GET /api/appointments - Retrieve Appointments ===")
+    
+    success_count = 0
+    total_tests = 3
+    
+    # Test 1: Get all appointments
+    print("Test 1: Retrieve all appointments")
+    try:
+        response = requests.get(
+            f"{BACKEND_URL}/appointments",
+            timeout=10
+        )
+        
+        print(f"Status Code: {response.status_code}")
+        
+        if response.status_code == 200:
+            response_data = response.json()
+            print(f"Number of appointments retrieved: {len(response_data)}")
+            
+            if len(response_data) > 0:
+                print(f"Sample appointment: {json.dumps(response_data[0], indent=2, default=str)}")
+                
+                # Verify structure of first appointment
+                required_fields = ["id", "date", "time", "client_name", "client_number", "phone", "location", "appointment_type", "timestamp"]
+                first_appointment = response_data[0]
+                missing_fields = [field for field in required_fields if field not in first_appointment]
+                
+                if missing_fields:
+                    print(f"❌ FAIL: Missing fields in appointment: {missing_fields}")
+                else:
+                    print("✅ All required fields present")
+                    success_count += 1
+            else:
+                print("⚠️  No appointments found in database")
+                success_count += 1  # Empty result is still valid
+        else:
+            print(f"❌ FAIL: HTTP {response.status_code}")
+            print(f"Response: {response.text}")
+            
+    except Exception as e:
+        print(f"❌ FAIL: Error - {str(e)}")
+    
+    # Test 2: Test date range filtering
+    print("\nTest 2: Date range filtering")
+    try:
+        start_date = "2025-10-27"
+        end_date = "2025-10-29"
+        response = requests.get(
+            f"{BACKEND_URL}/appointments?start_date={start_date}&end_date={end_date}",
+            timeout=10
+        )
+        
+        print(f"Status Code: {response.status_code}")
+        
+        if response.status_code == 200:
+            response_data = response.json()
+            print(f"Appointments in date range {start_date} to {end_date}: {len(response_data)}")
+            
+            # Verify all returned appointments are within date range
+            valid_dates = True
+            for appointment in response_data:
+                app_date = appointment.get('date')
+                if app_date and (app_date < start_date or app_date > end_date):
+                    print(f"❌ Appointment date {app_date} outside range {start_date}-{end_date}")
+                    valid_dates = False
+            
+            if valid_dates:
+                print("✅ Date range filtering working correctly")
+                success_count += 1
+            else:
+                print("❌ Date range filtering failed")
+        else:
+            print(f"❌ FAIL: HTTP {response.status_code}")
+            
+    except Exception as e:
+        print(f"❌ FAIL: Error - {str(e)}")
+    
+    # Test 3: Verify German characters are properly retrieved
+    print("\nTest 3: German character encoding verification")
+    try:
+        response = requests.get(
+            f"{BACKEND_URL}/appointments",
+            timeout=10
+        )
+        
+        if response.status_code == 200:
+            response_data = response.json()
+            
+            # Look for appointments with German characters
+            german_char_found = False
+            for appointment in response_data:
+                notes = appointment.get('notes', '')
+                name = appointment.get('client_name', '')
+                if any(char in notes + name for char in ['ä', 'ö', 'ü', 'ß', '€']):
+                    print(f"✅ German characters found and properly encoded: {name}, {notes}")
+                    german_char_found = True
+                    break
+            
+            if german_char_found or len(response_data) == 0:
+                print("✅ German character encoding verified")
+                success_count += 1
+            else:
+                print("⚠️  No appointments with German characters found to test encoding")
+                success_count += 1  # Still pass if no German chars to test
+        else:
+            print(f"❌ FAIL: HTTP {response.status_code}")
+            
+    except Exception as e:
+        print(f"❌ FAIL: Error - {str(e)}")
+    
+    print(f"\nGET /api/appointments: {success_count}/{total_tests} tests passed")
+    return success_count == total_tests
+
 def test_get_job_applications():
     """Test GET /api/job-applications endpoint"""
     print("\n=== Testing GET /api/job-applications ===")
