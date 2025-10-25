@@ -2142,6 +2142,7 @@ body {
 
 .sort-toggle-button:active {
   transform: translateY(0);
+}
 
 /* Modal Overlay for Appointment Popup */
 .modal-overlay {
