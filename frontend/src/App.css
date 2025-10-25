@@ -2151,7 +2151,7 @@ body {
 
 .sort-toggle-button:active {
   transform: translateY(0);
-
+}
 
 /* ============================================
    Appointment Daily Popup Styles
