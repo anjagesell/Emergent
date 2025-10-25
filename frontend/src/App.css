@@ -1644,11 +1644,11 @@ body {
 }
 
 .weekly-calendar {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr) !important;
   gap: 0;
   margin: 2rem 0;
-  border: 3px solid #0a2e4e;
+  border: 3px solid #0a2e4e !important;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
