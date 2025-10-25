@@ -111,6 +111,24 @@ user_problem_statement: |
   5. Intern section should have tabs for "Verfügbarkeitsanfragen" and "Bewerbungen"
 
 backend:
+  - task: "Appointments API - Complete CRUD Operations"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 1
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: false
+        agent: "testing"
+        comment: "Initial testing failed with 422 validation error due to frontend/backend field mismatch. Frontend sending 'details' but backend expecting 'notes', missing required fields client_number, phone, location."
+      - working: false
+        agent: "testing"
+        comment: "Fixed frontend form fields but encountered 500 error when retrieving appointments due to MongoDB ObjectId serialization issue in GET endpoint."
+      - working: true
+        agent: "testing"
+        comment: "✅ PASS: Complete appointments CRUD operations working perfectly. Fixed MongoDB ObjectId serialization by excluding '_id' field from GET response. Successfully tested: 1) POST /api/appointments - creates appointments with all required fields (client_number, date, time, client_name, phone, location, notes, appointment_type), 2) GET /api/appointments - retrieves all appointments without serialization errors, 3) DELETE /api/appointments/{id} - deletes appointments with proper confirmation. All endpoints working correctly with proper error handling."
+
   - task: "Job Application API - POST /api/job-applications"
     implemented: true
     working: true
