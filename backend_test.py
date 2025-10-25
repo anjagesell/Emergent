@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
-Backend API Testing for OCTA Care Services
-Tests job application endpoints and existing availability request endpoints
+Backend API Testing for OCTA Care Services - Appointment Management System
+Tests appointment endpoints for the OCTA care services platform
 """
 
 import requests
 import json
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
+import urllib.parse
 
 # Backend URL from frontend/.env
 BACKEND_URL = "https://octa-calendar.preview.emergentagent.com/api"
