@@ -122,25 +122,19 @@ class Appointment(BaseModel):
     model_config = ConfigDict(extra="ignore")
     
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
-    client_number: str
     date: str  # Format: YYYY-MM-DD
     time: str  # Format: HH:00
     client_name: str
-    phone: str
-    location: str
+    service: Optional[str] = None
     notes: Optional[str] = None
-    appointment_type: str  # 'video_conference', 'in_person', 'phone', 'online_email'
     timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 class AppointmentCreate(BaseModel):
-    client_number: str
     date: str
     time: str
     client_name: str
-    phone: str
-    location: str
+    service: Optional[str] = None
     notes: Optional[str] = None
-    appointment_type: str
 
 
 # Add your routes to the router instead of directly to app
