@@ -336,6 +336,64 @@ async def delete_job_application(application_id: str):
         raise HTTPException(status_code=500, detail="Failed to delete application")
 
 
+
+# Appointment Endpoints
+@api_router.post("/appointments", response_model=Appointment)
+async def create_appointment(appointment_input: AppointmentCreate):
+    """Create a new appointment"""
+    try:
+        appointment_obj = Appointment(**appointment_input.model_dump())
+        
+        # Save to database
+        doc = appointment_obj.model_dump()
+        doc['timestamp'] = doc['timestamp'].isoformat()
+        await db.appointments.insert_one(doc)
+        
+        logger.info(f"Appointment {appointment_obj.id} created for {appointment_obj.date} at {appointment_obj.time}")
+        
+        return appointment_obj
+    except Exception as e:
+        logger.error(f"Error creating appointment: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to create appointment")
+
+@api_router.get("/appointments")
+async def get_appointments(start_date: Optional[str] = Query(None), end_date: Optional[str] = Query(None)):
+    """Get all appointments, optionally filtered by date range"""
+    try:
+        query = {}
+        if start_date and end_date:
+            query['date'] = {'$gte': start_date, '$lte': end_date}
+        
+        appointments = await db.appointments.find(query).to_list(length=None)
+        
+        # Convert timestamp strings back to datetime for response
+        for app in appointments:
+            if isinstance(app.get('timestamp'), str):
+                app['timestamp'] = datetime.fromisoformat(app['timestamp'])
+        
+        return appointments
+    except Exception as e:
+        logger.error(f"Error retrieving appointments: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to retrieve appointments")
+
+@api_router.delete("/appointments/{appointment_id}")
+async def delete_appointment(appointment_id: str):
+    """Delete an appointment"""
+    try:
+        result = await db.appointments.delete_one({"id": appointment_id})
+        
+        if result.deleted_count == 0:
+            raise HTTPException(status_code=404, detail="Appointment not found")
+            
+        logger.info(f"Deleted appointment {appointment_id}")
+        return {"success": True, "message": "Appointment deleted successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error deleting appointment: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to delete appointment")
+
+
 # AI Chatbot endpoint
 @api_router.post("/chat", response_model=ChatResponse)
 async def chat_endpoint(chat_input: ChatMessage):
