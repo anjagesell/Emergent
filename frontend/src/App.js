@@ -60,8 +60,21 @@ function App() {
   const [internError, setInternError] = useState('');
   const [requests, setRequests] = useState([]);
   const [jobApplications, setJobApplications] = useState([]);
-  const [internActiveTab, setInternActiveTab] = useState('availability'); // 'availability' or 'jobs'
+  const [internActiveTab, setInternActiveTab] = useState('appointments'); // 'appointments', 'availability' or 'jobs'
   const [sortOrder, setSortOrder] = useState('newest'); // 'newest' or 'oldest'
+  
+  // Appointments state
+  const [appointments, setAppointments] = useState([]);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [showDayPopup, setShowDayPopup] = useState(false);
+  const [currentWeekStart, setCurrentWeekStart] = useState(() => {
+    const today = new Date();
+    const day = today.getDay();
+    const diff = day === 0 ? -6 : 1 - day; // Adjust to Monday
+    const monday = new Date(today);
+    monday.setDate(today.getDate() + diff);
+    return monday;
+  });
   
   const t = translations[language];
   const categoryKeys = ['z1', 'z2a', 'z2b', 'z3', 'z4', 'z5', 'z6', 'z7', 'z8', 'z9'];
