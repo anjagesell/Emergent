@@ -1788,9 +1788,6 @@ body {
   }
 }
 
-  width: 8px;
-}
-
 .sidebar::-webkit-scrollbar-track,
 .content::-webkit-scrollbar-track,
 .modal-content::-webkit-scrollbar-track {
