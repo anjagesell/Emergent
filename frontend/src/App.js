@@ -67,6 +67,12 @@ function App() {
   const [appointments, setAppointments] = useState([]);
   const [selectedDate, setSelectedDate] = useState(null);
   const [showDayPopup, setShowDayPopup] = useState(false);
+  const [appointmentForm, setAppointmentForm] = useState({
+    time: '08:00',
+    clientName: '',
+    service: '',
+    notes: ''
+  });
   const [currentWeekStart, setCurrentWeekStart] = useState(() => {
     const today = new Date();
     const day = today.getDay();
