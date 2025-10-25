@@ -300,6 +300,79 @@ function App() {
     }
   };
 
+  const handleCreateAppointment = async (e) => {
+    e.preventDefault();
+    
+    if (!newAppointment.name || !newAppointment.time) {
+      alert(language === 'de' ? 'Bitte füllen Sie Name und Zeit aus.' : 'Please fill in name and time.');
+      return;
+    }
+    
+    try {
+      const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+      const response = await fetch(`${BACKEND_URL}/api/appointments`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...newAppointment,
+          date: selectedDate
+        })
+      });
+      
+      if (response.ok) {
+        await loadAppointments();
+        setNewAppointment({
+          client_number: '',
+          time: '08:00',
+          name: '',
+          phone: '',
+          location: '',
+          notes: '',
+          appointment_type: 'in_person'
+        });
+        alert(language === 'de' ? '✓ Termin erfolgreich erstellt' : '✓ Appointment successfully created');
+      } else {
+        throw new Error('Failed to create appointment');
+      }
+    } catch (error) {
+      console.error('Error creating appointment:', error);
+      alert(language === 'de' ? 'Fehler beim Erstellen des Termins' : 'Error creating appointment');
+    }
+  };
+
+  const handleDeleteAppointment = async (appointmentId) => {
+    if (window.confirm(language === 'de' 
+      ? 'Möchten Sie diesen Termin wirklich löschen?' 
+      : 'Are you sure you want to delete this appointment?')) {
+      try {
+        const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+        const response = await fetch(`${BACKEND_URL}/api/appointments/${appointmentId}`, {
+          method: 'DELETE'
+        });
+        
+        if (response.ok) {
+          await loadAppointments();
+          alert(language === 'de' ? '✓ Termin erfolgreich gelöscht' : '✓ Appointment successfully deleted');
+        } else {
+          throw new Error('Delete failed');
+        }
+      } catch (error) {
+        console.error('Error deleting appointment:', error);
+        alert(language === 'de' ? 'Fehler beim Löschen' : 'Error deleting appointment');
+      }
+    }
+  };
+
+  const getAppointmentsForDate = (date) => {
+    return appointments.filter(app => app.date === date);
+  };
+
+  const getAppointmentsForTimeSlot = (date, time) => {
+    return appointments.filter(app => app.date === date && app.time === time);
+  };
+
   const getWeekDates = () => {
     const dates = [];
     const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
