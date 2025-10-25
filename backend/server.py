@@ -364,7 +364,7 @@ async def get_appointments(start_date: Optional[str] = Query(None), end_date: Op
         if start_date and end_date:
             query['date'] = {'$gte': start_date, '$lte': end_date}
         
-        appointments = await db.appointments.find(query).to_list(length=None)
+        appointments = await db.appointments.find(query, {"_id": 0}).to_list(length=None)
         
         # Convert timestamp strings back to datetime for response
         for app in appointments:
