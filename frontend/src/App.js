@@ -1864,6 +1864,18 @@ function App() {
                       <option value="online_email">{language === 'de' ? 'Online/E-Mail' : 'Online/Email'}</option>
                     </select>
                   </div>
+                  <div className="form-group">
+                    <label>
+                      {language === 'de' ? 'Ort' : 'Location'} <span className="required">*</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      name="location" 
+                      required 
+                      className="form-input"
+                      placeholder={language === 'de' ? 'Ort eingeben...' : 'Enter location...'}
+                    />
+                  </div>
                 </div>
                 <div className="form-group">
                   <label>{language === 'de' ? 'Details/Notizen' : 'Details/Notes'}</label>
