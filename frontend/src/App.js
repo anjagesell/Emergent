@@ -722,7 +722,16 @@ function App() {
                       </div>
                       
                       {/* Weekly Calendar */}
-                      <div className="weekly-calendar">
+                      <div className="weekly-calendar" style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(6, 1fr)',
+                        gap: 0,
+                        margin: '2rem 0',
+                        border: '3px solid #0a2e4e',
+                        borderRadius: '8px',
+                        overflow: 'hidden',
+                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
+                      }}>
                         {getWeekDates().map((dayInfo) => (
                           <div
                             key={dayInfo.dateString}
@@ -731,9 +740,38 @@ function App() {
                               setSelectedDate(dayInfo.dateString);
                               setShowDayPopup(true);
                             }}
+                            style={{
+                              background: dayInfo.hasAppointments ? 'linear-gradient(135deg, #c8f8e4 0%, #b0f0d0 100%)' : 'white',
+                              borderRight: '2px solid #d0d0d0',
+                              borderBottom: '2px solid #d0d0d0',
+                              padding: '1.5rem 1rem',
+                              cursor: 'pointer',
+                              transition: 'all 0.3s ease',
+                              textAlign: 'center',
+                              minHeight: '120px',
+                              display: 'flex',
+                              flexDirection: 'column',
+                              justifyContent: 'center',
+                              alignItems: 'center'
+                            }}
                           >
-                            <div className="day-name">{dayInfo.dayName}</div>
-                            <div className="day-date">
+                            <div className="day-name" style={{
+                              fontSize: '0.85rem',
+                              fontWeight: 700,
+                              color: dayInfo.hasAppointments ? '#1a5a3a' : '#0a2e4e',
+                              textTransform: 'uppercase',
+                              marginBottom: '0.75rem',
+                              letterSpacing: '0.5px',
+                              borderBottom: `2px solid ${dayInfo.hasAppointments ? '#68b890' : '#0a2e4e'}`,
+                              paddingBottom: '0.5rem',
+                              width: '100%'
+                            }}>{dayInfo.dayName}</div>
+                            <div className="day-date" style={{
+                              fontSize: '1.5rem',
+                              fontWeight: 700,
+                              color: dayInfo.hasAppointments ? '#1a4a2a' : '#0a2e4e',
+                              marginTop: '0.5rem'
+                            }}>
                               {dayInfo.date.toLocaleDateString(language === 'de' ? 'de-DE' : 'en-US', { day: '2-digit', month: '2-digit' })}
                             </div>
                           </div>
