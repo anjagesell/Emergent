@@ -983,35 +983,106 @@ body {
   box-shadow: 0 4px 8px rgba(211, 47, 47, 0.3);
 }
 
+/* Admin Section - Manila File Folder Style */
 .intern-tabs {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  border-bottom: 2px solid #e0e0e0;
+  gap: 4px;
+  margin-bottom: -2px;
+  position: relative;
+  z-index: 10;
+  padding-left: 40px;
 }
 
 .intern-tab {
-  padding: 1rem 2rem;
-  background-color: transparent;
-  color: #001f3f;
-  border: none;
-  border-bottom: 3px solid transparent;
-  font-size: 1.1rem;
-  font-weight: 600;
+  position: relative;
+  padding: 12px 30px 12px 50px;
+  background: linear-gradient(to bottom, #e8dcc0 0%, #d4c8a8 100%);
+  border: 2px solid #b8a88a;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #4a4030;
   transition: all 0.3s ease;
-  white-space: nowrap;
+  box-shadow: 
+    0 -2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  clip-path: polygon(
+    8% 0%, 92% 0%, 100% 15%, 100% 100%, 0% 100%, 0% 15%
+  );
 }
 
-.intern-tab:hover {
-  background-color: #f5f5f5;
-  color: #003d82;
+.intern-tab::before {
+  content: attr(data-number);
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #8b7355;
+  background: rgba(255, 255, 255, 0.3);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #b8a88a;
+}
+
+.intern-tab:hover:not(.active) {
+  background: linear-gradient(to bottom, #f0e4c8 0%, #dcc8a8 100%);
+  transform: translateY(-2px);
 }
 
 .intern-tab.active {
-  color: #001f3f;
-  border-bottom-color: #001f3f;
-  background-color: transparent;
+  background: linear-gradient(to bottom, #f4e8c1 0%, #e8dcc0 100%);
+  border-color: #a89878;
+  z-index: 20;
+  font-weight: 700;
+  box-shadow: 
+    0 -4px 8px rgba(0, 0, 0, 0.15),
+    inset 0 2px 0 rgba(255, 255, 255, 0.5);
+  padding-bottom: 14px;
+}
+
+.intern-tab.active::before {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: #8b7355;
+  color: #5a4030;
+}
+
+/* Manila Folder Content Area */
+.intern-content {
+  background: linear-gradient(to bottom, #f8f2e0 0%, #f4e8c1 100%);
+  border: 3px solid #a89878;
+  border-radius: 0 8px 8px 8px;
+  padding: 30px;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4),
+    inset 0 0 80px rgba(139, 115, 85, 0.03);
+  position: relative;
+}
+
+.intern-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 24px,
+      rgba(139, 115, 85, 0.03) 24px,
+      rgba(139, 115, 85, 0.03) 25px
+    );
+  pointer-events: none;
 }
 
 .requests-title {
