@@ -289,6 +289,54 @@ frontend:
         agent: "testing"
         comment: "✅ PASS: CRITICAL FIX VERIFIED - Notizen field in Bewerbungen tab working perfectly! Successfully tested: 1) Status checkbox toggle working, 2) Notizen field accepts German characters (äöüß) and special characters (€@#!), 3) NO RED ERROR MESSAGES appear, 4) Text persists correctly, 5) API calls to PATCH /api/job-applications/{id} working correctly. Original user-reported issue RESOLVED."
 
+  - task: "Appointments Calendar Grid"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Phase 1 complete: Weekly calendar grid (Mon-Sat) with mint green 'Termine' tab in Admin section. Grid shows days with navigation. Days with appointments turn mint green."
+
+  - task: "Daily Appointment Popup"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Phase 2 complete: Implemented daily appointment popup modal with time slots (08:00-18:00), appointment form with all required fields (client_number, time, name, phone, location, notes, appointment_type), display of existing appointments in time slots, and delete functionality. Popup opens when clicking calendar day."
+
+  - task: "Appointment Form and CRUD Operations"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Implemented handleCreateAppointment() for creating appointments, handleDeleteAppointment() for deleting appointments, and helper functions getAppointmentsForDate() and getAppointmentsForTimeSlot() for filtering appointments. Form state managed with newAppointment state object."
+
+  - task: "Appointment Popup Styling"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/App.css"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Added comprehensive CSS for appointment popup with Manila folder aesthetic: modal overlay, popup container, header with close button, time slots display, appointment cards, and form styling. Includes responsive design for mobile."
+
 metadata:
   created_by: "main_agent"
   version: "1.0"
