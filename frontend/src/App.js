@@ -1765,9 +1765,11 @@ function App() {
                   date: selectedDate,
                   time: formData.get('time'),
                   client_name: formData.get('client_name'),
-                  details: formData.get('details'),
-                  appointment_type: formData.get('appointment_type'),
-                  language: language
+                  client_number: formData.get('client_number') || 'N/A',
+                  phone: formData.get('phone') || 'N/A',
+                  location: formData.get('location') || 'N/A',
+                  notes: formData.get('details'),
+                  appointment_type: formData.get('appointment_type')
                 };
 
                 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
