@@ -1765,6 +1765,123 @@ function App() {
         <p className="footer-copyright">{t.copyright}</p>
         <p className="footer-designer">© Designed by Larsen</p>
       </footer>
+
+      {/* Appointment Day Popup Modal */}
+      {showDayPopup && (
+        <div className="modal-overlay" onClick={() => setShowDayPopup(false)}>
+          <div className="appointment-popup-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="appointment-popup-header">
+              <h2>
+                {language === 'de' ? 'Termine für ' : 'Appointments for '}
+                {selectedDate && new Date(selectedDate + 'T00:00:00').toLocaleDateString(language === 'de' ? 'de-DE' : 'en-US', { 
+                  weekday: 'long', 
+                  day: '2-digit', 
+                  month: '2-digit', 
+                  year: 'numeric' 
+                })}
+              </h2>
+              <button className="popup-close-button" onClick={() => setShowDayPopup(false)}>✕</button>
+            </div>
+
+            {/* Add New Appointment Form */}
+            <div className="add-appointment-section">
+              <h3>{language === 'de' ? 'Neuer Termin' : 'New Appointment'}</h3>
+              <form onSubmit={handleAddAppointment} className="appointment-form">
+                <div className="form-row">
+                  <label>
+                    {language === 'de' ? 'Uhrzeit' : 'Time'}*
+                    <select 
+                      value={appointmentForm.time} 
+                      onChange={(e) => setAppointmentForm(prev => ({...prev, time: e.target.value}))}
+                      required
+                    >
+                      {generateTimeSlots().map(slot => (
+                        <option key={slot} value={slot}>{slot}</option>
+                      ))}
+                    </select>
+                  </label>
+                  <label>
+                    {language === 'de' ? 'Kundenname' : 'Client Name'}*
+                    <input 
+                      type="text" 
+                      value={appointmentForm.clientName}
+                      onChange={(e) => setAppointmentForm(prev => ({...prev, clientName: e.target.value}))}
+                      placeholder={language === 'de' ? 'Name eingeben' : 'Enter name'}
+                      required
+                    />
+                  </label>
+                </div>
+                <div className="form-row">
+                  <label>
+                    {language === 'de' ? 'Dienstleistung' : 'Service'}
+                    <input 
+                      type="text" 
+                      value={appointmentForm.service}
+                      onChange={(e) => setAppointmentForm(prev => ({...prev, service: e.target.value}))}
+                      placeholder={language === 'de' ? 'z.B. Hauswirtschaft' : 'e.g. Housekeeping'}
+                    />
+                  </label>
+                  <label>
+                    {language === 'de' ? 'Notizen' : 'Notes'}
+                    <input 
+                      type="text" 
+                      value={appointmentForm.notes}
+                      onChange={(e) => setAppointmentForm(prev => ({...prev, notes: e.target.value}))}
+                      placeholder={language === 'de' ? 'Zusätzliche Informationen' : 'Additional information'}
+                    />
+                  </label>
+                </div>
+                <button type="submit" className="add-appointment-button">
+                  {language === 'de' ? '+ Termin hinzufügen' : '+ Add Appointment'}
+                </button>
+              </form>
+            </div>
+
+            {/* Appointments List */}
+            <div className="appointments-list-section">
+              <h3>{language === 'de' ? 'Termine des Tages' : 'Day\'s Appointments'}</h3>
+              {getDayAppointments().length === 0 ? (
+                <p className="no-appointments">{language === 'de' ? 'Keine Termine für diesen Tag.' : 'No appointments for this day.'}</p>
+              ) : (
+                <div className="spreadsheet-container">
+                  <table className="spreadsheet-table appointments-table">
+                    <thead>
+                      <tr>
+                        <th>{language === 'de' ? 'Löschen' : 'Delete'}</th>
+                        <th>#</th>
+                        <th>{language === 'de' ? 'Uhrzeit' : 'Time'}</th>
+                        <th>{language === 'de' ? 'Kundenname' : 'Client Name'}</th>
+                        <th>{language === 'de' ? 'Dienstleistung' : 'Service'}</th>
+                        <th>{language === 'de' ? 'Notizen' : 'Notes'}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {getDayAppointments().map((appointment, index) => (
+                        <tr key={appointment.id}>
+                          <td>
+                            <button 
+                              className="delete-icon-button"
+                              onClick={() => handleDeleteAppointment(appointment.id)}
+                              title={language === 'de' ? 'Löschen' : 'Delete'}
+                            >
+                              🗑️
+                            </button>
+                          </td>
+                          <td>{index + 1}</td>
+                          <td>{appointment.time}</td>
+                          <td>{appointment.client_name}</td>
+                          <td>{appointment.service || '-'}</td>
+                          <td>{appointment.notes || '-'}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
