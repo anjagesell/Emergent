@@ -1588,7 +1588,8 @@ body {
 .sidebar::-webkit-scrollbar,
 .content::-webkit-scrollbar,
 .modal-content::-webkit-scrollbar {
-
+  width: 8px;
+}
 
 /* Mint Green Appointments Folder */
 .mint-green-tab {
