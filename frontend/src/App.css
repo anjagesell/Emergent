@@ -2122,4 +2122,296 @@ body {
 
 .sort-toggle-button:active {
   transform: translateY(0);
+
+
+/* ============================================
+   Appointment Daily Popup Styles
+   ============================================ */
+
+.appointment-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.appointment-popup {
+  background: #f8f6f0;
+  border: 2px solid #8b7355;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  font-family: 'Courier New', monospace;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.popup-header {
+  background: #d4c5a9;
+  border-bottom: 2px solid #8b7355;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup-header h3 {
+  margin: 0;
+  color: #3d3226;
+  font-family: 'Courier New', monospace;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.close-popup-button {
+  background: #8b7355;
+  color: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.close-popup-button:hover {
+  background: #6d5a45;
+  transform: rotate(90deg);
+}
+
+.popup-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Time Slots Container */
+.time-slots-container {
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.time-slots-container h4 {
+  color: #3d3226;
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #8b7355;
+  padding-bottom: 0.5rem;
+}
+
+.time-slot {
+  border: 1px solid #d0c4a8;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+  background: white;
+  overflow: hidden;
+}
+
+.time-slot-header {
+  background: #9fc5a8;
+  color: #2d4a36;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-bottom: 1px solid #7fa88e;
+}
+
+.time-slot-appointments {
+  padding: 0.5rem;
+  min-height: 40px;
+}
+
+.empty-slot {
+  color: #999;
+  font-style: italic;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.appointment-card {
+  background: #fdfcf8;
+  border: 1px solid #d0c4a8;
+  border-radius: 4px;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.appointment-card:last-child {
+  margin-bottom: 0;
+}
+
+.appointment-card div {
+  margin-bottom: 0.25rem;
+}
+
+.appointment-card strong {
+  color: #3d3226;
+  margin-right: 0.5rem;
+}
+
+.delete-appointment-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  transition: transform 0.2s;
+}
+
+.delete-appointment-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Add Appointment Form */
+.add-appointment-form {
+  background: white;
+  border: 2px solid #8b7355;
+  border-radius: 4px;
+  padding: 1.5rem;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.add-appointment-form h4 {
+  color: #3d3226;
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #8b7355;
+  padding-bottom: 0.5rem;
+}
+
+.add-appointment-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.add-appointment-form label {
+  display: block;
+  color: #3d3226;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.add-appointment-form input,
+.add-appointment-form select,
+.add-appointment-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d0c4a8;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  background: #fdfcf8;
+  color: #3d3226;
+  transition: border-color 0.2s;
+}
+
+.add-appointment-form input:focus,
+.add-appointment-form select:focus,
+.add-appointment-form textarea:focus {
+  outline: none;
+  border-color: #9fc5a8;
+  box-shadow: 0 0 0 2px rgba(159, 197, 168, 0.2);
+}
+
+.add-appointment-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.submit-appointment-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #9fc5a8;
+  color: #2d4a36;
+  border: 2px solid #7fa88e;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 1rem;
+}
+
+.submit-appointment-btn:hover {
+  background: #8ab499;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.submit-appointment-btn:active {
+  transform: translateY(0);
+}
+
+/* Mobile Responsive for Popup */
+@media (max-width: 900px) {
+  .popup-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .time-slots-container,
+  .add-appointment-form {
+    max-height: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .appointment-popup {
+    width: 95%;
+    max-height: 95vh;
+  }
+  
+  .popup-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .popup-content {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
 }
