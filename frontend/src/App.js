@@ -821,6 +821,155 @@ function App() {
                           </div>
                         ))}
                       </div>
+                      
+                      {/* Daily Appointment Popup */}
+                      {showDayPopup && selectedDate && (
+                        <div className="appointment-popup-overlay" onClick={() => setShowDayPopup(false)}>
+                          <div className="appointment-popup" onClick={(e) => e.stopPropagation()}>
+                            <div className="popup-header">
+                              <h3>
+                                {new Date(selectedDate + 'T00:00:00').toLocaleDateString(language === 'de' ? 'de-DE' : 'en-US', { 
+                                  weekday: 'long', 
+                                  year: 'numeric', 
+                                  month: 'long', 
+                                  day: 'numeric' 
+                                })}
+                              </h3>
+                              <button className="close-popup-button" onClick={() => setShowDayPopup(false)}>
+                                ✕
+                              </button>
+                            </div>
+                            
+                            <div className="popup-content">
+                              {/* Time Slots */}
+                              <div className="time-slots-container">
+                                <h4>{language === 'de' ? 'Termine für diesen Tag' : 'Appointments for this day'}</h4>
+                                {['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'].map(timeSlot => {
+                                  const slotAppointments = getAppointmentsForTimeSlot(selectedDate, timeSlot);
+                                  return (
+                                    <div key={timeSlot} className="time-slot">
+                                      <div className="time-slot-header">{timeSlot}</div>
+                                      <div className="time-slot-appointments">
+                                        {slotAppointments.length > 0 ? (
+                                          slotAppointments.map(apt => (
+                                            <div key={apt.id} className="appointment-card">
+                                              <button 
+                                                className="delete-appointment-btn"
+                                                onClick={() => handleDeleteAppointment(apt.id)}
+                                                title={language === 'de' ? 'Löschen' : 'Delete'}
+                                              >
+                                                🗑️
+                                              </button>
+                                              <div><strong>{language === 'de' ? 'Name:' : 'Name:'}</strong> {apt.name}</div>
+                                              {apt.client_number && <div><strong>{language === 'de' ? 'Kundennummer:' : 'Client #:'}</strong> {apt.client_number}</div>}
+                                              {apt.phone && <div><strong>{language === 'de' ? 'Telefon:' : 'Phone:'}</strong> {apt.phone}</div>}
+                                              {apt.location && <div><strong>{language === 'de' ? 'Ort:' : 'Location:'}</strong> {apt.location}</div>}
+                                              <div><strong>{language === 'de' ? 'Typ:' : 'Type:'}</strong> {apt.appointment_type === 'video_conference' ? (language === 'de' ? 'Videokonferenz' : 'Video Conference') : apt.appointment_type === 'in_person' ? (language === 'de' ? 'Persönlich' : 'In Person') : apt.appointment_type === 'phone' ? (language === 'de' ? 'Telefon' : 'Phone') : (language === 'de' ? 'Online/Email' : 'Online/Email')}</div>
+                                              {apt.notes && <div><strong>{language === 'de' ? 'Notizen:' : 'Notes:'}</strong> {apt.notes}</div>}
+                                            </div>
+                                          ))
+                                        ) : (
+                                          <div className="empty-slot">{language === 'de' ? 'Frei' : 'Free'}</div>
+                                        )}
+                                      </div>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                              
+                              {/* Add Appointment Form */}
+                              <div className="add-appointment-form">
+                                <h4>{language === 'de' ? 'Neuen Termin hinzufügen' : 'Add New Appointment'}</h4>
+                                <form onSubmit={handleCreateAppointment}>
+                                  <div className="form-group">
+                                    <label>{language === 'de' ? 'Kundennummer:' : 'Client Number:'}</label>
+                                    <input
+                                      type="text"
+                                      value={newAppointment.client_number}
+                                      onChange={(e) => setNewAppointment({...newAppointment, client_number: e.target.value})}
+                                    />
+                                  </div>
+                                  
+                                  <div className="form-group">
+                                    <label>{language === 'de' ? 'Zeit:' : 'Time:'} *</label>
+                                    <select
+                                      value={newAppointment.time}
+                                      onChange={(e) => setNewAppointment({...newAppointment, time: e.target.value})}
+                                      required
+                                    >
+                                      <option value="08:00">08:00</option>
+                                      <option value="09:00">09:00</option>
+                                      <option value="10:00">10:00</option>
+                                      <option value="11:00">11:00</option>
+                                      <option value="12:00">12:00</option>
+                                      <option value="13:00">13:00</option>
+                                      <option value="14:00">14:00</option>
+                                      <option value="15:00">15:00</option>
+                                      <option value="16:00">16:00</option>
+                                      <option value="17:00">17:00</option>
+                                      <option value="18:00">18:00</option>
+                                    </select>
+                                  </div>
+                                  
+                                  <div className="form-group">
+                                    <label>{language === 'de' ? 'Name:' : 'Name:'} *</label>
+                                    <input
+                                      type="text"
+                                      value={newAppointment.name}
+                                      onChange={(e) => setNewAppointment({...newAppointment, name: e.target.value})}
+                                      required
+                                    />
+                                  </div>
+                                  
+                                  <div className="form-group">
+                                    <label>{language === 'de' ? 'Telefon:' : 'Phone:'}</label>
+                                    <input
+                                      type="tel"
+                                      value={newAppointment.phone}
+                                      onChange={(e) => setNewAppointment({...newAppointment, phone: e.target.value})}
+                                    />
+                                  </div>
+                                  
+                                  <div className="form-group">
+                                    <label>{language === 'de' ? 'Ort:' : 'Location:'}</label>
+                                    <input
+                                      type="text"
+                                      value={newAppointment.location}
+                                      onChange={(e) => setNewAppointment({...newAppointment, location: e.target.value})}
+                                    />
+                                  </div>
+                                  
+                                  <div className="form-group">
+                                    <label>{language === 'de' ? 'Termintyp:' : 'Appointment Type:'}</label>
+                                    <select
+                                      value={newAppointment.appointment_type}
+                                      onChange={(e) => setNewAppointment({...newAppointment, appointment_type: e.target.value})}
+                                    >
+                                      <option value="video_conference">{language === 'de' ? 'Videokonferenz' : 'Video Conference'}</option>
+                                      <option value="in_person">{language === 'de' ? 'Persönlich' : 'In Person'}</option>
+                                      <option value="phone">{language === 'de' ? 'Telefon' : 'Phone'}</option>
+                                      <option value="online_email">{language === 'de' ? 'Online/Email' : 'Online/Email'}</option>
+                                    </select>
+                                  </div>
+                                  
+                                  <div className="form-group">
+                                    <label>{language === 'de' ? 'Notizen:' : 'Notes:'}</label>
+                                    <textarea
+                                      value={newAppointment.notes}
+                                      onChange={(e) => setNewAppointment({...newAppointment, notes: e.target.value})}
+                                      rows="3"
+                                    />
+                                  </div>
+                                  
+                                  <button type="submit" className="submit-appointment-btn">
+                                    {language === 'de' ? 'Termin Speichern' : 'Save Appointment'}
+                                  </button>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   )}
                   
