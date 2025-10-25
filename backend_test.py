@@ -408,6 +408,82 @@ def test_get_job_applications():
         print(f"❌ FAIL: Unexpected error - {str(e)}")
         return False
 
+def test_delete_appointments(appointment_ids):
+    """Test DELETE /api/appointments/{id} endpoint"""
+    print("\n=== Testing DELETE /api/appointments/{id} - Delete Appointment ===")
+    
+    if not appointment_ids:
+        print("❌ No appointment IDs provided for deletion testing")
+        return False
+    
+    success_count = 0
+    total_tests = 2
+    
+    # Test 1: Delete an existing appointment
+    appointment_id = appointment_ids[0] if appointment_ids else None
+    if appointment_id:
+        print(f"Test 1: Delete existing appointment {appointment_id}")
+        try:
+            response = requests.delete(
+                f"{BACKEND_URL}/appointments/{appointment_id}",
+                timeout=10
+            )
+            
+            print(f"Status Code: {response.status_code}")
+            
+            if response.status_code == 200:
+                response_data = response.json()
+                print(f"Response: {json.dumps(response_data, indent=2)}")
+                
+                if response_data.get("success") and "deleted" in response_data.get("message", "").lower():
+                    print("✅ Appointment deleted successfully")
+                    success_count += 1
+                    
+                    # Verify appointment is removed from database
+                    print("Verifying appointment removal...")
+                    get_response = requests.get(f"{BACKEND_URL}/appointments", timeout=10)
+                    if get_response.status_code == 200:
+                        appointments = get_response.json()
+                        deleted_appointment = next((app for app in appointments if app['id'] == appointment_id), None)
+                        if deleted_appointment is None:
+                            print("✅ Appointment successfully removed from database")
+                        else:
+                            print("❌ Appointment still exists in database after deletion")
+                    else:
+                        print("⚠️  Could not verify deletion due to GET request failure")
+                else:
+                    print(f"❌ Unexpected response format: {response_data}")
+            else:
+                print(f"❌ FAIL: HTTP {response.status_code}")
+                print(f"Response: {response.text}")
+                
+        except Exception as e:
+            print(f"❌ FAIL: Error - {str(e)}")
+    
+    # Test 2: Test 404 for non-existent appointment ID
+    print("\nTest 2: Delete non-existent appointment (404 test)")
+    fake_id = "non-existent-appointment-12345"
+    try:
+        response = requests.delete(
+            f"{BACKEND_URL}/appointments/{fake_id}",
+            timeout=10
+        )
+        
+        print(f"Status Code: {response.status_code}")
+        
+        if response.status_code == 404:
+            print("✅ 404 error correctly returned for non-existent appointment")
+            success_count += 1
+        else:
+            print(f"❌ Expected 404, got {response.status_code}")
+            print(f"Response: {response.text}")
+            
+    except Exception as e:
+        print(f"❌ FAIL: Error - {str(e)}")
+    
+    print(f"\nDELETE /api/appointments: {success_count}/{total_tests} tests passed")
+    return success_count == total_tests
+
 def test_get_availability_requests():
     """Test existing GET /api/availability-requests endpoint"""
     print("\n=== Testing GET /api/availability-requests (existing endpoint) ===")
