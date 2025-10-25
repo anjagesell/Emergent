@@ -75,6 +75,15 @@ function App() {
     monday.setDate(today.getDate() + diff);
     return monday;
   });
+  const [newAppointment, setNewAppointment] = useState({
+    client_number: '',
+    time: '08:00',
+    name: '',
+    phone: '',
+    location: '',
+    notes: '',
+    appointment_type: 'in_person'
+  });
   
   const t = translations[language];
   const categoryKeys = ['z1', 'z2a', 'z2b', 'z3', 'z4', 'z5', 'z6', 'z7', 'z8', 'z9'];
