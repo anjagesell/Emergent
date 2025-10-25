@@ -276,6 +276,45 @@ function App() {
     }
   };
 
+
+  const loadAppointments = async () => {
+    try {
+      const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+      const response = await fetch(`${BACKEND_URL}/api/appointments`);
+      if (response.ok) {
+        const data = await response.json();
+        setAppointments(data);
+      }
+    } catch (error) {
+      console.error('Error loading appointments:', error);
+    }
+  };
+
+  const getWeekDates = () => {
+    const dates = [];
+    const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const daysOfWeekDE = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+    
+    for (let i = 0; i < 6; i++) {
+      const date = new Date(currentWeekStart);
+      date.setDate(currentWeekStart.getDate() + i);
+      dates.push({
+        date: date,
+        dateString: date.toISOString().split('T')[0],
+        dayName: language === 'de' ? daysOfWeekDE[i] : daysOfWeek[i],
+        hasAppointments: appointments.some(app => app.date === date.toISOString().split('T')[0])
+      });
+    }
+    return dates;
+  };
+
+  const navigateWeek = (direction) => {
+    const newWeekStart = new Date(currentWeekStart);
+    newWeekStart.setDate(currentWeekStart.getDate() + (direction * 7));
+    setCurrentWeekStart(newWeekStart);
+  };
+
+
   return (
     <div className="app-container">
       {/* Header mit Logo */}
