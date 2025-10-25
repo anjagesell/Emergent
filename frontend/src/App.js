@@ -755,12 +755,12 @@ function App() {
                           </table>
                         </div>
                       )}
-                    </>
+                    </div>
                   )}
                   
                   {/* Job Applications Tab */}
                   {internActiveTab === 'jobs' && (
-                    <>
+                    <div className="intern-content">
                       <h3 className="requests-title">
                         {language === 'de' ? 'Stellenbewerbungen' : 'Job Applications'}
                       </h3>
