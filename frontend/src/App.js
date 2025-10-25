@@ -696,6 +696,45 @@ function App() {
                     </button>
                   </div>
                   
+                  {/* Appointments Tab */}
+                  {internActiveTab === 'appointments' && (
+                    <div className="intern-content">
+                      <h3 className="requests-title">{language === 'de' ? 'Terminkalender' : 'Appointment Calendar'}</h3>
+                      
+                      {/* Week Navigation */}
+                      <div className="week-navigation">
+                        <button onClick={() => navigateWeek(-1)} className="week-nav-button">
+                          ← {language === 'de' ? 'Vorherige Woche' : 'Previous Week'}
+                        </button>
+                        <span className="current-week">
+                          {currentWeekStart.toLocaleDateString(language === 'de' ? 'de-DE' : 'en-US', { month: 'long', year: 'numeric' })}
+                        </span>
+                        <button onClick={() => navigateWeek(1)} className="week-nav-button">
+                          {language === 'de' ? 'Nächste Woche' : 'Next Week'} →
+                        </button>
+                      </div>
+                      
+                      {/* Weekly Calendar */}
+                      <div className="weekly-calendar">
+                        {getWeekDates().map((dayInfo) => (
+                          <div
+                            key={dayInfo.dateString}
+                            className={`calendar-day ${dayInfo.hasAppointments ? 'has-appointments' : ''}`}
+                            onClick={() => {
+                              setSelectedDate(dayInfo.dateString);
+                              setShowDayPopup(true);
+                            }}
+                          >
+                            <div className="day-name">{dayInfo.dayName}</div>
+                            <div className="day-date">
+                              {dayInfo.date.toLocaleDateString(language === 'de' ? 'de-DE' : 'en-US', { day: '2-digit', month: '2-digit' })}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  
                   {/* Availability Requests Tab */}
                   {internActiveTab === 'availability' && (
                     <div className="intern-content">
