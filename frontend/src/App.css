@@ -1001,6 +1001,7 @@ body {
   border-bottom: none;
   border-radius: 8px 8px 0 0;
   cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
   font-weight: 600;
   font-size: 0.95rem;
   color: #4a4030;
