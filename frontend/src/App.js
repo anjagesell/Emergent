@@ -1712,7 +1712,7 @@ function App() {
                             <div className="appointment-details">
                               <strong>{app.client_name}</strong>
                               <span className="appointment-time">{app.time}</span>
-                              {app.details && <p className="appointment-notes">{app.details}</p>}
+                              {app.notes && <p className="appointment-notes">{app.notes}</p>}
                               <span className="appointment-type-badge">{app.appointment_type}</span>
                             </div>
                             <button 
