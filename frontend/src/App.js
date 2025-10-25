@@ -662,6 +662,12 @@ function App() {
                   {/* Tabs for different request types */}
                   <div className="intern-tabs">
                     <button
+                      className={`intern-tab mint-green-tab ${internActiveTab === 'appointments' ? 'active' : ''}`}
+                      onClick={() => setInternActiveTab('appointments')}
+                    >
+                      {language === 'de' ? 'Termine' : 'Appointments'}
+                    </button>
+                    <button
                       className={`intern-tab ${internActiveTab === 'availability' ? 'active' : ''}`}
                       onClick={() => setInternActiveTab('availability')}
                       data-number="1"
