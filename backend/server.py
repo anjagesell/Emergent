@@ -289,6 +289,26 @@ async def update_job_application(
         logger.error(f"Error updating application: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to update application")
 
+
+# Delete job application
+@api_router.delete("/job-applications/{application_id}")
+async def delete_job_application(application_id: str):
+    """Delete a job application"""
+    try:
+        result = await db.job_applications.delete_one({"id": application_id})
+        
+        if result.deleted_count == 0:
+            raise HTTPException(status_code=404, detail="Application not found")
+            
+        logger.info(f"Deleted job application {application_id}")
+        return {"success": True, "message": "Application deleted successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error deleting application: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to delete application")
+
+
 # AI Chatbot endpoint
 @api_router.post("/chat", response_model=ChatResponse)
 async def chat_endpoint(chat_input: ChatMessage):
