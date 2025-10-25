@@ -1828,6 +1828,32 @@ function App() {
                 <div className="form-row">
                   <div className="form-group">
                     <label>
+                      {language === 'de' ? 'Kundennummer' : 'Client Number'} <span className="required">*</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      name="client_number" 
+                      required 
+                      className="form-input"
+                      placeholder={language === 'de' ? 'Kundennummer eingeben...' : 'Enter client number...'}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>
+                      {language === 'de' ? 'Telefon' : 'Phone'} <span className="required">*</span>
+                    </label>
+                    <input 
+                      type="tel" 
+                      name="phone" 
+                      required 
+                      className="form-input"
+                      placeholder={language === 'de' ? 'Telefonnummer eingeben...' : 'Enter phone number...'}
+                    />
+                  </div>
+                </div>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label>
                       {language === 'de' ? 'Terminart' : 'Appointment Type'} <span className="required">*</span>
                     </label>
                     <select name="appointment_type" required className="form-input">
