@@ -6,7 +6,7 @@ Test multiple enhanced job applications to ensure system handles them correctly
 import requests
 import json
 
-BACKEND_URL = "https://octa-care-platform.preview.emergentagent.com/api"
+BACKEND_URL = "https://caregiver-portal-3.preview.emergentagent.com/api"
 
 def test_multiple_applications():
     """Test creating multiple enhanced job applications"""
