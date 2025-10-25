@@ -344,7 +344,12 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus: []
+  current_focus:
+    - "POST /api/appointments - Create appointment"
+    - "GET /api/appointments - Retrieve appointments"
+    - "DELETE /api/appointments/{id} - Delete appointment"
+    - "Daily Appointment Popup"
+    - "Appointment Form and CRUD Operations"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
