@@ -1618,6 +1618,8 @@ body {
   padding: 1rem;
   background: rgba(255, 255, 255, 0.5);
   border-radius: 8px;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .week-nav-button {
@@ -1630,6 +1632,7 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .week-nav-button:hover {
@@ -1641,6 +1644,8 @@ body {
   font-size: 1.1rem;
   font-weight: 700;
   color: #0a2e4e;
+  white-space: nowrap;
+  text-align: center;
 }
 
 .weekly-calendar {
