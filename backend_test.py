@@ -338,8 +338,8 @@ def test_get_appointments():
             # Look for appointments with German characters
             german_char_found = False
             for appointment in response_data:
-                notes = appointment.get('notes', '')
-                name = appointment.get('client_name', '')
+                notes = appointment.get('notes') or ''
+                name = appointment.get('client_name') or ''
                 if any(char in notes + name for char in ['ä', 'ö', 'ü', 'ß', '€']):
                     print(f"✅ German characters found and properly encoded: {name}, {notes}")
                     german_char_found = True
