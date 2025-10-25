@@ -941,7 +941,7 @@ function App() {
                           </table>
                         </div>
                       )}
-                    </>
+                    </div>
                   )}
                 </div>
               )}
