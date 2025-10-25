@@ -179,39 +179,48 @@ backend:
 
   - task: "POST /api/appointments - Create appointment"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Appointment endpoints already exist in backend. POST endpoint creates appointments with fields: date, time, client_number, name, phone, location, notes, appointment_type. Saves to MongoDB appointments collection with UUID."
+      - working: true
+        agent: "testing"
+        comment: "✅ PASS: POST /api/appointments working perfectly. Successfully tested with comprehensive appointment data including German characters (äöüß €). All 4/4 tests passed: 1) Complete appointment with German umlauts in name and notes, 2) Minimal required data, 3) Video conference appointment, 4) Online/Email appointment. UUID generation verified, all fields saved correctly, proper HTTP 200 responses."
 
   - task: "GET /api/appointments - Retrieve appointments"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "GET endpoint retrieves all appointments with optional date range filtering (start_date, end_date query parameters)."
+      - working: true
+        agent: "testing"
+        comment: "✅ PASS: GET /api/appointments working correctly after fixing MongoDB _id serialization issue. All 3/3 tests passed: 1) Retrieve all appointments with proper field structure, 2) Date range filtering (start_date/end_date parameters) working correctly, 3) German character encoding verified. Fixed missing {\"_id\": 0} projection in MongoDB query to prevent ObjectId serialization errors."
 
   - task: "DELETE /api/appointments/{id} - Delete appointment"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "DELETE endpoint removes appointment by ID from MongoDB."
+      - working: true
+        agent: "testing"
+        comment: "✅ PASS: DELETE /api/appointments/{id} working perfectly. All 2/2 tests passed: 1) Successfully deleted existing appointment with proper success response and database removal verification, 2) Proper 404 error returned for non-existent appointment IDs. Data persistence verified through GET requests."
 
 frontend:
   - task: "Job Application Form on Stellenangebote Page"
