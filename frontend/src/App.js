@@ -611,12 +611,14 @@ function App() {
                     <button
                       className={`intern-tab ${internActiveTab === 'availability' ? 'active' : ''}`}
                       onClick={() => setInternActiveTab('availability')}
+                      data-number="1"
                     >
                       {language === 'de' ? 'Verfügbarkeitsanfragen' : 'Availability Requests'} ({requests.length})
                     </button>
                     <button
                       className={`intern-tab ${internActiveTab === 'jobs' ? 'active' : ''}`}
                       onClick={() => setInternActiveTab('jobs')}
+                      data-number="2"
                     >
                       {language === 'de' ? 'Bewerbungen' : 'Job Applications'} ({jobApplications.length})
                     </button>
