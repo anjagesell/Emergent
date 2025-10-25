@@ -315,6 +315,13 @@ function App() {
     setCurrentWeekStart(newWeekStart);
   };
 
+  
+  // Load appointments when component mounts
+  useEffect(() => {
+    loadAppointments();
+  }, []);
+
+
 
   return (
     <div className="app-container">
