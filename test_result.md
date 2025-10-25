@@ -178,6 +178,21 @@ backend:
         comment: "✅ PASS: PATCH endpoint fully functional. Successfully tested: 1) Status update (status_processed=true/false), 2) Notes update with German umlauts and special characters, 3) Combined parameter updates, 4) Data persistence verification via GET, 5) Proper 404 error for non-existent IDs. Fixed HTTPException handling to return correct 404 status codes. All 5/5 tests passed."
 
 frontend:
+  - task: "Appointments Calendar Feature"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Implemented appointments calendar with 6-column grid (Monday-Saturday), day popup with hourly slots 8:00-18:00, appointment creation form, and CRUD operations"
+      - working: true
+        agent: "testing"
+        comment: "✅ PASS: Complete Appointments Calendar feature working perfectly. Successfully tested: 1) Login to Admin section (password: Morpheus), 2) Termine tab is mint green and active by default, 3) Calendar displays as 6-column grid (Monday-Saturday) with proper borders, 4) Day popup opens with hourly slots 8:00-18:00 (11 slots), 5) Appointment creation with all required fields (Time, Client Name, Client Number, Phone, Location, Appointment Type, Details), 6) Appointments appear in correct time slots, 7) Days with appointments show mint green background, 8) Week navigation (Previous/Next buttons) working, 9) Appointment deletion with confirmation working, 10) Form resets after successful submission. Fixed backend field mismatch issue (frontend was sending 'details' but backend expected 'notes', missing required fields client_number, phone, location). All CRUD operations functional."
+
   - task: "Job Application Form on Stellenangebote Page"
     implemented: true
     working: true
