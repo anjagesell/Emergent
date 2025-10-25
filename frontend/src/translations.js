@@ -274,7 +274,7 @@ Dies ist OCTA. Dies ist unsere Geschichte. Dies ist unser Versprechen.`,
     nav: {
       home: 'Home',
       availability: 'Request Availability',
-      intern: 'Internal',
+      intern: 'Admin',
       z1: 'Z1: Household Assistance',
       z2a: 'Z2a: Professional Care',
       z2b: 'Z2b: CarePlus',
