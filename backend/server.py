@@ -240,6 +240,25 @@ async def update_availability_request(
         logger.error(f"Error updating request: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to update request")
 
+# Delete availability request
+@api_router.delete("/availability-requests/{request_id}")
+async def delete_availability_request(request_id: str):
+    """Delete an availability request"""
+    try:
+        result = await db.availability_requests.delete_one({"id": request_id})
+        
+        if result.deleted_count == 0:
+            raise HTTPException(status_code=404, detail="Request not found")
+            
+        logger.info(f"Deleted availability request {request_id}")
+        return {"success": True, "message": "Request deleted successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error deleting request: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to delete request")
+
+
 # Update job application status and notes
 @api_router.patch("/job-applications/{application_id}")
 async def update_job_application(
