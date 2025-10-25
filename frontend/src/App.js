@@ -791,6 +791,31 @@ function App() {
                                 return sortOrder === 'newest' ? dateB - dateA : dateA - dateB;
                               }).map((application, index) => (
                                 <tr key={application.id} data-testid="application-row">
+                                  <td className="delete-cell">
+                                    <button
+                                      className="delete-button"
+                                      onClick={async () => {
+                                        if (window.confirm(language === 'de' 
+                                          ? 'Möchten Sie diese Bewerbung wirklich löschen?' 
+                                          : 'Are you sure you want to delete this application?')) {
+                                          const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+                                          try {
+                                            await fetch(`${BACKEND_URL}/api/job-applications/${application.id}`, {
+                                              method: 'DELETE'
+                                            });
+                                            loadJobApplications(); // Refresh the list
+                                          } catch (error) {
+                                            alert(language === 'de' 
+                                              ? 'Fehler beim Löschen' 
+                                              : 'Error deleting application');
+                                          }
+                                        }
+                                      }}
+                                      title={language === 'de' ? 'Löschen' : 'Delete'}
+                                    >
+                                      🗑️
+                                    </button>
+                                  </td>
                                   <td className="row-number">{index + 1}</td>
                                   <td className="timestamp-cell">
                                     {new Date(application.timestamp).toLocaleString(language === 'de' ? 'de-DE' : 'en-US')}
