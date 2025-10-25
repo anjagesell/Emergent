@@ -666,6 +666,31 @@ function App() {
                                 return sortOrder === 'newest' ? dateB - dateA : dateA - dateB;
                               }).map((request, index) => (
                                 <tr key={request.id} data-testid="request-row">
+                                  <td className="delete-cell">
+                                    <button
+                                      className="delete-button"
+                                      onClick={async () => {
+                                        if (window.confirm(language === 'de' 
+                                          ? 'Möchten Sie diesen Eintrag wirklich löschen?' 
+                                          : 'Are you sure you want to delete this entry?')) {
+                                          const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+                                          try {
+                                            await fetch(`${BACKEND_URL}/api/availability-requests/${request.id}`, {
+                                              method: 'DELETE'
+                                            });
+                                            loadRequests(); // Refresh the list
+                                          } catch (error) {
+                                            alert(language === 'de' 
+                                              ? 'Fehler beim Löschen' 
+                                              : 'Error deleting entry');
+                                          }
+                                        }
+                                      }}
+                                      title={language === 'de' ? 'Löschen' : 'Delete'}
+                                    >
+                                      🗑️
+                                    </button>
+                                  </td>
                                   <td className="row-number">{index + 1}</td>
                                   <td className="timestamp-cell">
                                     {new Date(request.timestamp).toLocaleString(language === 'de' ? 'de-DE' : 'en-US')}
