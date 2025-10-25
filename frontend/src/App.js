@@ -671,6 +671,12 @@ function App() {
                     <button
                       className={`intern-tab mint-green-tab ${internActiveTab === 'appointments' ? 'active' : ''}`}
                       onClick={() => setInternActiveTab('appointments')}
+                      style={{
+                        background: internActiveTab === 'appointments' 
+                          ? 'linear-gradient(to bottom, #c8f8e4 0%, #a8e8c4 100%)'
+                          : 'linear-gradient(to bottom, #b8e8d4 0%, #98d8b8 100%)',
+                        borderColor: '#78c8a0'
+                      }}
                     >
                       {language === 'de' ? 'Termine' : 'Appointments'}
                     </button>
