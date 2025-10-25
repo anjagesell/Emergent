@@ -765,6 +765,7 @@ function App() {
                           <table className="spreadsheet-table">
                             <thead>
                               <tr>
+                                <th>{language === 'de' ? 'Löschen' : 'Delete'}</th>
                                 <th>#</th>
                                 <th>{language === 'de' ? 'Zeitstempel' : 'Timestamp'}</th>
                                 <th>{language === 'de' ? 'Name' : 'Name'}</th>
