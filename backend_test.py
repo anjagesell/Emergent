@@ -13,6 +13,168 @@ import urllib.parse
 # Backend URL from frontend/.env
 BACKEND_URL = "https://octa-calendar.preview.emergentagent.com/api"
 
+def test_post_appointments():
+    """Test POST /api/appointments endpoint with comprehensive appointment data"""
+    print("\n=== Testing POST /api/appointments - Create Appointment ===")
+    
+    created_appointment_ids = []
+    success_count = 0
+    total_tests = 4
+    
+    # Test 1: Complete appointment data with German characters
+    test_data_1 = {
+        "date": "2025-10-27",
+        "time": "10:00", 
+        "client_number": "K12345",
+        "client_name": "Hans Müller",
+        "phone": "+49 123 456789",
+        "location": "Berlin Office",
+        "notes": "Ersttermin - Pflegeberatung für Mutter (äöüß €)",
+        "appointment_type": "in_person"
+    }
+    
+    print("Test 1: Complete appointment with German characters")
+    try:
+        response = requests.post(
+            f"{BACKEND_URL}/appointments",
+            json=test_data_1,
+            headers={"Content-Type": "application/json"},
+            timeout=10
+        )
+        
+        print(f"Status Code: {response.status_code}")
+        
+        if response.status_code == 200:
+            response_data = response.json()
+            print(f"Response: {json.dumps(response_data, indent=2, default=str)}")
+            
+            # Verify UUID is generated
+            if 'id' in response_data and len(response_data['id']) > 0:
+                print("✅ UUID generated successfully")
+                created_appointment_ids.append(response_data['id'])
+                
+                # Verify all fields are saved correctly
+                fields_match = True
+                for field in ["date", "time", "client_number", "client_name", "phone", "location", "notes", "appointment_type"]:
+                    if response_data.get(field) != test_data_1[field]:
+                        print(f"❌ Field {field} mismatch. Expected: {test_data_1[field]}, Got: {response_data.get(field)}")
+                        fields_match = False
+                
+                if fields_match:
+                    print("✅ All fields saved correctly")
+                    success_count += 1
+                else:
+                    print("❌ Field validation failed")
+            else:
+                print("❌ UUID not generated")
+        else:
+            print(f"❌ FAIL: HTTP {response.status_code}")
+            print(f"Response: {response.text}")
+            
+    except Exception as e:
+        print(f"❌ FAIL: Error - {str(e)}")
+    
+    # Test 2: Minimal data (only required fields)
+    test_data_2 = {
+        "date": "2025-10-28",
+        "time": "14:00",
+        "client_name": "Maria Schmidt",
+        "client_number": "",
+        "phone": "",
+        "location": "",
+        "appointment_type": "phone"
+    }
+    
+    print("\nTest 2: Minimal required data")
+    try:
+        response = requests.post(
+            f"{BACKEND_URL}/appointments",
+            json=test_data_2,
+            headers={"Content-Type": "application/json"},
+            timeout=10
+        )
+        
+        print(f"Status Code: {response.status_code}")
+        
+        if response.status_code == 200:
+            response_data = response.json()
+            print("✅ Minimal data appointment created successfully")
+            created_appointment_ids.append(response_data['id'])
+            success_count += 1
+        else:
+            print(f"❌ FAIL: HTTP {response.status_code}")
+            print(f"Response: {response.text}")
+            
+    except Exception as e:
+        print(f"❌ FAIL: Error - {str(e)}")
+    
+    # Test 3: Another appointment with different type
+    test_data_3 = {
+        "date": "2025-10-29",
+        "time": "16:00",
+        "client_number": "V98765",
+        "client_name": "Anna Becker",
+        "phone": "+49 987 654321",
+        "location": "Hamburg Zentrum",
+        "notes": "Nachtermin - Beratung Pflegegrad",
+        "appointment_type": "video_conference"
+    }
+    
+    print("\nTest 3: Video conference appointment")
+    try:
+        response = requests.post(
+            f"{BACKEND_URL}/appointments",
+            json=test_data_3,
+            headers={"Content-Type": "application/json"},
+            timeout=10
+        )
+        
+        if response.status_code == 200:
+            response_data = response.json()
+            print("✅ Video conference appointment created successfully")
+            created_appointment_ids.append(response_data['id'])
+            success_count += 1
+        else:
+            print(f"❌ FAIL: HTTP {response.status_code}")
+            
+    except Exception as e:
+        print(f"❌ FAIL: Error - {str(e)}")
+    
+    # Test 4: Online/Email appointment type
+    test_data_4 = {
+        "date": "2025-10-30",
+        "time": "09:00",
+        "client_number": "E55555",
+        "client_name": "Thomas Weber",
+        "phone": "+49 555 123456",
+        "location": "Online",
+        "notes": "E-Mail Beratung - Kostenvoranschlag",
+        "appointment_type": "online_email"
+    }
+    
+    print("\nTest 4: Online/Email appointment")
+    try:
+        response = requests.post(
+            f"{BACKEND_URL}/appointments",
+            json=test_data_4,
+            headers={"Content-Type": "application/json"},
+            timeout=10
+        )
+        
+        if response.status_code == 200:
+            response_data = response.json()
+            print("✅ Online/Email appointment created successfully")
+            created_appointment_ids.append(response_data['id'])
+            success_count += 1
+        else:
+            print(f"❌ FAIL: HTTP {response.status_code}")
+            
+    except Exception as e:
+        print(f"❌ FAIL: Error - {str(e)}")
+    
+    print(f"\nPOST /api/appointments: {success_count}/{total_tests} tests passed")
+    return success_count == total_tests, created_appointment_ids
+
 def test_post_job_application():
     """Test POST /api/job-applications endpoint with enhanced fields"""
     print("\n=== Testing POST /api/job-applications (Enhanced Model) ===")
