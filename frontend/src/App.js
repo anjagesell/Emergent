@@ -639,7 +639,7 @@ function App() {
                   
                   {/* Availability Requests Tab */}
                   {internActiveTab === 'availability' && (
-                    <>
+                    <div className="intern-content">
                       <h3 className="requests-title">{t.intern.requestsTitle}</h3>
                       
                       {requests.length === 0 ? (
