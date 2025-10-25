@@ -1731,43 +1731,59 @@ body {
   .calendar-day:nth-child(6) {
     border-right: 2px solid #d0d0d0;
   }
+  
+  .calendar-day {
+    min-height: 110px;
+  }
 }
 
 @media (max-width: 768px) {
   .weekly-calendar {
-    grid-template-columns: repeat(3, 1fr); /* Show 3 columns on mobile */
-  }
-  
-  .calendar-day:nth-child(3n) {
-    border-right: none;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile for better spacing */
+    gap: 0;
+    margin: 1.5rem 0;
   }
   
   .calendar-day {
-    min-height: 100px;
-    padding: 1rem 0.5rem;
+    min-height: 120px;
+    padding: 1.2rem 0.8rem;
+    border-right: 2px solid #d0d0d0;
+    border-bottom: 2px solid #d0d0d0;
+  }
+  
+  .calendar-day:nth-child(2n) {
+    border-right: none;
+  }
+  
+  .calendar-day:nth-child(3n) {
+    border-right: 2px solid #d0d0d0;
   }
   
   .day-name {
-    font-size: 0.7rem;
-    padding-bottom: 0.3rem;
+    font-size: 0.75rem;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.6rem;
   }
   
   .day-date {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    margin-top: 0.4rem;
   }
   
   .week-navigation {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.8rem;
+    padding: 0.8rem;
   }
   
   .current-week {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
   
   .week-nav-button {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
   }
 }
 
