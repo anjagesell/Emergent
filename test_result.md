@@ -177,6 +177,42 @@ backend:
         agent: "testing"
         comment: "✅ PASS: PATCH endpoint fully functional. Successfully tested: 1) Status update (status_processed=true/false), 2) Notes update with German umlauts and special characters, 3) Combined parameter updates, 4) Data persistence verification via GET, 5) Proper 404 error for non-existent IDs. Fixed HTTPException handling to return correct 404 status codes. All 5/5 tests passed."
 
+  - task: "POST /api/appointments - Create appointment"
+    implemented: true
+    working: "NA"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Appointment endpoints already exist in backend. POST endpoint creates appointments with fields: date, time, client_number, name, phone, location, notes, appointment_type. Saves to MongoDB appointments collection with UUID."
+
+  - task: "GET /api/appointments - Retrieve appointments"
+    implemented: true
+    working: "NA"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "GET endpoint retrieves all appointments with optional date range filtering (start_date, end_date query parameters)."
+
+  - task: "DELETE /api/appointments/{id} - Delete appointment"
+    implemented: true
+    working: "NA"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "DELETE endpoint removes appointment by ID from MongoDB."
+
 frontend:
   - task: "Job Application Form on Stellenangebote Page"
     implemented: true
