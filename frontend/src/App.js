@@ -245,6 +245,7 @@ function App() {
       setInternError('');
       loadRequests();
       loadJobApplications();
+      loadAppointments();
     } else {
       setInternError(language === 'de' ? 'Falsches Passwort' : 'Incorrect password');
     }
