@@ -1565,6 +1565,37 @@ body {
 
 
 
+/* Delete Button in Admin Tables */
+.delete-cell {
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.5rem;
+}
+
+.delete-button {
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-button:hover {
+  background: rgba(220, 38, 38, 0.1);
+  transform: scale(1.1);
+}
+
+.delete-button:active {
+  transform: scale(0.95);
+}
+
+
+
 /* Origin Story Link Below Video */
 .origin-story-link-container {
   display: flex;
