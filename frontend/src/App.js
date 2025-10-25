@@ -1639,6 +1639,184 @@ function App() {
         </main>
       </div>
 
+      {/* Day Popup Modal for Appointments */}
+      {showDayPopup && selectedDate && (
+        <div className="day-popup-overlay" onClick={() => setShowDayPopup(false)}>
+          <div className="day-popup-content" onClick={(e) => e.stopPropagation()}>
+            <div className="day-popup-header">
+              <h3>
+                {language === 'de' ? 'Termine für' : 'Appointments for'}{' '}
+                {new Date(selectedDate).toLocaleDateString(language === 'de' ? 'de-DE' : 'en-US', { 
+                  weekday: 'long', 
+                  year: 'numeric', 
+                  month: 'long', 
+                  day: 'numeric' 
+                })}
+              </h3>
+              <button className="close-popup-button" onClick={() => setShowDayPopup(false)}>×</button>
+            </div>
+
+            {/* Time Slots Display */}
+            <div className="time-slots-container">
+              {Array.from({ length: 11 }, (_, i) => i + 8).map(hour => {
+                const timeString = `${hour.toString().padStart(2, '0')}:00`;
+                const dayAppointments = appointments.filter(app => 
+                  app.date === selectedDate && app.time.startsWith(`${hour.toString().padStart(2, '0')}:`)
+                );
+                
+                return (
+                  <div key={hour} className="time-slot">
+                    <div className="time-label">{timeString}</div>
+                    <div className="appointments-list">
+                      {dayAppointments.length > 0 ? (
+                        dayAppointments.map(app => (
+                          <div key={app.id} className="appointment-item">
+                            <div className="appointment-details">
+                              <strong>{app.client_name}</strong>
+                              <span className="appointment-time">{app.time}</span>
+                              {app.details && <p className="appointment-notes">{app.details}</p>}
+                              <span className="appointment-type-badge">{app.appointment_type}</span>
+                            </div>
+                            <button 
+                              className="delete-appointment-button"
+                              onClick={async () => {
+                                if (window.confirm(language === 'de'
+                                  ? 'Möchten Sie diesen Termin wirklich löschen?'
+                                  : 'Are you sure you want to delete this appointment?')) {
+                                  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+                                  try {
+                                    const response = await fetch(`${BACKEND_URL}/api/appointments/${app.id}`, {
+                                      method: 'DELETE'
+                                    });
+                                    if (response.ok) {
+                                      await loadAppointments();
+                                      alert(language === 'de' 
+                                        ? '✓ Termin erfolgreich gelöscht' 
+                                        : '✓ Appointment successfully deleted');
+                                    }
+                                  } catch (error) {
+                                    alert(language === 'de' 
+                                      ? 'Fehler beim Löschen' 
+                                      : 'Error deleting appointment');
+                                  }
+                                }
+                              }}
+                            >
+                              🗑️
+                            </button>
+                          </div>
+                        ))
+                      ) : (
+                        <div className="no-appointments">
+                          {language === 'de' ? 'Keine Termine' : 'No appointments'}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Add New Appointment Form */}
+            <div className="add-appointment-form">
+              <h4>{language === 'de' ? 'Neuen Termin hinzufügen' : 'Add New Appointment'}</h4>
+              <form onSubmit={async (e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                const appointmentData = {
+                  date: selectedDate,
+                  time: formData.get('time'),
+                  client_name: formData.get('client_name'),
+                  details: formData.get('details'),
+                  appointment_type: formData.get('appointment_type'),
+                  language: language
+                };
+
+                const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+                try {
+                  const response = await fetch(`${BACKEND_URL}/api/appointments`, {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(appointmentData)
+                  });
+
+                  if (response.ok) {
+                    await loadAppointments();
+                    e.target.reset();
+                    alert(language === 'de' 
+                      ? '✓ Termin erfolgreich erstellt' 
+                      : '✓ Appointment created successfully');
+                  } else {
+                    throw new Error('Failed to create appointment');
+                  }
+                } catch (error) {
+                  console.error('Error creating appointment:', error);
+                  alert(language === 'de' 
+                    ? 'Fehler beim Erstellen des Termins' 
+                    : 'Error creating appointment');
+                }
+              }}>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label>
+                      {language === 'de' ? 'Uhrzeit' : 'Time'} <span className="required">*</span>
+                    </label>
+                    <input 
+                      type="time" 
+                      name="time" 
+                      min="08:00" 
+                      max="18:00" 
+                      required 
+                      className="form-input"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>
+                      {language === 'de' ? 'Kundenname' : 'Client Name'} <span className="required">*</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      name="client_name" 
+                      required 
+                      className="form-input"
+                      placeholder={language === 'de' ? 'Name eingeben...' : 'Enter name...'}
+                    />
+                  </div>
+                </div>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label>
+                      {language === 'de' ? 'Terminart' : 'Appointment Type'} <span className="required">*</span>
+                    </label>
+                    <select name="appointment_type" required className="form-input">
+                      <option value="">{language === 'de' ? 'Bitte wählen...' : 'Please select...'}</option>
+                      <option value="video_conference">{language === 'de' ? 'Videokonferenz' : 'Video Conference'}</option>
+                      <option value="in_person">{language === 'de' ? 'Persönlich' : 'In Person'}</option>
+                      <option value="phone">{language === 'de' ? 'Telefon' : 'Phone'}</option>
+                      <option value="online_email">{language === 'de' ? 'Online/E-Mail' : 'Online/Email'}</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label>{language === 'de' ? 'Details/Notizen' : 'Details/Notes'}</label>
+                  <textarea 
+                    name="details" 
+                    className="form-textarea" 
+                    rows="3"
+                    placeholder={language === 'de' ? 'Zusätzliche Details...' : 'Additional details...'}
+                  />
+                </div>
+                <button type="submit" className="submit-button">
+                  {language === 'de' ? 'Termin erstellen' : 'Create Appointment'}
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Footer mit Impressum und Datenschutz */}
       <footer className="app-footer">
         {/* Krankenkassen Logos */}
