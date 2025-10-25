@@ -321,6 +321,76 @@ function App() {
     setCurrentWeekStart(newWeekStart);
   };
 
+  const handleAddAppointment = async (e) => {
+    e.preventDefault();
+    
+    if (!selectedDate || !appointmentForm.time || !appointmentForm.clientName) {
+      alert(language === 'de' ? 'Bitte füllen Sie alle Pflichtfelder aus.' : 'Please fill in all required fields.');
+      return;
+    }
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/appointments`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          date: selectedDate,
+          time: appointmentForm.time,
+          client_name: appointmentForm.clientName,
+          service: appointmentForm.service,
+          notes: appointmentForm.notes
+        })
+      });
+
+      if (response.ok) {
+        const newAppointment = await response.json();
+        setAppointments(prev => [...prev, newAppointment]);
+        setAppointmentForm({ time: '08:00', clientName: '', service: '', notes: '' });
+      } else {
+        alert(language === 'de' ? 'Fehler beim Erstellen des Termins.' : 'Error creating appointment.');
+      }
+    } catch (error) {
+      console.error('Error adding appointment:', error);
+      alert(language === 'de' ? 'Fehler beim Erstellen des Termins.' : 'Error creating appointment.');
+    }
+  };
+
+  const handleDeleteAppointment = async (appointmentId) => {
+    if (!window.confirm(language === 'de' ? 'Möchten Sie diesen Termin wirklich löschen?' : 'Are you sure you want to delete this appointment?')) {
+      return;
+    }
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/appointments/${appointmentId}`, {
+        method: 'DELETE'
+      });
+
+      if (response.ok) {
+        setAppointments(prev => prev.filter(app => app.id !== appointmentId));
+      } else {
+        alert(language === 'de' ? 'Fehler beim Löschen des Termins.' : 'Error deleting appointment.');
+      }
+    } catch (error) {
+      console.error('Error deleting appointment:', error);
+      alert(language === 'de' ? 'Fehler beim Löschen des Termins.' : 'Error deleting appointment.');
+    }
+  };
+
+  const getDayAppointments = () => {
+    if (!selectedDate) return [];
+    return appointments
+      .filter(app => app.date === selectedDate)
+      .sort((a, b) => a.time.localeCompare(b.time));
+  };
+
+  const generateTimeSlots = () => {
+    const slots = [];
+    for (let hour = 8; hour <= 18; hour++) {
+      slots.push(`${hour.toString().padStart(2, '0')}:00`);
+    }
+    return slots;
+  };
+
   
   // Load appointments when component mounts
   useEffect(() => {
