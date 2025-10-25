@@ -1590,22 +1590,22 @@ body {
 .modal-content::-webkit-scrollbar {
 
 
-/* Mint Green Appointments Folder */
-.mint-green-tab {
+/* Mint Green Appointments Folder - Higher specificity */
+.intern-tab.mint-green-tab {
   background: linear-gradient(to bottom, #b8e8d4 0%, #98d8b8 100%) !important;
   border-color: #78c8a0 !important;
 }
 
-.mint-green-tab:hover:not(.active) {
+.intern-tab.mint-green-tab:hover:not(.active) {
   background: linear-gradient(to bottom, #c0f0dc 0%, #a0e0c0 100%) !important;
 }
 
-.mint-green-tab.active {
+.intern-tab.mint-green-tab.active {
   background: linear-gradient(to bottom, #c8f8e4 0%, #a8e8c4 100%) !important;
   border-color: #68b890 !important;
 }
 
-.mint-green-tab::before {
+.intern-tab.mint-green-tab::before {
   display: none !important; /* No number for appointments tab */
 }
 
