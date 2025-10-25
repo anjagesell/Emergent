@@ -807,10 +807,17 @@ function App() {
                                           : 'Are you sure you want to delete this application?')) {
                                           const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
                                           try {
-                                            await fetch(`${BACKEND_URL}/api/job-applications/${application.id}`, {
+                                            const response = await fetch(`${BACKEND_URL}/api/job-applications/${application.id}`, {
                                               method: 'DELETE'
                                             });
-                                            loadJobApplications(); // Refresh the list
+                                            if (response.ok) {
+                                              alert(language === 'de' 
+                                                ? '✓ Bewerbung erfolgreich gelöscht' 
+                                                : '✓ Application successfully deleted');
+                                              loadJobApplications(); // Refresh the list
+                                            } else {
+                                              throw new Error('Delete failed');
+                                            }
                                           } catch (error) {
                                             alert(language === 'de' 
                                               ? 'Fehler beim Löschen' 
