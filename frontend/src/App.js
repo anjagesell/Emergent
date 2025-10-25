@@ -1765,9 +1765,9 @@ function App() {
                   date: selectedDate,
                   time: formData.get('time'),
                   client_name: formData.get('client_name'),
-                  client_number: formData.get('client_number') || 'N/A',
-                  phone: formData.get('phone') || 'N/A',
-                  location: formData.get('location') || 'N/A',
+                  client_number: formData.get('client_number'),
+                  phone: formData.get('phone'),
+                  location: formData.get('location'),
                   notes: formData.get('details'),
                   appointment_type: formData.get('appointment_type')
                 };
