@@ -728,7 +728,19 @@ function App() {
                       </div>
                       
                       {/* Weekly Calendar */}
-                      <div className="weekly-calendar">
+                      <div 
+                        className="weekly-calendar"
+                        style={{
+                          display: 'grid',
+                          gridTemplateColumns: 'repeat(6, 1fr)',
+                          gap: 0,
+                          margin: '2rem 0',
+                          border: '3px solid #0a2e4e',
+                          borderRadius: '8px',
+                          overflow: 'hidden',
+                          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
+                        }}
+                      >
                         {getWeekDates().map((dayInfo) => (
                           <div
                             key={dayInfo.dateString}
