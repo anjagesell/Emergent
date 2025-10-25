@@ -1738,6 +1738,100 @@ function App() {
         <p className="footer-copyright">{t.copyright}</p>
         <p className="footer-designer">© Designed by Larsen</p>
       </footer>
+      
+      {/* Daily Appointments Popup */}
+      {showDayPopup && selectedDate && (
+        <div className="modal-overlay" onClick={() => setShowDayPopup(false)}>
+          <div className="modal-content appointment-popup" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setShowDayPopup(false)}>×</button>
+            
+            <h2 className="popup-title">
+              {language === 'de' ? 'Termine für' : 'Appointments for'} {new Date(selectedDate).toLocaleDateString(language === 'de' ? 'de-DE' : 'en-US', { weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric' })}
+            </h2>
+            
+            <div className="appointment-slots">
+              {Array.from({ length: 9 }, (_, i) => i + 9).map(hour => {
+                const timeSlot = `${hour.toString().padStart(2, '0')}:00`;
+                const dayAppointments = appointments.filter(app => app.date === selectedDate && app.time === timeSlot);
+                
+                return (
+                  <div key={hour} className="time-slot">
+                    <div className="time-label">{timeSlot}</div>
+                    <div className="appointment-details">
+                      {dayAppointments.length > 0 ? (
+                        dayAppointments.map((appt, idx) => (
+                          <div key={idx} className="appointment-item">
+                            <div className="appointment-info">
+                              <strong>{appt.client_name}</strong>
+                              {appt.service && <span> - {appt.service}</span>}
+                              {appt.notes && <div className="appt-notes">{appt.notes}</div>}
+                            </div>
+                            <button 
+                              className="delete-appointment"
+                              onClick={async () => {
+                                if (window.confirm(language === 'de' ? 'Termin löschen?' : 'Delete appointment?')) {
+                                  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+                                  try {
+                                    const response = await fetch(`${BACKEND_URL}/api/appointments/${appt._id}`, {
+                                      method: 'DELETE'
+                                    });
+                                    if (response.ok) {
+                                      alert(language === 'de' ? '✓ Termin gelöscht' : '✓ Appointment deleted');
+                                      loadAppointments();
+                                    }
+                                  } catch (error) {
+                                    alert(language === 'de' ? 'Fehler beim Löschen' : 'Error deleting');
+                                  }
+                                }
+                              }}
+                            >
+                              🗑️
+                            </button>
+                          </div>
+                        ))
+                      ) : (
+                        <button 
+                          className="add-appointment-btn"
+                          onClick={() => {
+                            const clientName = prompt(language === 'de' ? 'Kundenname:' : 'Client name:');
+                            if (clientName) {
+                              const service = prompt(language === 'de' ? 'Dienstleistung:' : 'Service:');
+                              const notes = prompt(language === 'de' ? 'Notizen (optional):' : 'Notes (optional):');
+                              
+                              const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+                              fetch(`${BACKEND_URL}/api/appointments`, {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                  client_name: clientName,
+                                  service: service || '',
+                                  date: selectedDate,
+                                  time: timeSlot,
+                                  notes: notes || ''
+                                })
+                              })
+                              .then(res => res.json())
+                              .then(() => {
+                                alert(language === 'de' ? '✓ Termin erstellt' : '✓ Appointment created');
+                                loadAppointments();
+                              })
+                              .catch(() => {
+                                alert(language === 'de' ? 'Fehler beim Erstellen' : 'Error creating appointment');
+                              });
+                            }
+                          }}
+                        >
+                          + {language === 'de' ? 'Termin hinzufügen' : 'Add Appointment'}
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
